@@ -1,0 +1,49 @@
+type Timestamp = int;
+type SocialLink = 
+ record {
+   platform: text;
+   url: text;
+ };
+type ProjectId = nat;
+type Project = 
+ record {
+   category: text;
+   description: text;
+   featured: bool;
+   githubUrl: opt text;
+   id: ProjectId;
+   imageUrl: text;
+   liveUrl: opt text;
+   techStack: vec text;
+   title: text;
+ };
+type Profile = 
+ record {
+   bio: text;
+   name: text;
+   skills: vec text;
+   socialLinks: vec SocialLink;
+   title: text;
+ };
+type ContactSubmission = 
+ record {
+   email: text;
+   id: nat;
+   message: text;
+   name: text;
+   timestamp: Timestamp;
+ };
+service : {
+  addProject: (title: text, description: text, techStack: vec text, imageUrl:
+   text, liveUrl: opt text, githubUrl: opt text, category: text, featured:
+   bool) -> (ProjectId);
+  deleteProject: (id: ProjectId) -> (bool);
+  getAllProjects: () -> (vec Project) query;
+  getContactSubmissions: () -> (vec ContactSubmission) query;
+  getFeaturedProjects: () -> (vec Project) query;
+  getProfile: () -> (opt Profile) query;
+  getProject: (id: ProjectId) -> (opt Project) query;
+  setProfile: (newProfile: Profile) -> ();
+  submitContact: (name: text, email: text, message: text) -> (nat);
+  updateProject: (project: Project) -> (bool);
+}

@@ -1,0 +1,23 @@
+{
+  "overview": "A premium software engineer portfolio website with hero section, project showcase, skills, and contact form — built for employers and clients.",
+  "features": [
+    "Hero section with animated background and CTA",
+    "Featured projects showcase with detail pages",
+    "Skills section with categorized tech stack",
+    "Contact form with success feedback",
+    "CV/Resume download",
+    "Smooth scroll animations and transitions",
+    "Responsive mobile-first design",
+    "Dark modern theme with premium typography"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "software-engineer",
+    "showcase",
+    "dark-theme",
+    "animations",
+    "responsive"
+  ],
+  "last_updated": "2026-04-17T20:31:20.838Z"
+}

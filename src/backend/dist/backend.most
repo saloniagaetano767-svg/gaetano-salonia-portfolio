@@ -1,0 +1,59 @@
+// Version: 1.0.0
+type ContactSubmission__397518865 =
+  {
+    email : Text;
+    id : Nat;
+    message : Text;
+    name : Text;
+    timestamp : Timestamp__851919047
+  };
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Profile__59924030 =
+  {
+    bio : Text;
+    name : Text;
+    skills : [Text];
+    socialLinks : [SocialLink__315946840];
+    title : Text
+  };
+type ProjectId__478417951 = Nat;
+type ProjectId__535774148 = ProjectId__478417951;
+type Project__19257312 =
+  {
+    category : Text;
+    description : Text;
+    featured : Bool;
+    githubUrl : ?Text;
+    id : ProjectId__535774148;
+    imageUrl : Text;
+    liveUrl : ?Text;
+    techStack : [Text];
+    title : Text
+  };
+type SocialLink__315946840 = {platform : Text; url : Text};
+type Timestamp__301639476 = Int;
+type Timestamp__851919047 = Timestamp__301639476;
+actor {
+  stable contacts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?ContactSubmission__397518865]];
+      var elementIndex : Nat__490723111
+    };
+  stable var nextContactId : Nat;
+  stable var nextProjectId : Nat;
+  stable var profile : ?Profile__59924030;
+  stable projects :
+    {
+      var root : Node__46230540<ProjectId__535774148, Project__19257312>;
+      var size : Nat__490723111
+    }
+};
