@@ -49,6 +49,7 @@ export function ProjectsSection() {
     backendProjects && backendProjects.length > 0
       ? backendProjects
       : SAMPLE_PROJECTS;
+  const displayedProjects = projects.slice(0, 3);
 
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
     threshold: 0.05,
@@ -57,7 +58,7 @@ export function ProjectsSection() {
     useScrollAnimation<HTMLDivElement>({
       threshold: 0.05,
     });
-  const staggered = useStaggeredAnimation(projects.length, 0.1);
+  const staggered = useStaggeredAnimation(displayedProjects.length, 0.1);
 
   useApplyVisibleClass(
     gridRef as React.RefObject<HTMLElement | null>,
@@ -98,7 +99,7 @@ export function ProjectsSection() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             data-ocid="projects.loading_state"
           >
-            {[1, 2, 3, 4, 5].map((i) => (
+            {[1, 2, 3].map((i) => (
               <ProjectCardSkeleton key={i} />
             ))}
           </div>
@@ -108,7 +109,7 @@ export function ProjectsSection() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             data-ocid="projects.list"
           >
-            {projects.map((project, i) => (
+            {displayedProjects.map((project, i) => (
               <ProjectCard
                 key={project.id.toString()}
                 project={project}

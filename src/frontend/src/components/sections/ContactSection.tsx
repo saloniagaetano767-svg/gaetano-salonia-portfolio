@@ -2,31 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Download, Github, Linkedin, Mail, Send } from "lucide-react";
+import { Download, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { useContact } from "../../hooks/useContact";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import type { ContactFormData } from "../../types/portfolio";
 
 const EMAIL = "hello@gaetanosalonia.com";
-const GITHUB_URL = "https://github.com/saloniagaetano767-svg";
-const LINKEDIN_URL = "https://www.linkedin.com/in/gaetano-salonia";
 const CV_URL = "/cv.pdf";
-
-const SOCIAL_LINKS = [
-  {
-    href: GITHUB_URL,
-    icon: Github,
-    label: "GitHub",
-    handle: "github.com/saloniagaetano767-svg",
-  },
-  {
-    href: LINKEDIN_URL,
-    icon: Linkedin,
-    label: "LinkedIn",
-    handle: "linkedin.com/in/gaetano-salonia",
-  },
-];
 
 export function ContactSection() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>({
@@ -291,34 +274,6 @@ export function ContactSection() {
                 </span>
                 <span className="font-body text-sm">{EMAIL}</span>
               </a>
-            </div>
-
-            {/* Divider */}
-            <div className="h-px bg-border" />
-
-            {/* Social Links */}
-            <div>
-              <p className="text-xs font-display tracking-widest uppercase text-muted-foreground mb-4">
-                Find me online
-              </p>
-              <div className="flex flex-col gap-3">
-                {SOCIAL_LINKS.map(({ href, icon: Icon, label, handle }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
-                    aria-label={label}
-                    data-ocid={`contact.${label.toLowerCase()}_link`}
-                  >
-                    <span className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/5 transition-smooth">
-                      <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </span>
-                    <span className="font-body text-sm">{handle}</span>
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Availability badge */}
