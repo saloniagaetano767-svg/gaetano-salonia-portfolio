@@ -19,29 +19,36 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     label: "Programming languages",
     accentClass: "accent-cyan",
     skills: [
-      { name: "JavaScript" },
-      { name: "TypeScript" },
-      { name: "HTML" },
-      { name: "CSS" },
+      { name: "JavaScript & TypeScript" },
+      { name: "Java" },
       { name: "Python" },
       { name: "C#" },
+      { name: "C" },
+      { name: "C++" },
+      { name: "HTML & CSS" },
     ],
   },
   {
     label: "Frameworks & libraries",
     accentClass: "accent-violet",
-    skills: [{ name: "React.js" }, { name: "Tailwind CSS" }, { name: "Vite" }],
+    skills: [
+      { name: "React.js" },
+      { name: "Node.js" },
+      { name: "Tailwind CSS" },
+      { name: "Vite" },
+    ],
   },
   {
     label: "Tools & technologies",
     accentClass: "accent-emerald",
     skills: [
       { name: "Git & GitHub" },
-      { name: "VS Code" },
-      { name: "REST APIs" },
+      { name: "Docker" },
       { name: "SQL" },
-      { name: "Responsive design" },
-      { name: "Debugging & testing" },
+      { name: "Linux & Windows" },
+      { name: "REST APIs" },
+      { name: "VS Code" },
+      { name: "Microsoft Office" },
     ],
   },
   {
@@ -49,19 +56,23 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     accentClass: "accent-amber",
     skills: [
       { name: "Problem-solving" },
-      { name: "Analytical thinking" },
-      { name: "Teamwork" },
-      { name: "Fast learner" },
       { name: "Structured delivery" },
+      { name: "Testing & QA mindset" },
+      { name: "Technical documentation" },
+      { name: "Teamwork & code review" },
+      { name: "Customer-oriented service" },
+      { name: "Communication & conflict resolution" },
+      { name: "Self-driven & proactive" },
     ],
   },
   {
     label: "Languages",
     accentClass: "accent-rose",
     skills: [
-      { name: "German (fluent)" },
-      { name: "Italian (fluent)" },
-      { name: "English (good)" },
+      { name: "German (C2 / mother tongue level)" },
+      { name: "Italian (mother tongue)" },
+      { name: "English (B1 / B2)" },
+      { name: "French (A1)" },
     ],
   },
 ];
@@ -217,8 +228,9 @@ export function SkillsSection() {
             </span>
           </h2>
           <p className="mt-4 text-muted-foreground text-base max-w-xl leading-relaxed">
-            A practical toolkit shaped by vocational training, workplace
-            delivery at RUAG, and continuous learning through personal projects.
+            Shaped by vocational training, day-to-day delivery at RUAG (NavData,
+            SODC), and side projects — aligned with my CV: Java through C++,
+            React, Node, Docker, Linux, and Office tooling.
           </p>
         </div>
 

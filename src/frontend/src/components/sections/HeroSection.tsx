@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 const NAME = "Gaetano Salonia";
 const TITLE = "Software Engineer · Switzerland";
-const LOCATION = "Based in Switzerland · RUAG · Open to Software Engineer & IT Support roles";
+const LOCATION =
+  "Based in Switzerland · RUAG · Open to Software Engineer & IT Support roles";
 const VALUE_PROP =
   "I build reliable applications with clean architecture — from requirements to delivery — combining apprenticeship rigor with curiosity for modern web technology.";
 
@@ -45,7 +46,7 @@ export function HeroSection() {
     const particles: Particle[] = [];
     const PARTICLE_COUNT = 70;
     const CONNECTION_DIST = 160;
-    const CYAN = "68% 0.12 200";
+    const CYAN = "66% 0.17 218";
 
     function resize() {
       if (!canvas) return;
@@ -152,14 +153,19 @@ export function HeroSection() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-background/70" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-background/58 dark:bg-background/68"
+        aria-hidden="true"
+      />
 
       {/* Animated gradient radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse 70% 55% at 60% 45%, oklch(0.62 0.12 200 / 0.11) 0%, transparent 70%)",
+          background: [
+            "radial-gradient(ellipse 72% 58% at 58% 42%, oklch(0.58 0.16 218 / 0.2) 0%, transparent 68%)",
+            "radial-gradient(ellipse 50% 45% at 18% 78%, oklch(0.62 0.14 295 / 0.12) 0%, transparent 65%)",
+          ].join(","),
         }}
         aria-hidden="true"
       />

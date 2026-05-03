@@ -1,5 +1,5 @@
-import { c as createLucideIcon, k as useParams, j as jsxRuntimeExports, i as Link, B as Button, G as Github, d as Skeleton } from "./index-DiEdBJV9.js";
-import { d as useProject, S as SAMPLE_PROJECTS, B as Badge, E as ExternalLink, C as CASE_STUDIES } from "./badge-CruFn8Ii.js";
+import { c as createLucideIcon, i as useParams, j as jsxRuntimeExports, L as Link, B as Button, G as Github, d as Skeleton } from "./index-mRDVAQWc.js";
+import { d as useProject, S as SAMPLE_PROJECTS, B as Badge, E as ExternalLink, C as CASE_STUDIES } from "./badge-D89uCdfC.js";
 /**
  * @license lucide-react v0.511.0 - ISC
  *

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { BRAND_MARK } from "@/lib/site";
 import { Link } from "@tanstack/react-router";
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -45,13 +46,13 @@ export function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors duration-200"
+          className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors duration-200 tracking-tight"
           data-ocid="nav.home_link"
-          aria-label="Home"
+          aria-label="Home — Gaetano Salonia"
         >
-          <span className="text-primary">&lt;</span>
-          Gaetano
-          <span className="text-primary">/&gt;</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+            {BRAND_MARK}
+          </span>
         </Link>
 
         {/* Desktop nav */}

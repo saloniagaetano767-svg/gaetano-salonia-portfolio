@@ -2,24 +2,32 @@ import {
   useScrollAnimation,
   useStaggeredAnimation,
 } from "@/hooks/useScrollAnimation";
-import { Building2, GraduationCap, MapPin } from "lucide-react";
+import { BookOpen, Building2, GraduationCap, MapPin } from "lucide-react";
 
 const TIMELINE = [
   {
     icon: Building2,
-    period: "Present",
-    title: "RUAG",
-    subtitle: "Technical / IT-related role · Switzerland",
+    period: "2024 — present",
+    title: "RUAG AG",
+    subtitle: "Application Developer (EFZ) · Software · Switzerland",
     description:
-      "Contributing in a professional engineering environment: collaborating on software-related work, following structured development practices, and strengthening problem-solving in real product contexts.",
+      "Developing and maintaining applications in the context of military navigation data (NavData). Contributing to the Swiss Obstacle Database Converter (SODC) for security-relevant obstacle data. Implementing validation and processing pipelines, testing, QA, and technical documentation — working in a team with high reliability expectations.",
   },
   {
     icon: GraduationCap,
-    period: "Apprenticeship",
-    title: "Computer Science EFZ — Application Development",
-    subtitle: "Vocational diploma (Informatiker EFZ)",
+    period: "2022 — 2024",
+    title: "Benedict School",
+    subtitle: "Computer Science EFZ — Application Development",
     description:
-      "Comprehensive training in application development: requirements, implementation, testing, databases, and teamwork — with a strong foundation in software engineering principles and delivery discipline.",
+      "Vocational foundation in software development and programming: object-oriented design, databases (SQL), hands-on school projects, plus documentation and presenting technical work to practitioners.",
+  },
+  {
+    icon: BookOpen,
+    period: "2019 — 2022",
+    title: "Rüti Secondary School",
+    subtitle: "Compulsory education",
+    description:
+      "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship — building independence and everyday teamwork.",
   },
 ];
 
@@ -28,7 +36,7 @@ export function ExperienceSection() {
     threshold: 0.08,
     rootMargin: "0px 0px -40px 0px",
   });
-  const stagger = useStaggeredAnimation(TIMELINE.length, 0.12);
+  const stagger = useStaggeredAnimation(TIMELINE.length, 0.08);
 
   return (
     <section
@@ -48,23 +56,25 @@ export function ExperienceSection() {
             Switzerland
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
-            Experience &{" "}
-            <span className="text-gradient">Education</span>
+            Experience & <span className="text-gradient">Education</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-base max-w-2xl leading-relaxed">
-            A concise view of where I work, how I was trained, and the
-            professional standards I bring to every task.
+            How I work today at RUAG, how I trained at Benedict School, and the
+            path that led there — together they show both practice and formal
+            education.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {TIMELINE.map((item, i) => {
             const Icon = item.icon;
             return (
               <article
                 key={item.title}
                 className={`rounded-2xl border border-border/60 bg-card/80 p-8 backdrop-blur-sm transition-all duration-700 hover:border-primary/35 hover:shadow-[0_20px_50px_oklch(var(--primary)/0.08)] ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
                 }`}
                 style={stagger[i].style}
                 data-ocid={`experience.card.${i + 1}`}

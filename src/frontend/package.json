@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && pnpm copy:env",
+    "build": "vite build && node ./scripts/write-env-dist.mjs",
     "copy:env": "node -e \"require('fs').copyFileSync('env.json','dist/env.json')\"",
     "typecheck": "tsc --noEmit",
     "check": "biome check src",

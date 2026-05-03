@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { CONTACT_EMAIL } from "@/lib/site";
 import { Download, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { useContact } from "../../hooks/useContact";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import type { ContactFormData } from "../../types/portfolio";
 
-const EMAIL = "hello@gaetanosalonia.com";
 const CV_URL = "/cv.pdf";
 
 export function ContactSection() {
@@ -30,15 +30,17 @@ export function ContactSection() {
   });
 
   const errors = {
-    name: touched.name && !form.name.trim() ? "Name is required" : null,
+    name: touched.name && !form.name.trim() ? "Please enter your name." : null,
     email:
       touched.email && !form.email.trim()
-        ? "Email is required"
+        ? "Please enter your email."
         : touched.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
-          ? "Enter a valid email address"
+          ? "Please enter a valid email address."
           : null,
     message:
-      touched.message && !form.message.trim() ? "Message is required" : null,
+      touched.message && !form.message.trim()
+        ? "Please enter a short message."
+        : null,
   };
 
   const isFormValid =
@@ -71,12 +73,12 @@ export function ContactSection() {
     <section
       id="contact"
       ref={ref}
-      className={`scroll-fade ${isVisible ? "visible" : ""} py-24 px-6`}
+      className={`scroll-fade ${isVisible ? "visible" : ""} pt-24 pb-16 md:pb-20 px-6`}
       data-ocid="contact.section"
     >
       <div className="max-w-5xl mx-auto">
         {/* Header Row */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-6 mb-12 md:mb-14">
           <div>
             <p className="text-primary font-mono text-sm tracking-widest uppercase mb-2 opacity-80">
               Contact
@@ -97,7 +99,7 @@ export function ContactSection() {
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
           {/* Form Column */}
           <div className="lg:col-span-3">
             {isSuccess ? (
@@ -109,10 +111,10 @@ export function ContactSection() {
                   <Send className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Message sent!
+                  Message sent
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Thanks! I&apos;ll get back to you soon.
+                  Thanks — I&apos;ll get back to you soon.
                 </p>
               </div>
             ) : (
@@ -200,7 +202,7 @@ export function ContactSection() {
                   <Textarea
                     id="contact-message"
                     name="message"
-                    placeholder="Tell me about your project or opportunity…"
+                    placeholder="Tell me about your project, role, or question…"
                     value={form.message}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -228,7 +230,7 @@ export function ContactSection() {
                     data-ocid="contact.error_state"
                   >
                     {error?.message ??
-                      "Something went wrong. Please try again."}
+                      "Something went wrong — try again or email me directly."}
                   </p>
                 )}
 
@@ -249,7 +251,7 @@ export function ContactSection() {
                   ) : (
                     <span className="flex items-center gap-2">
                       <Send className="w-4 h-4" />
-                      Send Message
+                      Send message
                     </span>
                   )}
                 </Button>
@@ -258,26 +260,26 @@ export function ContactSection() {
           </div>
 
           {/* Sidebar Column */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
+          <div className="lg:col-span-2 flex flex-col gap-8 pt-1">
             {/* Email contact */}
             <div>
               <p className="text-xs font-display tracking-widest uppercase text-muted-foreground mb-3">
-                Or reach out directly
+                Or email me directly
               </p>
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="group inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
                 data-ocid="contact.email_link"
               >
                 <span className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/5 transition-smooth">
                   <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </span>
-                <span className="font-body text-sm">{EMAIL}</span>
+                <span className="font-body text-sm">{CONTACT_EMAIL}</span>
               </a>
             </div>
 
             {/* Availability badge */}
-            <div className="mt-auto pt-2">
+            <div className="mt-auto pt-1">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-xs font-display text-primary/80 tracking-wide">
@@ -286,13 +288,6 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-border text-center text-muted-foreground text-xs font-body">
-          <span>
-            © {new Date().getFullYear()} Gaetano Salonia · Switzerland
-          </span>
         </div>
       </div>
     </section>

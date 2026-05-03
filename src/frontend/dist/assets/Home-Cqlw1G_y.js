@@ -7,8 +7,8 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentResult, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn, _a;
-import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as Skeleton, e as cn, f as createSlot, D as Download, B as Button, M as Mail, G as Github, L as Linkedin, i as Link } from "./index-DiEdBJV9.js";
-import { u as useProfile, a as useActor, c as createActor, B as Badge, E as ExternalLink, b as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./badge-CruFn8Ii.js";
+import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as Skeleton, e as cn, f as createSlot, D as Download, B as Button, M as Mail, L as Link, G as Github } from "./index-mRDVAQWc.js";
+import { u as useProfile, a as useActor, c as createActor, B as Badge, E as ExternalLink, b as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./badge-D89uCdfC.js";
 var MutationObserver = (_a = class extends Subscribable {
   constructor(client, options) {
     super();
@@ -680,23 +680,7 @@ function useContact() {
   });
 }
 const EMAIL = "hello@gaetanosalonia.com";
-const GITHUB_URL = "https://github.com/saloniagaetano767-svg";
-const LINKEDIN_URL = "https://www.linkedin.com/in/gaetano-salonia";
 const CV_URL = "/cv.pdf";
-const SOCIAL_LINKS = [
-  {
-    href: GITHUB_URL,
-    icon: Github,
-    label: "GitHub",
-    handle: "github.com/saloniagaetano767-svg"
-  },
-  {
-    href: LINKEDIN_URL,
-    icon: Linkedin,
-    label: "LinkedIn",
-    handle: "linkedin.com/in/gaetano-salonia"
-  }
-];
 function ContactSection() {
   const { ref, isVisible } = useScrollAnimation({
     threshold: 0.08
@@ -937,26 +921,6 @@ function ContactSection() {
                   ]
                 }
               )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px bg-border" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-display tracking-widest uppercase text-muted-foreground mb-4", children: "Find me online" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-3", children: SOCIAL_LINKS.map(({ href, icon: Icon, label, handle }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  className: "group inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200",
-                  "aria-label": label,
-                  "data-ocid": `contact.${label.toLowerCase()}_link`,
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/5 transition-smooth", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { className: "w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" }) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-body text-sm", children: handle })
-                  ]
-                },
-                label
-              )) })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto pt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-primary animate-pulse" }),
@@ -1489,13 +1453,14 @@ function useApplyVisibleClass(ref, isVisible) {
 function ProjectsSection() {
   const { data: backendProjects, isLoading } = useFeaturedProjects();
   const projects = backendProjects && backendProjects.length > 0 ? backendProjects : SAMPLE_PROJECTS;
+  const displayedProjects = projects.slice(0, 3);
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
     threshold: 0.05
   });
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({
     threshold: 0.05
   });
-  const staggered = useStaggeredAnimation(projects.length, 0.1);
+  const staggered = useStaggeredAnimation(displayedProjects.length, 0.1);
   useApplyVisibleClass(
     gridRef,
     gridVisible
@@ -1530,7 +1495,7 @@ function ProjectsSection() {
           {
             className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
             "data-ocid": "projects.loading_state",
-            children: [1, 2, 3, 4, 5].map((i) => /* @__PURE__ */ jsxRuntimeExports.jsx(ProjectCardSkeleton, {}, i))
+            children: [1, 2, 3].map((i) => /* @__PURE__ */ jsxRuntimeExports.jsx(ProjectCardSkeleton, {}, i))
           }
         ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
@@ -1538,7 +1503,7 @@ function ProjectsSection() {
             ref: gridRef,
             className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
             "data-ocid": "projects.list",
-            children: projects.map((project, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            children: displayedProjects.map((project, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               ProjectCard,
               {
                 project,

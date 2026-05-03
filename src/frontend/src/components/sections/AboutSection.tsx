@@ -13,13 +13,14 @@ const FALLBACK_PROFILE: Profile = {
   skills: [
     "JavaScript",
     "TypeScript",
-    "HTML",
-    "CSS",
+    "Java",
     "React",
+    "Node.js",
     "Tailwind CSS",
+    "Docker",
     "Git",
-    "REST APIs",
     "SQL",
+    "C / C++",
   ],
   socialLinks: [],
 };
@@ -28,7 +29,8 @@ const EXPERTISE_AREAS = [
   {
     label: "Application engineering",
     icon: "⬡",
-    description: "End-to-end thinking: requirements, implementation, and validation",
+    description:
+      "End-to-end thinking: requirements, implementation, and validation",
   },
   {
     label: "Web & interfaces",
@@ -38,7 +40,8 @@ const EXPERTISE_AREAS = [
   {
     label: "Quality & data",
     icon: "◎",
-    description: "SQL fundamentals, debugging discipline, and structured testing",
+    description:
+      "SQL fundamentals, debugging discipline, and structured testing",
   },
   {
     label: "Team delivery",

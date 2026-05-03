@@ -1,3 +1,4 @@
+import { BRAND_MARK, CONTACT_EMAIL } from "@/lib/site";
 import { Github, Linkedin, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -12,7 +13,7 @@ interface SocialItem {
 const SOCIAL: SocialItem[] = [
   {
     icon: Mail,
-    href: "mailto:hello@gaetanosalonia.com",
+    href: `mailto:${CONTACT_EMAIL}`,
     label: "Email",
   },
   {
@@ -33,13 +34,13 @@ export function Footer() {
       className="bg-card border-t border-border/60"
       data-ocid="footer.section"
     >
-      <div className="container mx-auto px-6 py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="container mx-auto px-6 py-10 md:py-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-8">
           {/* Brand */}
-          <div className="font-display font-bold text-lg text-foreground">
-            <span className="text-primary">&lt;</span>
-            Gaetano
-            <span className="text-primary">/&gt;</span>
+          <div className="font-display font-bold text-lg text-foreground tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              {BRAND_MARK}
+            </span>
           </div>
 
           {/* Tagline */}
