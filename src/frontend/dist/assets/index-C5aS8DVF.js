@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-BPIDruj5.js","assets/usePortfolio-DLpjZgZG.js","assets/ProjectDetail-BIQCg1yK.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-CWxrS9Jt.js","assets/usePortfolio-iJsRDNpw.js","assets/ProjectDetail-BYeJBaVO.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -34340,26 +34340,46 @@ const de = {
       "Benedict Schule — EFZ Applikationsentwicklung",
       "Persönliche Projekte & Open Source"
     ],
-    journeyTitle: "Mein Werdegang"
+    journeyTitle: "Mein Werdegang",
+    nextStepsTitle: "Nächste Schritte"
   },
   journey: [
     {
-      role: "Lernender Applikationsentwickler",
-      company: "RUAG AG",
-      period: "2024 — Heute",
-      description: "Entwicklung interner Softwareanwendungen, Mitarbeit an NavData und dem Swiss Obstacle Database Converter (SODC), Validierungspipelines, Testing, QA und moderne Frontend-Lösungen mit React und TypeScript."
+      role: "Sekundarschule",
+      company: "Sekundarschule Rüti",
+      period: "2019 — 2022",
+      description: "Breite Allgemeinbildung mit Fokus auf strukturiertes Arbeiten, analytisches Denken und Vorbereitung auf die IT-Lehre.",
+      phase: "past"
     },
     {
       role: "Informatiker EFZ — Applikationsentwicklung",
       company: "Benedict Schule",
       period: "2022 — 2024",
-      description: "Berufliche Grundlage in Softwareentwicklung: objektorientiertes Design, Datenbanken (SQL), Schulprojekte und Präsentation technischer Arbeit."
+      description: "Berufliche Grundlage in Softwareentwicklung: objektorientiertes Design, Datenbanken (SQL), Schulprojekte und Präsentation technischer Arbeit.",
+      phase: "past"
     },
     {
-      role: "Sekundarschule",
-      company: "Sekundarschule Rüti",
-      period: "2019 — 2022",
-      description: "Breite Allgemeinbildung mit Fokus auf strukturiertes Arbeiten, analytisches Denken und Vorbereitung auf die IT-Lehre."
+      role: "Lernender Applikationsentwickler",
+      company: "RUAG AG",
+      period: "2024 — Heute",
+      description: "Entwicklung interner Softwareanwendungen, Mitarbeit an NavData und dem Swiss Obstacle Database Converter (SODC), Validierungspipelines, Testing, QA und moderne Frontend-Lösungen mit React und TypeScript.",
+      phase: "current"
+    },
+    {
+      role: "Eid. Fachausweis — AI Business Specialist",
+      company: "Eidgenössische Prüfung",
+      period: "Geplant",
+      description: "Nach der Lehre möchte ich den Eid. Fachausweis als AI Business Specialist holen — Business und angewandte KI verbinden, um echten Mehrwert zu schaffen.",
+      phase: "future",
+      badge: "Nächster Schritt"
+    },
+    {
+      role: "Bachelor",
+      company: "Hochschule (geplant)",
+      period: "Geplant",
+      description: "Langfristiges Ziel: ein Bachelor-Studium, um mein technisches Fundament zu vertiefen und Türen zu Senior-Rollen und Führungspositionen zu öffnen.",
+      phase: "future",
+      badge: "Vision"
     }
   ],
   services: {
@@ -34502,26 +34522,46 @@ const en = {
       "Benedict School — EFZ Application Development",
       "Personal projects & open source"
     ],
-    journeyTitle: "My Journey"
+    journeyTitle: "My Journey",
+    nextStepsTitle: "Next Steps"
   },
   journey: [
     {
-      role: "Software Developer Apprentice",
-      company: "RUAG AG",
-      period: "2024 — Present",
-      description: "Developing and maintaining internal software applications, contributing to NavData and the Swiss Obstacle Database Converter (SODC), implementing validation pipelines, testing, QA, and modern frontend solutions with React and TypeScript."
+      role: "Compulsory Education",
+      company: "Rüti Secondary School",
+      period: "2019 — 2022",
+      description: "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship.",
+      phase: "past"
     },
     {
       role: "Informatiker EFZ — Application Development",
       company: "Benedict School",
       period: "2022 — 2024",
-      description: "Vocational foundation in software development: object-oriented design, databases (SQL), hands-on school projects, and presenting technical work to practitioners."
+      description: "Vocational foundation in software development: object-oriented design, databases (SQL), hands-on school projects, and presenting technical work to practitioners.",
+      phase: "past"
     },
     {
-      role: "Compulsory Education",
-      company: "Rüti Secondary School",
-      period: "2019 — 2022",
-      description: "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship."
+      role: "Software Developer Apprentice",
+      company: "RUAG AG",
+      period: "2024 — Present",
+      description: "Developing and maintaining internal software applications, contributing to NavData and the Swiss Obstacle Database Converter (SODC), implementing validation pipelines, testing, QA, and modern frontend solutions with React and TypeScript.",
+      phase: "current"
+    },
+    {
+      role: "Federal Diploma — AI Business Specialist",
+      company: "Swiss Professional Examination",
+      period: "Planned",
+      description: "After completing my apprenticeship, I plan to earn the Eid. Fachausweis as an AI Business Specialist — bridging business strategy with applied AI to deliver real-world value.",
+      phase: "future",
+      badge: "Next step"
+    },
+    {
+      role: "Bachelor's Degree",
+      company: "University (planned)",
+      period: "Planned",
+      description: "The long-term goal: a Bachelor's degree to deepen my technical foundation and open doors to senior engineering and leadership roles.",
+      phase: "future",
+      badge: "Vision"
     }
   ],
   services: {
@@ -34668,26 +34708,46 @@ const it = {
       "Benedict School — EFZ Application Development",
       "Progetti personali & open source"
     ],
-    journeyTitle: "Il mio percorso"
+    journeyTitle: "Il mio percorso",
+    nextStepsTitle: "Prossimi passi"
   },
   journey: [
     {
-      role: "Apprendista Sviluppatore Software",
-      company: "RUAG AG",
-      period: "2024 — Presente",
-      description: "Sviluppo e manutenzione di applicazioni interne, contributo a NavData e al Swiss Obstacle Database Converter (SODC), pipeline di validazione, testing, QA e soluzioni frontend moderne con React e TypeScript."
+      role: "Scuola secondaria",
+      company: "Scuola secondaria Rüti",
+      period: "2019 — 2022",
+      description: "Istruzione generale con enfasi sul lavoro strutturato, pensiero analitico e preparazione all'apprendistato IT.",
+      phase: "past"
     },
     {
       role: "Informatiker EFZ — Application Development",
       company: "Benedict School",
       period: "2022 — 2024",
-      description: "Formazione professionale in sviluppo software: design orientato agli oggetti, database (SQL), progetti scolastici e presentazione del lavoro tecnico."
+      description: "Formazione professionale in sviluppo software: design orientato agli oggetti, database (SQL), progetti scolastici e presentazione del lavoro tecnico.",
+      phase: "past"
     },
     {
-      role: "Scuola secondaria",
-      company: "Scuola secondaria Rüti",
-      period: "2019 — 2022",
-      description: "Istruzione generale con enfasi sul lavoro strutturato, pensiero analitico e preparazione all'apprendistato IT."
+      role: "Apprendista Sviluppatore Software",
+      company: "RUAG AG",
+      period: "2024 — Presente",
+      description: "Sviluppo e manutenzione di applicazioni interne, contributo a NavData e al Swiss Obstacle Database Converter (SODC), pipeline di validazione, testing, QA e soluzioni frontend moderne con React e TypeScript.",
+      phase: "current"
+    },
+    {
+      role: "Diploma federale — AI Business Specialist",
+      company: "Esame professionale svizzero",
+      period: "Pianificato",
+      description: "Dopo l'apprendistato, voglio ottenere l'Eid. Fachausweis come AI Business Specialist — unire strategia aziendale e IA applicata per creare valore concreto.",
+      phase: "future",
+      badge: "Prossimo passo"
+    },
+    {
+      role: "Laurea triennale",
+      company: "Università (pianificato)",
+      period: "Pianificato",
+      description: "Obiettivo a lungo termine: una laurea per approfondire le competenze tecniche e aprire le porte a ruoli senior e di leadership.",
+      phase: "future",
+      badge: "Visione"
     }
   ],
   services: {
@@ -34795,7 +34855,7 @@ const it = {
     rights: "Tutti i diritti riservati."
   }
 };
-const STORAGE_KEY = "portfolio-locale";
+const STORAGE_KEY$1 = "portfolio-locale";
 const translations = { EN: en, DE: de, IT: it };
 const htmlLang = {
   EN: "en",
@@ -34805,7 +34865,7 @@ const htmlLang = {
 const LocaleContext = reactExports.createContext(null);
 function readStoredLocale() {
   if (typeof window === "undefined") return "EN";
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = localStorage.getItem(STORAGE_KEY$1);
   if (stored === "DE" || stored === "IT" || stored === "EN") return stored;
   return "EN";
 }
@@ -34813,7 +34873,7 @@ function LocaleProvider({ children }) {
   const [locale, setLocaleState] = reactExports.useState(readStoredLocale);
   const setLocale = reactExports.useCallback((next) => {
     setLocaleState(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    localStorage.setItem(STORAGE_KEY$1, next);
   }, []);
   reactExports.useEffect(() => {
     document.documentElement.lang = htmlLang[locale];
@@ -34843,7 +34903,7 @@ function LanguageSwitcher({ className = "" }) {
     {
       type: "button",
       onClick: () => setLocale(l),
-      className: `font-mono text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md transition-all duration-200 ${locale === l ? "btn-gradient text-[#070b14]" : "bg-white/5 text-[#5a6a88] hover:text-primary"}`,
+      className: `font-mono text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md transition-all duration-200 ${locale === l ? "btn-gradient text-[var(--btn-text)]" : "surface-muted text-muted-foreground hover:text-primary"}`,
       "aria-pressed": locale === l,
       "aria-label": `Switch language to ${l}`,
       children: l
@@ -34860,12 +34920,12 @@ function Footer() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "footer",
     {
-      className: "border-t border-white/5 py-8 px-8",
+      className: "border-t theme-divider py-8 px-8",
       "data-ocid": "footer.section",
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1100px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display font-extrabold text-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: BRAND_MARK.replace(".", "") }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-[#3a4a68]", children: t.footer.copy }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-muted-foreground", children: t.footer.copy }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#2a3a58] mt-1", children: t.footer.rights })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, {})
@@ -35105,16 +35165,16 @@ function Navbar() {
                   onClick: () => scrollToSection("hero"),
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: BRAND_MARK.replace(".", "") }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#2a3a68]", children: "." })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[var(--brand-dot)]", children: "." })
                   ]
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "hidden md:flex items-center gap-7", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "hidden md:flex items-center gap-8", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
                   onClick: () => handleNavClick(link.id),
-                  className: "text-[13px] font-medium text-[#6a7a98] hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body",
+                  className: "text-base font-medium text-muted-foreground hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body",
                   "data-ocid": `nav.${link.id}_link`,
                   children: link.label
                 }
@@ -35125,7 +35185,7 @@ function Navbar() {
                   "button",
                   {
                     type: "button",
-                    className: "md:hidden p-2 rounded-md text-[#6a7a98] hover:text-foreground transition-colors",
+                    className: "md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors",
                     onClick: () => setIsOpen(!isOpen),
                     "aria-label": isOpen ? "Close menu" : "Open menu",
                     "aria-expanded": isOpen,
@@ -35150,12 +35210,12 @@ function Navbar() {
                 {
                   type: "button",
                   onClick: () => handleNavClick(link.id),
-                  className: "block w-full text-left text-sm text-[#6a7a98] hover:text-primary py-2 transition-colors",
+                  className: "block w-full text-left text-base text-muted-foreground hover:text-primary py-2 transition-colors",
                   "data-ocid": `nav.mobile_${link.id}_link`,
                   children: link.label
                 }
               ) }, link.id)),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "pt-2 border-t border-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, {}) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "pt-2 border-t theme-divider", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, {}) })
             ] })
           }
         )
@@ -35173,37 +35233,142 @@ function PageBackground() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "absolute inset-0",
+            className: "absolute inset-0 page-bg-grid transition-[background-image] duration-500",
             style: {
-              backgroundImage: [
-                "linear-gradient(rgba(94,231,208,0.025) 1px, transparent 1px)",
-                "linear-gradient(90deg, rgba(94,231,208,0.025) 1px, transparent 1px)"
-              ].join(","),
-              backgroundSize: "60px 60px"
+              backgroundImage: "var(--grid-lines), var(--grid-dots)",
+              backgroundSize: "60px 60px, 20px 20px"
             }
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[40px]",
+            className: "absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[40px] transition-[background] duration-500",
             style: {
-              background: "radial-gradient(circle, rgba(94,231,208,0.07) 0%, transparent 65%)"
+              background: `radial-gradient(circle, var(--orb-primary) 0%, transparent 65%)`
             }
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "absolute bottom-0 -right-[10%] w-[500px] h-[500px] rounded-full blur-[40px]",
+            className: "absolute bottom-0 -right-[10%] w-[500px] h-[500px] rounded-full blur-[40px] transition-[background] duration-500",
             style: {
-              background: "radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 65%)"
+              background: `radial-gradient(circle, var(--orb-accent) 0%, transparent 65%)`
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "page-bg-orb-extra absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[60px]",
+            style: {
+              background: `radial-gradient(circle, var(--orb-extra) 0%, transparent 70%)`
             }
           }
         )
       ]
     }
   );
+}
+const STORAGE_KEY = "portfolio-theme";
+function normalizeStored(value) {
+  if (value === "light" || value === "spectral") return "light";
+  return "dark";
+}
+function getTheme() {
+  if (typeof window === "undefined") return "dark";
+  return normalizeStored(localStorage.getItem(STORAGE_KEY));
+}
+function setTheme(theme) {
+  const root2 = document.documentElement;
+  root2.dataset.theme = theme;
+  if (theme === "light") {
+    root2.classList.remove("dark");
+    root2.style.colorScheme = "light";
+  } else {
+    root2.classList.add("dark");
+    root2.style.colorScheme = "dark";
+  }
+  localStorage.setItem(STORAGE_KEY, theme);
+}
+function toggleTheme() {
+  const next = getTheme() === "dark" ? "light" : "dark";
+  setTheme(next);
+  return next;
+}
+function initTheme() {
+  setTheme(getTheme());
+}
+function useThemeFlash() {
+  const reducedMotion = usePrefersReducedMotion();
+  const [active, setActive] = reactExports.useState(false);
+  const triggerFlash = reactExports.useCallback(() => {
+    if (reducedMotion) return;
+    setActive(true);
+    window.setTimeout(() => setActive(false), 750);
+  }, [reducedMotion]);
+  return { active, triggerFlash };
+}
+function ThemeFlashOverlay({ active }) {
+  if (!active) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "theme-flash-overlay", "aria-hidden": true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "theme-flash-burst" }) });
+}
+function ThemeToggle() {
+  const [theme, setThemeState] = reactExports.useState("dark");
+  const { active: flashActive, triggerFlash } = useThemeFlash();
+  const isLight = theme === "light";
+  reactExports.useEffect(() => {
+    const current = document.documentElement.dataset.theme;
+    setThemeState(current === "light" ? "light" : "dark");
+  }, []);
+  const handleToggle = () => {
+    triggerFlash();
+    const next = toggleTheme();
+    setThemeState(next);
+  };
+  const tooltip = isLight ? "Hellblau-Theme deaktivieren" : "Hellblau-Theme aktivieren";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeFlashOverlay, { active: flashActive }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        type: "button",
+        onClick: handleToggle,
+        className: "theme-switch group",
+        "aria-label": tooltip,
+        "aria-pressed": isLight,
+        title: tooltip,
+        "data-ocid": "theme.toggle",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "theme-switch-track", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `theme-switch-thumb ${isLight ? "is-on" : ""}`,
+                "aria-hidden": true
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `theme-switch-label ${!isLight ? "is-active" : "is-inactive"}`,
+                children: "OFF"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `theme-switch-label ${isLight ? "is-active" : "is-inactive"}`,
+                children: "ON"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "theme-switch-tooltip", children: tooltip })
+        ]
+      }
+    )
+  ] });
 }
 function Layout({ children }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(LocaleProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col bg-background text-foreground relative", children: [
@@ -35219,11 +35384,12 @@ function Layout({ children }) {
         children
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeToggle, {})
   ] }) });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-BPIDruj5.js"), true ? __vite__mapDeps([0,1]) : void 0));
-const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-BIQCg1yK.js"), true ? __vite__mapDeps([2,1]) : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-CWxrS9Jt.js"), true ? __vite__mapDeps([0,1]) : void 0));
+const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-BYeJBaVO.js"), true ? __vite__mapDeps([2,1]) : void 0));
 function PageLoader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
@@ -35259,6 +35425,7 @@ function App() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, { position: "bottom-right", richColors: true })
   ] });
 }
+initTheme();
 BigInt.prototype.toJSON = function() {
   return this.toString();
 };

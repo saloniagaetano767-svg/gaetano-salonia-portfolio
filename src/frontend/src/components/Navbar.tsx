@@ -53,16 +53,16 @@ export function Navbar() {
           onClick={() => scrollToSection("hero")}
         >
           <span className="grad-teal">{BRAND_MARK.replace(".", "")}</span>
-          <span className="text-[#2a3a68]">.</span>
+          <span className="text-[var(--brand-dot)]">.</span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.id}>
               <button
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="text-[13px] font-medium text-[#6a7a98] hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body"
+                className="text-base font-medium text-muted-foreground hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body"
                 data-ocid={`nav.${link.id}_link`}
               >
                 {link.label}
@@ -75,7 +75,7 @@ export function Navbar() {
           <LanguageSwitcher className="hidden sm:flex" />
           <button
             type="button"
-            className="md:hidden p-2 rounded-md text-[#6a7a98] hover:text-foreground transition-colors"
+            className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -100,14 +100,14 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="block w-full text-left text-sm text-[#6a7a98] hover:text-primary py-2 transition-colors"
+                className="block w-full text-left text-base text-muted-foreground hover:text-primary py-2 transition-colors"
                 data-ocid={`nav.mobile_${link.id}_link`}
               >
                 {link.label}
               </button>
             </li>
           ))}
-          <li className="pt-2 border-t border-white/5">
+          <li className="pt-2 border-t theme-divider">
             <LanguageSwitcher />
           </li>
         </ul>

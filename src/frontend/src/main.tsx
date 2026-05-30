@@ -3,6 +3,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import { initTheme } from "./lib/theme";
+
+initTheme();
 
 BigInt.prototype.toJSON = function () {
   return this.toString();

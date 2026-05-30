@@ -28,16 +28,12 @@ function WorkSlide({
         data-ocid={`work.slide.${index + 1}`}
       >
         <div
-          className="absolute top-0 right-0 w-40 h-40 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(94,231,208,0.06) 0%, transparent 70%)",
-          }}
+          className="absolute top-0 right-0 w-40 h-40 pointer-events-none bg-[radial-gradient(circle,var(--orb-primary)_0%,transparent_70%)]"
           aria-hidden
         />
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
           <div>
-            <p className="font-mono text-[10px] text-[#3a4a68] tracking-[0.14em] uppercase mb-2">
+            <p className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.14em] uppercase mb-2">
               {t.work.client}
             </p>
             <p className="font-display text-5xl md:text-7xl font-extrabold grad-teal leading-none mb-4">
@@ -46,20 +42,20 @@ function WorkSlide({
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
               {project.title}
             </h3>
-            <p className="text-sm text-[#8a9ab8] mt-1">{project.category}</p>
+            <p className="text-sm text-muted-foreground mt-1">{project.category}</p>
           </div>
           <p className="font-mono text-sm text-primary font-bold shrink-0">
             {index + 1}/{total}
           </p>
         </div>
-        <p className="text-sm text-[#8a9ab8] leading-relaxed max-w-2xl mb-8">
+        <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-8">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[#c8d0e0]"
+              className="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md surface-muted text-foreground/90"
             >
               {tag}
             </span>
@@ -147,7 +143,7 @@ export function WorkSection() {
                 <button
                   type="button"
                   onClick={scrollPrev}
-                  className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                  className="w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
                   aria-label={t.work.prev}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -155,7 +151,7 @@ export function WorkSection() {
                 <button
                   type="button"
                   onClick={scrollNext}
-                  className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                  className="w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
                   aria-label={t.work.next}
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -168,7 +164,7 @@ export function WorkSection() {
                     type="button"
                     onClick={() => emblaApi?.scrollTo(i)}
                     className={`h-1 rounded-full transition-all duration-300 ${
-                      i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-white/20"
+                      i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-[var(--surface-border)]"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />

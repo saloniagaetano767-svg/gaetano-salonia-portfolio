@@ -37,14 +37,16 @@ export const en: Translation = {
       "Personal projects & open source",
     ],
     journeyTitle: "My Journey",
+    nextStepsTitle: "Next Steps",
   },
   journey: [
     {
-      role: "Software Developer Apprentice",
-      company: "RUAG AG",
-      period: "2024 — Present",
+      role: "Compulsory Education",
+      company: "Rüti Secondary School",
+      period: "2019 — 2022",
       description:
-        "Developing and maintaining internal software applications, contributing to NavData and the Swiss Obstacle Database Converter (SODC), implementing validation pipelines, testing, QA, and modern frontend solutions with React and TypeScript.",
+        "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship.",
+      phase: "past",
     },
     {
       role: "Informatiker EFZ — Application Development",
@@ -52,13 +54,33 @@ export const en: Translation = {
       period: "2022 — 2024",
       description:
         "Vocational foundation in software development: object-oriented design, databases (SQL), hands-on school projects, and presenting technical work to practitioners.",
+      phase: "past",
     },
     {
-      role: "Compulsory Education",
-      company: "Rüti Secondary School",
-      period: "2019 — 2022",
+      role: "Software Developer Apprentice",
+      company: "RUAG AG",
+      period: "2024 — Present",
       description:
-        "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship.",
+        "Developing and maintaining internal software applications, contributing to NavData and the Swiss Obstacle Database Converter (SODC), implementing validation pipelines, testing, QA, and modern frontend solutions with React and TypeScript.",
+      phase: "current",
+    },
+    {
+      role: "Federal Diploma — AI Business Specialist",
+      company: "Swiss Professional Examination",
+      period: "Planned",
+      description:
+        "After completing my apprenticeship, I plan to earn the Eid. Fachausweis as an AI Business Specialist — bridging business strategy with applied AI to deliver real-world value.",
+      phase: "future",
+      badge: "Next step",
+    },
+    {
+      role: "Bachelor's Degree",
+      company: "University (planned)",
+      period: "Planned",
+      description:
+        "The long-term goal: a Bachelor's degree to deepen my technical foundation and open doors to senior engineering and leadership roles.",
+      phase: "future",
+      badge: "Vision",
     },
   ],
   services: {

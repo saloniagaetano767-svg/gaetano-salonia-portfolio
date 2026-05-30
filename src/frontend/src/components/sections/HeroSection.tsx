@@ -46,7 +46,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-[17px] text-[#5a6a88] font-medium mb-2"
+            className="text-[17px] text-muted-foreground font-medium mb-2"
           >
             {t.hero.greeting}
           </motion.p>
@@ -79,7 +79,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.28 }}
-            className="text-[15px] text-[#8a9ab8] leading-relaxed max-w-md mb-9"
+            className="text-[15px] text-muted-foreground leading-relaxed max-w-md mb-9"
           >
             {t.hero.tagline}
           </motion.p>
@@ -93,7 +93,7 @@ export function HeroSection() {
             <button
               type="button"
               onClick={() => scrollToSection("work")}
-              className="btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all duration-200"
+              className="btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all duration-200"
               data-ocid="hero.primary_button"
             >
               {t.hero.cta}
@@ -101,7 +101,7 @@ export function HeroSection() {
             <a
               href="/cv.pdf"
               download
-              className="font-semibold text-sm px-6 py-3 rounded-[11px] border border-white/15 text-[#c8d0e0] hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+              className="font-semibold text-sm px-6 py-3 rounded-[11px] surface-border text-foreground/90 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200"
               data-ocid="hero.secondary_button"
             >
               {t.hero.cv}
@@ -118,7 +118,7 @@ export function HeroSection() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+              className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
             >
               ⌘ {t.hero.github}
             </a>
@@ -126,13 +126,13 @@ export function HeroSection() {
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+              className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
             >
               ◈ {t.hero.linkedin}
             </a>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+              className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
             >
               ✉ {t.hero.email}
             </a>

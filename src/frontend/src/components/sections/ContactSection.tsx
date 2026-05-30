@@ -99,7 +99,7 @@ export function ContactSection() {
           <br />
           <span className="grad-teal">{t.contact.titleAccent}</span>
         </h2>
-        <p className="text-sm text-[#5a6a88] leading-relaxed mb-11 max-w-lg">
+        <p className="text-sm text-muted-foreground leading-relaxed mb-11 max-w-lg">
           {t.contact.sub}
         </p>
       </motion.div>
@@ -123,10 +123,10 @@ export function ContactSection() {
             >
               <span className="text-xl text-primary min-w-6">{item.icon}</span>
               <div>
-                <p className="font-mono text-[10px] text-[#3a4a68] tracking-wider uppercase mb-0.5">
+                <p className="font-mono text-[10px] text-muted-foreground/70 tracking-wider uppercase mb-0.5">
                   {item.label}
                 </p>
-                <p className="text-[13px] text-[#c8d0e0] font-medium">
+                <p className="text-[13px] text-foreground/90 font-medium">
                   {item.value}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export function ContactSection() {
               <h3 className="font-display text-xl font-bold text-foreground mb-2">
                 {t.contact.successTitle}
               </h3>
-              <p className="text-sm text-[#8a9ab8]">
+              <p className="text-sm text-muted-foreground">
                 {t.contact.successMessage}
               </p>
             </div>
@@ -167,7 +167,7 @@ export function ContactSection() {
                 value={form.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
                 data-ocid="contact.name_input"
               />
               {errors.name && (
@@ -181,7 +181,7 @@ export function ContactSection() {
                 value={form.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
                 data-ocid="contact.email_input"
               />
               {errors.email && (
@@ -194,7 +194,7 @@ export function ContactSection() {
                 value={form.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none"
+                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none"
                 data-ocid="contact.message_textarea"
               />
               {errors.message && (
@@ -213,7 +213,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={isPending}
-                className="btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all disabled:opacity-60"
+                className="btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all disabled:opacity-60"
                 data-ocid="contact.submit_button"
               >
                 {isPending ? t.contact.sending : t.contact.send}

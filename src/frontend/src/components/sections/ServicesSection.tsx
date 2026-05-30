@@ -24,7 +24,7 @@ export function ServicesSection() {
           <br />
           <span className="grad-teal">{t.services.titleAccent}</span>
         </h2>
-        <p className="text-sm text-[#5a6a88] max-w-md leading-relaxed mb-10">
+        <p className="text-sm text-muted-foreground max-w-md leading-relaxed mb-10">
           {t.services.sub}
         </p>
       </motion.div>
@@ -42,7 +42,7 @@ export function ServicesSection() {
           >
             <div className="flex items-start justify-between gap-4 mb-5">
               <div>
-                <p className="font-mono text-[10px] text-[#3a4a68] tracking-[0.12em] uppercase mb-1">
+                <p className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1">
                   SERVICE
                 </p>
                 <h3 className="font-display text-xl font-bold text-foreground">
@@ -57,7 +57,7 @@ export function ServicesSection() {
               {cat.items.map((item) => (
                 <li
                   key={item}
-                  className="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#8a9ab8] group-hover:border-primary/25 group-hover:text-primary transition-colors"
+                  className="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md surface-muted text-muted-foreground group-hover:border-primary/25 group-hover:text-primary transition-colors"
                 >
                   {item}
                 </li>
@@ -77,7 +77,7 @@ export function ServicesSection() {
         {t.services.pills.map((pill) => (
           <span
             key={pill}
-            className="font-mono text-xs font-semibold px-4 py-2 rounded-[11px] bg-white/[0.04] border border-white/[0.08] text-[#8a9ab8] hover:border-primary/30 hover:text-primary hover:bg-primary/[0.05] transition-all cursor-default"
+            className="font-mono text-xs font-semibold px-4 py-2 rounded-[11px] surface-muted text-muted-foreground hover:border-primary/30 hover:text-primary hover:bg-primary/[0.05] transition-all cursor-default"
           >
             {pill}
           </span>

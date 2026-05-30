@@ -41,14 +41,16 @@ export const it: Translation = {
       "Progetti personali & open source",
     ],
     journeyTitle: "Il mio percorso",
+    nextStepsTitle: "Prossimi passi",
   },
   journey: [
     {
-      role: "Apprendista Sviluppatore Software",
-      company: "RUAG AG",
-      period: "2024 — Presente",
+      role: "Scuola secondaria",
+      company: "Scuola secondaria Rüti",
+      period: "2019 — 2022",
       description:
-        "Sviluppo e manutenzione di applicazioni interne, contributo a NavData e al Swiss Obstacle Database Converter (SODC), pipeline di validazione, testing, QA e soluzioni frontend moderne con React e TypeScript.",
+        "Istruzione generale con enfasi sul lavoro strutturato, pensiero analitico e preparazione all'apprendistato IT.",
+      phase: "past",
     },
     {
       role: "Informatiker EFZ — Application Development",
@@ -56,13 +58,33 @@ export const it: Translation = {
       period: "2022 — 2024",
       description:
         "Formazione professionale in sviluppo software: design orientato agli oggetti, database (SQL), progetti scolastici e presentazione del lavoro tecnico.",
+      phase: "past",
     },
     {
-      role: "Scuola secondaria",
-      company: "Scuola secondaria Rüti",
-      period: "2019 — 2022",
+      role: "Apprendista Sviluppatore Software",
+      company: "RUAG AG",
+      period: "2024 — Presente",
       description:
-        "Istruzione generale con enfasi sul lavoro strutturato, pensiero analitico e preparazione all'apprendistato IT.",
+        "Sviluppo e manutenzione di applicazioni interne, contributo a NavData e al Swiss Obstacle Database Converter (SODC), pipeline di validazione, testing, QA e soluzioni frontend moderne con React e TypeScript.",
+      phase: "current",
+    },
+    {
+      role: "Diploma federale — AI Business Specialist",
+      company: "Esame professionale svizzero",
+      period: "Pianificato",
+      description:
+        "Dopo l'apprendistato, voglio ottenere l'Eid. Fachausweis come AI Business Specialist — unire strategia aziendale e IA applicata per creare valore concreto.",
+      phase: "future",
+      badge: "Prossimo passo",
+    },
+    {
+      role: "Laurea triennale",
+      company: "Università (pianificato)",
+      period: "Pianificato",
+      description:
+        "Obiettivo a lungo termine: una laurea per approfondire le competenze tecniche e aprire le porte a ruoli senior e di leadership.",
+      phase: "future",
+      badge: "Visione",
     },
   ],
   services: {

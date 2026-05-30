@@ -7,8 +7,8 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentResult, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn, _a;
-import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-CWpk0u9u.js";
-import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-DLpjZgZG.js";
+import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-C5aS8DVF.js";
+import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-iJsRDNpw.js";
 var MutationObserver$1 = (_a = class extends Subscribable {
   constructor(client, options) {
     super();
@@ -185,16 +185,84 @@ function useMutation(options, queryClient) {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1);
+const __iconNode$4 = [
+  [
+    "path",
+    {
+      d: "M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z",
+      key: "l5xja"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z",
+      key: "ep3f8r"
+    }
+  ],
+  ["path", { d: "M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4", key: "1p4c4q" }],
+  ["path", { d: "M17.599 6.5a3 3 0 0 0 .399-1.375", key: "tmeiqw" }],
+  ["path", { d: "M6.003 5.125A3 3 0 0 0 6.401 6.5", key: "105sqy" }],
+  ["path", { d: "M3.477 10.896a4 4 0 0 1 .585-.396", key: "ql3yin" }],
+  ["path", { d: "M19.938 10.5a4 4 0 0 1 .585.396", key: "1qfode" }],
+  ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
+  ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
+];
+const Brain = createLucideIcon("brain", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode);
+const __iconNode$3 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$3);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$2 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$2);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1 = [
+  [
+    "path",
+    {
+      d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+      key: "j76jl0"
+    }
+  ],
+  ["path", { d: "M22 10v6", key: "1lu8f3" }],
+  ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5", key: "1r8lef" }]
+];
+const GraduationCap = createLucideIcon("graduation-cap", __iconNode$1);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
+      key: "4pj2yx"
+    }
+  ],
+  ["path", { d: "M20 3v4", key: "1olli1" }],
+  ["path", { d: "M22 5h-4", key: "1gvqau" }],
+  ["path", { d: "M4 17v2", key: "vumght" }],
+  ["path", { d: "M5 18H3", key: "zchphs" }]
+];
+const Sparkles = createLucideIcon("sparkles", __iconNode);
 const LayoutGroupContext = reactExports.createContext({});
 function useConstant(init) {
   const ref = reactExports.useRef(null);
@@ -8035,13 +8103,92 @@ const featureBundle = {
 };
 const motion = /* @__PURE__ */ createMotionProxy(featureBundle, createDomVisualElement);
 function InfoRow({ label, value }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-5 mb-5 border-b border-white/5 last:mb-0 last:pb-0 last:border-0", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#3a4a68] tracking-[0.12em] uppercase mb-1", children: label }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-[#c8d0e0] font-semibold", children: value })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-5 mb-5 border-b theme-divider last:mb-0 last:pb-0 last:border-0", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1", children: label }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-foreground/90 font-semibold", children: value })
+  ] });
+}
+function JourneyNode({ item, futureIndex }) {
+  const isFuture = item.phase === "future";
+  const FutureIcon = futureIndex === 1 ? GraduationCap : Brain;
+  const content = /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-baseline gap-1 mb-1", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h3",
+        {
+          className: `font-display text-[17px] font-bold ${isFuture ? "text-foreground/80" : "text-foreground"}`,
+          children: item.role
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[13px] text-primary font-semibold", children: [
+        "@ ",
+        item.company
+      ] }),
+      item.badge && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full border border-primary/30 text-primary bg-primary/10", children: item.badge })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[11px] text-muted-foreground/70 tracking-wider mb-2", children: item.period }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "p",
+      {
+        className: `text-[13px] leading-relaxed max-w-xl ${isFuture ? "text-muted-foreground/80" : "text-muted-foreground"}`,
+        children: item.description
+      }
+    )
+  ] });
+  if (isFuture) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: "-5%" },
+        transition: { duration: 0.6 },
+        className: "journey-future-float",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "journey-future-card relative", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            FutureIcon,
+            {
+              className: "absolute top-3 right-3 w-4 h-4 text-primary/50",
+              "aria-hidden": true
+            }
+          ),
+          content
+        ] })
+      }
+    );
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pb-2", children: content });
+}
+function JourneyDot({ item }) {
+  if (item.phase === "current") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex items-center justify-center w-[11px] h-[11px] mt-1 shrink-0", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-0 rounded-full bg-primary/30 animate-ping" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative w-[11px] h-[11px] rounded-full bg-gradient-to-br from-primary to-accent journey-dot-glow" })
+    ] });
+  }
+  if (item.phase === "future") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-[11px] h-[11px] rounded-full border-2 border-dashed border-primary/50 mt-1 shrink-0 bg-transparent" });
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-[11px] h-[11px] rounded-full bg-gradient-to-br from-primary to-accent journey-dot-glow mt-1 shrink-0" });
+}
+function JourneyConnector({
+  dashed,
+  showGlow
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex-1 mt-2 min-h-[40px] w-px", "aria-hidden": true, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: `absolute inset-0 w-px ${dashed ? "journey-bridge-line" : "bg-gradient-to-b from-primary/25 to-transparent"}`
+      }
+    ),
+    showGlow && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-path-dot absolute left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_oklch(var(--primary))]" })
   ] });
 }
 function AboutSection() {
   const { t } = useTranslation();
+  const pastAndCurrent = t.journey.filter((item) => item.phase !== "future");
+  const futureItems = t.journey.filter((item) => item.phase === "future");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "section",
     {
@@ -8079,15 +8226,15 @@ function AboutSection() {
               transition: { duration: 0.7 },
               className: "space-y-4",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8] leading-relaxed", children: t.about.p1 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8] leading-relaxed", children: t.about.p2 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8] leading-relaxed", children: t.about.p3 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: t.about.p1 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: t.about.p2 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: t.about.p3 }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-8", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-4", children: t.about.rosterTitle }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: t.about.roster.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                     "li",
                     {
-                      className: "text-sm text-[#c8d0e0] font-medium flex items-center gap-2",
+                      className: "text-sm text-foreground/90 font-medium flex items-center gap-2",
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1 h-1 rounded-full bg-primary shrink-0" }),
                         item
@@ -8130,29 +8277,42 @@ function AboutSection() {
                 "04 / ",
                 t.about.journeyTitle
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-0", children: t.journey.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-5 mb-9 last:mb-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-0", children: pastAndCurrent.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-5 mb-9 last:mb-0", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center min-w-[14px]", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-[11px] h-[11px] rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_0_14px_rgba(94,231,208,0.3)] mt-1 shrink-0" }),
-                  i < t.journey.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "span",
-                    {
-                      className: "w-px flex-1 mt-2 bg-gradient-to-b from-primary/25 to-transparent min-h-[40px]",
-                      "aria-hidden": true
-                    }
-                  )
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyDot, { item }),
+                  i < pastAndCurrent.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyConnector, {})
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-2", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-baseline gap-1 mb-1", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[17px] font-bold text-foreground", children: item.role }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[13px] text-primary font-semibold", children: [
-                      "@ ",
-                      item.company
-                    ] })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[11px] text-[#3a4a68] tracking-wider mb-2", children: item.period }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-[#8a9ab8] leading-relaxed max-w-xl", children: item.description })
-                ] })
-              ] }, item.role)) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyNode, { item })
+              ] }, item.role)) }),
+              futureItems.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 24 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true },
+                  transition: { duration: 0.7, delay: 0.1 },
+                  className: "mt-12",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-5 mb-8", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center min-w-[14px]", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-primary mt-0.5 shrink-0", "aria-hidden": true }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyConnector, { dashed: true, showGlow: true })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-[11px] text-primary tracking-[0.14em] uppercase pt-0.5", children: [
+                        "05 / ",
+                        t.about.nextStepsTitle
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-0", children: futureItems.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-5 mb-9 last:mb-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center min-w-[14px]", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyDot, { item }),
+                        i < futureItems.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyConnector, { dashed: true })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyNode, { item, futureIndex: i })
+                    ] }, item.role)) })
+                  ]
+                }
+              )
             ]
           }
         )
@@ -8270,7 +8430,7 @@ function ContactSection() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: t.contact.titleAccent })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#5a6a88] leading-relaxed mb-11 max-w-lg", children: t.contact.sub })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed mb-11 max-w-lg", children: t.contact.sub })
             ]
           }
         ),
@@ -8294,8 +8454,8 @@ function ContactSection() {
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl text-primary min-w-6", children: item.icon }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#3a4a68] tracking-wider uppercase mb-0.5", children: item.label }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-[#c8d0e0] font-medium", children: item.value })
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-muted-foreground/70 tracking-wider uppercase mb-0.5", children: item.label }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-foreground/90 font-medium", children: item.value })
                     ] })
                   ]
                 },
@@ -8317,7 +8477,7 @@ function ContactSection() {
                   "data-ocid": "contact.success_state",
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-xl font-bold text-foreground mb-2", children: t.contact.successTitle }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8]", children: t.contact.successMessage })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.successMessage })
                   ]
                 }
               ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -8338,7 +8498,7 @@ function ContactSection() {
                         value: form.name,
                         onChange: handleChange,
                         onBlur: handleBlur,
-                        className: "bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors",
+                        className: "surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors",
                         "data-ocid": "contact.name_input"
                       }
                     ),
@@ -8353,7 +8513,7 @@ function ContactSection() {
                         value: form.email,
                         onChange: handleChange,
                         onBlur: handleBlur,
-                        className: "bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors",
+                        className: "surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors",
                         "data-ocid": "contact.email_input"
                       }
                     ),
@@ -8367,7 +8527,7 @@ function ContactSection() {
                         value: form.message,
                         onChange: handleChange,
                         onBlur: handleBlur,
-                        className: "bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none",
+                        className: "surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none",
                         "data-ocid": "contact.message_textarea"
                       }
                     ),
@@ -8385,7 +8545,7 @@ function ContactSection() {
                       {
                         type: "submit",
                         disabled: isPending,
-                        className: "btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all disabled:opacity-60",
+                        className: "btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all disabled:opacity-60",
                         "data-ocid": "contact.submit_button",
                         children: isPending ? t.contact.sending : t.contact.send
                       }
@@ -8413,18 +8573,18 @@ function AvatarPortrait() {
     "div",
     {
       ref,
-      className: "relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto transition-transform duration-200 ease-out",
+      className: "group relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto transition-transform duration-200 ease-out cursor-default",
       style: { transform },
       "data-ocid": "hero.avatar",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-xl opacity-60 avatar-rim-glow" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 avatar-rim-glow", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative aspect-[4/5] overflow-hidden rounded-2xl surface-border avatar-rim-glow avatar-haunt-frame", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
             {
               src,
               alt: "Portrait of Gaetano Salonia",
-              className: "w-full h-full object-cover object-[center_15%]",
+              className: "relative z-10 w-full h-full object-cover object-[center_15%] avatar-haunt-base",
               width: 480,
               height: 600,
               loading: "eager",
@@ -8432,22 +8592,37 @@ function AvatarPortrait() {
               onError: () => setSrc(FALLBACK_SRC)
             }
           ),
-          !reducedMotion && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute inset-0 pointer-events-none opacity-0 animate-[blink_6s_ease-in-out_infinite]",
-              style: {
-                background: "linear-gradient(to bottom, transparent 38%, rgba(7,11,20,0.15) 42%, transparent 46%)"
-              },
-              "aria-hidden": true
-            }
-          ),
+          !reducedMotion && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src,
+                alt: "",
+                "aria-hidden": true,
+                className: "avatar-haunt-ghost absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none z-20",
+                width: 480,
+                height: 600
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "avatar-haunt-chroma-left pointer-events-none", "aria-hidden": true }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "avatar-haunt-chroma-right pointer-events-none", "aria-hidden": true }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "absolute inset-0 pointer-events-none opacity-0 animate-[blink_6s_ease-in-out_infinite] z-30",
+                style: {
+                  background: "linear-gradient(to bottom, transparent 38%, var(--vignette) 42%, transparent 46%)"
+                },
+                "aria-hidden": true
+              }
+            )
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
-              className: "absolute inset-0 pointer-events-none",
+              className: "absolute inset-0 pointer-events-none z-[5]",
               style: {
-                background: "linear-gradient(to top, rgba(7,11,20,0.5) 0%, transparent 40%)"
+                background: "linear-gradient(to top, var(--vignette) 0%, transparent 40%)"
               },
               "aria-hidden": true
             }
@@ -8502,7 +8677,7 @@ function HeroSection() {
               initial: { opacity: 0, y: 16 },
               animate: { opacity: 1, y: 0 },
               transition: { duration: 0.6, delay: 0.08 },
-              className: "text-[17px] text-[#5a6a88] font-medium mb-2",
+              className: "text-[17px] text-muted-foreground font-medium mb-2",
               children: t.hero.greeting
             }
           ),
@@ -8536,7 +8711,7 @@ function HeroSection() {
               initial: { opacity: 0, y: 20 },
               animate: { opacity: 1, y: 0 },
               transition: { duration: 0.7, delay: 0.28 },
-              className: "text-[15px] text-[#8a9ab8] leading-relaxed max-w-md mb-9",
+              className: "text-[15px] text-muted-foreground leading-relaxed max-w-md mb-9",
               children: t.hero.tagline
             }
           ),
@@ -8553,7 +8728,7 @@ function HeroSection() {
                   {
                     type: "button",
                     onClick: () => scrollToSection("work"),
-                    className: "btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all duration-200",
+                    className: "btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all duration-200",
                     "data-ocid": "hero.primary_button",
                     children: t.hero.cta
                   }
@@ -8563,7 +8738,7 @@ function HeroSection() {
                   {
                     href: "/cv.pdf",
                     download: true,
-                    className: "font-semibold text-sm px-6 py-3 rounded-[11px] border border-white/15 text-[#c8d0e0] hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200",
+                    className: "font-semibold text-sm px-6 py-3 rounded-[11px] surface-border text-foreground/90 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200",
                     "data-ocid": "hero.secondary_button",
                     children: t.hero.cv
                   }
@@ -8585,7 +8760,7 @@ function HeroSection() {
                     href: GITHUB_URL,
                     target: "_blank",
                     rel: "noopener noreferrer",
-                    className: "text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors",
+                    className: "text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors",
                     children: [
                       "⌘ ",
                       t.hero.github
@@ -8598,7 +8773,7 @@ function HeroSection() {
                     href: LINKEDIN_URL,
                     target: "_blank",
                     rel: "noopener noreferrer",
-                    className: "text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors",
+                    className: "text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors",
                     children: [
                       "◈ ",
                       t.hero.linkedin
@@ -8609,7 +8784,7 @@ function HeroSection() {
                   "a",
                   {
                     href: `mailto:${CONTACT_EMAIL}`,
-                    className: "text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors",
+                    className: "text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors",
                     children: [
                       "✉ ",
                       t.hero.email
@@ -8660,7 +8835,7 @@ function ServicesSection() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: t.services.titleAccent })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#5a6a88] max-w-md leading-relaxed mb-10", children: t.services.sub })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground max-w-md leading-relaxed mb-10", children: t.services.sub })
             ]
           }
         ),
@@ -8676,7 +8851,7 @@ function ServicesSection() {
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-4 mb-5", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#3a4a68] tracking-[0.12em] uppercase mb-1", children: "SERVICE" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1", children: "SERVICE" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-xl font-bold text-foreground", children: cat.title })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display text-3xl font-extrabold grad-teal opacity-80 group-hover:opacity-100 transition-opacity", children: cat.code })
@@ -8684,7 +8859,7 @@ function ServicesSection() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "flex flex-wrap gap-2", children: cat.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "li",
                 {
-                  className: "font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#8a9ab8] group-hover:border-primary/25 group-hover:text-primary transition-colors",
+                  className: "font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md surface-muted text-muted-foreground group-hover:border-primary/25 group-hover:text-primary transition-colors",
                   children: item
                 },
                 item
@@ -8704,7 +8879,7 @@ function ServicesSection() {
             children: t.services.pills.map((pill) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               "span",
               {
-                className: "font-mono text-xs font-semibold px-4 py-2 rounded-[11px] bg-white/[0.04] border border-white/[0.08] text-[#8a9ab8] hover:border-primary/30 hover:text-primary hover:bg-primary/[0.05] transition-all cursor-default",
+                className: "font-mono text-xs font-semibold px-4 py-2 rounded-[11px] surface-muted text-muted-foreground hover:border-primary/30 hover:text-primary hover:bg-primary/[0.05] transition-all cursor-default",
                 children: pill
               },
               pill
@@ -10427,19 +10602,16 @@ function WorkSlide({
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "absolute top-0 right-0 w-40 h-40 pointer-events-none",
-            style: {
-              background: "radial-gradient(circle, rgba(94,231,208,0.06) 0%, transparent 70%)"
-            },
+            className: "absolute top-0 right-0 w-40 h-40 pointer-events-none bg-[radial-gradient(circle,var(--orb-primary)_0%,transparent_70%)]",
             "aria-hidden": true
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#3a4a68] tracking-[0.14em] uppercase mb-2", children: t.work.client }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-muted-foreground/70 tracking-[0.14em] uppercase mb-2", children: t.work.client }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-5xl md:text-7xl font-extrabold grad-teal leading-none mb-4", children: code }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-2xl md:text-3xl font-bold text-foreground", children: project.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8] mt-1", children: project.category })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground mt-1", children: project.category })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-sm text-primary font-bold shrink-0", children: [
             index + 1,
@@ -10447,11 +10619,11 @@ function WorkSlide({
             total
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[#8a9ab8] leading-relaxed max-w-2xl mb-8", children: project.description }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed max-w-2xl mb-8", children: project.description }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2 mb-6", children: tags.map((tag) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "span",
           {
-            className: "font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[#c8d0e0]",
+            className: "font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md surface-muted text-foreground/90",
             children: tag
           },
           tag
@@ -10532,7 +10704,7 @@ function WorkSection() {
                     {
                       type: "button",
                       onClick: scrollPrev,
-                      className: "w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors",
+                      className: "w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors",
                       "aria-label": t.work.prev,
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "w-5 h-5" })
                     }
@@ -10542,7 +10714,7 @@ function WorkSection() {
                     {
                       type: "button",
                       onClick: scrollNext,
-                      className: "w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors",
+                      className: "w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors",
                       "aria-label": t.work.next,
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-5 h-5" })
                     }
@@ -10553,7 +10725,7 @@ function WorkSection() {
                   {
                     type: "button",
                     onClick: () => emblaApi == null ? void 0 : emblaApi.scrollTo(i),
-                    className: `h-1 rounded-full transition-all duration-300 ${i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-white/20"}`,
+                    className: `h-1 rounded-full transition-all duration-300 ${i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-[var(--surface-border)]"}`,
                     "aria-label": `Go to slide ${i + 1}`
                   },
                   p.id.toString()

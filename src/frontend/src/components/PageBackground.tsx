@@ -5,27 +5,28 @@ export function PageBackground() {
       aria-hidden
     >
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 page-bg-grid transition-[background-image] duration-500"
         style={{
-          backgroundImage: [
-            "linear-gradient(rgba(94,231,208,0.025) 1px, transparent 1px)",
-            "linear-gradient(90deg, rgba(94,231,208,0.025) 1px, transparent 1px)",
-          ].join(","),
-          backgroundSize: "60px 60px",
+          backgroundImage: "var(--grid-lines), var(--grid-dots)",
+          backgroundSize: "60px 60px, 20px 20px",
         }}
       />
       <div
-        className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[40px]"
+        className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[40px] transition-[background] duration-500"
         style={{
-          background:
-            "radial-gradient(circle, rgba(94,231,208,0.07) 0%, transparent 65%)",
+          background: `radial-gradient(circle, var(--orb-primary) 0%, transparent 65%)`,
         }}
       />
       <div
-        className="absolute bottom-0 -right-[10%] w-[500px] h-[500px] rounded-full blur-[40px]"
+        className="absolute bottom-0 -right-[10%] w-[500px] h-[500px] rounded-full blur-[40px] transition-[background] duration-500"
         style={{
-          background:
-            "radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 65%)",
+          background: `radial-gradient(circle, var(--orb-accent) 0%, transparent 65%)`,
+        }}
+      />
+      <div
+        className="page-bg-orb-extra absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[60px]"
+        style={{
+          background: `radial-gradient(circle, var(--orb-extra) 0%, transparent 70%)`,
         }}
       />
     </div>

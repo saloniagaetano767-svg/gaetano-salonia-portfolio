@@ -1,5 +1,5 @@
-import { c as createLucideIcon, r as reactExports, j as jsxRuntimeExports, R as React, m as clsx, o as cn, q as useParams, l as Link, k as Skeleton } from "./index-CWpk0u9u.js";
-import { b as useProject, S as SAMPLE_PROJECTS, C as CASE_STUDIES } from "./usePortfolio-DLpjZgZG.js";
+import { c as createLucideIcon, r as reactExports, j as jsxRuntimeExports, R as React, m as clsx, o as cn, q as useParams, l as Link, k as Skeleton } from "./index-C5aS8DVF.js";
+import { b as useProject, S as SAMPLE_PROJECTS, C as CASE_STUDIES } from "./usePortfolio-iJsRDNpw.js";
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -416,7 +416,7 @@ function ProjectDetail() {
           "a",
           {
             href: "/#work",
-            className: "inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group",
+            className: "inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group",
             "data-ocid": "project_detail.back_link",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" }),
@@ -523,7 +523,7 @@ function ProjectDetail() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: project.techStack.map((tech) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
                   {
-                    className: "font-mono text-sm px-3 py-1.5 rounded-lg glass-card text-[#c8d0e0]",
+                    className: "font-mono text-sm px-3 py-1.5 rounded-lg glass-card text-foreground/90",
                     children: tech
                   },
                   tech
@@ -591,7 +591,7 @@ function ProjectDetail() {
             "a",
             {
               href: "/#work",
-              className: "inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group",
+              className: "inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group",
               "data-ocid": "project_detail.footer_back_link",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" }),

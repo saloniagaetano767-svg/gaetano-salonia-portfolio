@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import { PageBackground } from "./PageBackground";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface LayoutProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ export function Layout({ children }: LayoutProps) {
           {children}
         </div>
         <Footer />
+        <ThemeToggle />
       </div>
     </LocaleProvider>
   );

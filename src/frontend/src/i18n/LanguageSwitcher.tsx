@@ -13,8 +13,8 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
           onClick={() => setLocale(l)}
           className={`font-mono text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md transition-all duration-200 ${
             locale === l
-              ? "btn-gradient text-[#070b14]"
-              : "bg-white/5 text-[#5a6a88] hover:text-primary"
+              ? "btn-gradient text-[var(--btn-text)]"
+              : "surface-muted text-muted-foreground hover:text-primary"
           }`}
           aria-pressed={locale === l}
           aria-label={`Switch language to ${l}`}

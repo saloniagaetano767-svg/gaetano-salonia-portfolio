@@ -1,10 +1,14 @@
 export type Locale = "EN" | "DE" | "IT";
 
+export type JourneyPhase = "past" | "current" | "future";
+
 export interface JourneyItem {
   role: string;
   company: string;
   period: string;
   description: string;
+  phase: JourneyPhase;
+  badge?: string;
 }
 
 export interface ServiceCategory {
@@ -45,6 +49,7 @@ export interface Translation {
     rosterTitle: string;
     roster: string[];
     journeyTitle: string;
+    nextStepsTitle: string;
   };
   journey: JourneyItem[];
   services: {

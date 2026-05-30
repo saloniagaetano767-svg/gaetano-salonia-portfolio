@@ -101,7 +101,7 @@ export default function ProjectDetail() {
         <div className="mb-10 fade-in">
           <a
             href="/#work"
-            className="inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group"
             data-ocid="project_detail.back_link"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />
@@ -213,7 +213,7 @@ export default function ProjectDetail() {
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-sm px-3 py-1.5 rounded-lg glass-card text-[#c8d0e0]"
+                  className="font-mono text-sm px-3 py-1.5 rounded-lg glass-card text-foreground/90"
                 >
                   {tech}
                 </span>
@@ -296,7 +296,7 @@ export default function ProjectDetail() {
         <div className="mt-16 pt-8 border-t border-border/40 flex justify-between items-center">
           <a
             href="/#work"
-            className="inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group"
             data-ocid="project_detail.footer_back_link"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />

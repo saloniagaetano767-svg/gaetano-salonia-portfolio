@@ -36,14 +36,16 @@ export const de: Translation = {
       "Persönliche Projekte & Open Source",
     ],
     journeyTitle: "Mein Werdegang",
+    nextStepsTitle: "Nächste Schritte",
   },
   journey: [
     {
-      role: "Lernender Applikationsentwickler",
-      company: "RUAG AG",
-      period: "2024 — Heute",
+      role: "Sekundarschule",
+      company: "Sekundarschule Rüti",
+      period: "2019 — 2022",
       description:
-        "Entwicklung interner Softwareanwendungen, Mitarbeit an NavData und dem Swiss Obstacle Database Converter (SODC), Validierungspipelines, Testing, QA und moderne Frontend-Lösungen mit React und TypeScript.",
+        "Breite Allgemeinbildung mit Fokus auf strukturiertes Arbeiten, analytisches Denken und Vorbereitung auf die IT-Lehre.",
+      phase: "past",
     },
     {
       role: "Informatiker EFZ — Applikationsentwicklung",
@@ -51,13 +53,33 @@ export const de: Translation = {
       period: "2022 — 2024",
       description:
         "Berufliche Grundlage in Softwareentwicklung: objektorientiertes Design, Datenbanken (SQL), Schulprojekte und Präsentation technischer Arbeit.",
+      phase: "past",
     },
     {
-      role: "Sekundarschule",
-      company: "Sekundarschule Rüti",
-      period: "2019 — 2022",
+      role: "Lernender Applikationsentwickler",
+      company: "RUAG AG",
+      period: "2024 — Heute",
       description:
-        "Breite Allgemeinbildung mit Fokus auf strukturiertes Arbeiten, analytisches Denken und Vorbereitung auf die IT-Lehre.",
+        "Entwicklung interner Softwareanwendungen, Mitarbeit an NavData und dem Swiss Obstacle Database Converter (SODC), Validierungspipelines, Testing, QA und moderne Frontend-Lösungen mit React und TypeScript.",
+      phase: "current",
+    },
+    {
+      role: "Eid. Fachausweis — AI Business Specialist",
+      company: "Eidgenössische Prüfung",
+      period: "Geplant",
+      description:
+        "Nach der Lehre möchte ich den Eid. Fachausweis als AI Business Specialist holen — Business und angewandte KI verbinden, um echten Mehrwert zu schaffen.",
+      phase: "future",
+      badge: "Nächster Schritt",
+    },
+    {
+      role: "Bachelor",
+      company: "Hochschule (geplant)",
+      period: "Geplant",
+      description:
+        "Langfristiges Ziel: ein Bachelor-Studium, um mein technisches Fundament zu vertiefen und Türen zu Senior-Rollen und Führungspositionen zu öffnen.",
+      phase: "future",
+      badge: "Vision",
     },
   ],
   services: {
