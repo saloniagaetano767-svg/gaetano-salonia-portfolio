@@ -99,14 +99,14 @@ export default function ProjectDetail() {
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         {/* Back navigation */}
         <div className="mb-10 fade-in">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group"
+          <a
+            href="/#work"
+            className="inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group"
             data-ocid="project_detail.back_link"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />
             Back to Portfolio
-          </Link>
+          </a>
         </div>
 
         {/* Header */}
@@ -120,8 +120,8 @@ export default function ProjectDetail() {
               {project.category}
             </Badge>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
-            {project.title}
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold text-foreground leading-tight mb-6">
+            <span className="grad-light">{project.title}</span>
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
             {project.description}
@@ -213,7 +213,7 @@ export default function ProjectDetail() {
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-sm px-3 py-1.5 rounded-lg bg-card border border-border text-foreground"
+                  className="font-mono text-sm px-3 py-1.5 rounded-lg glass-card text-[#c8d0e0]"
                 >
                   {tech}
                 </span>
@@ -294,14 +294,14 @@ export default function ProjectDetail() {
 
         {/* Footer navigation */}
         <div className="mt-16 pt-8 border-t border-border/40 flex justify-between items-center">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm group"
+          <a
+            href="/#work"
+            className="inline-flex items-center gap-2 text-[#8a9ab8] hover:text-primary transition-colors duration-200 text-sm group"
             data-ocid="project_detail.footer_back_link"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />
             Back to all projects
-          </Link>
+          </a>
           <div className="flex gap-3">
             {project.githubUrl && (
               <a

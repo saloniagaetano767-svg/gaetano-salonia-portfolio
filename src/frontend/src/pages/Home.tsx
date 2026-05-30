@@ -1,18 +1,16 @@
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { WorkSection } from "@/components/sections/WorkSection";
 
 export default function Home() {
   return (
-    <div data-ocid="home.page">
+    <div className="relative z-[1]" data-ocid="home.page">
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
+      <WorkSection />
+      <ServicesSection />
       <ContactSection />
     </div>
   );

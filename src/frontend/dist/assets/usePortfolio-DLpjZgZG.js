@@ -7,7 +7,7 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a;
-import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, k as utf8ToBytes, E as ExternalError, l as MissingRootKeyErrorCode, C as Certificate, m as lookupResultToBuffer, R as RequestStatusResponseStatus, U as UnknownError, o as RequestStatusDoneNoReplyErrorCode, p as RejectError, q as CertifiedRejectErrorCode, t as UNREACHABLE_ERROR, I as InputError, v as InvalidReadStateRequestErrorCode, w as ReadRequestType, x as Principal, y as IDL, z as MissingCanisterIdErrorCode, H as HttpAgent, A as encode, Q as QueryResponseStatus, F as UncertifiedRejectErrorCode, J as isV3ResponseBody, K as isV2ResponseBody, N as UncertifiedRejectUpdateErrorCode, O as UnexpectedErrorCode, V as decode, S as Subscribable, W as pendingThenable, X as resolveEnabled, s as shallowEqualObjects, Y as resolveStaleTime, a as noop, Z as environmentManager, _ as isValidTimeout, $ as timeUntilStale, a0 as timeoutManager, a1 as focusManager, a2 as fetchState, a3 as replaceData, n as notifyManager, r as reactExports, b as shouldThrowError, u as useQueryClient, a4 as useInternetIdentity, a5 as createActorWithConfig, c as createLucideIcon, a6 as Record, a7 as Vec, a8 as Opt, a9 as Service, aa as Func, ab as Nat, ac as Text, ad as Bool, ae as Int, j as jsxRuntimeExports, af as Slot, e as cn, ag as cva } from "./index-mRDVAQWc.js";
+import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, t as utf8ToBytes, E as ExternalError, M as MissingRootKeyErrorCode, v as Certificate, w as lookupResultToBuffer, x as RequestStatusResponseStatus, U as UnknownError, y as RequestStatusDoneNoReplyErrorCode, z as RejectError, A as CertifiedRejectErrorCode, B as UNREACHABLE_ERROR, I as InputError, D as InvalidReadStateRequestErrorCode, F as ReadRequestType, H as Principal, J as IDL, K as MissingCanisterIdErrorCode, N as HttpAgent, O as encode, Q as QueryResponseStatus, V as UncertifiedRejectErrorCode, W as isV3ResponseBody, X as isV2ResponseBody, Y as UncertifiedRejectUpdateErrorCode, Z as UnexpectedErrorCode, _ as decode, S as Subscribable, $ as pendingThenable, a0 as resolveEnabled, s as shallowEqualObjects, a1 as resolveStaleTime, a as noop, a2 as environmentManager, a3 as isValidTimeout, a4 as timeUntilStale, a5 as timeoutManager, a6 as focusManager, a7 as fetchState, a8 as replaceData, n as notifyManager, r as reactExports, b as shouldThrowError, u as useQueryClient, a9 as useInternetIdentity, aa as createActorWithConfig, ab as Record, ac as Vec, ad as Opt, ae as Service, af as Func, ag as Nat, ah as Text, ai as Bool, aj as Int } from "./index-CWpk0u9u.js";
 const FIVE_MINUTES_IN_MSEC = 5 * 60 * 1e3;
 function defaultStrategy() {
   return chain(conditionalDelay(once(), 1e3), backoff(1e3, 1.2), timeout(FIVE_MINUTES_IN_MSEC));
@@ -1069,18 +1069,6 @@ function useActor(createActor2) {
     isFetching: actorQuery.isFetching
   };
 }
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
-];
-const ExternalLink = createLucideIcon("external-link", __iconNode);
 const ProjectId = Nat;
 const Project = Record({
   "id": ProjectId,
@@ -1420,6 +1408,125 @@ function createActor(canisterId, _uploadFile, _downloadFile, options = {}) {
   });
   return new Backend(actor, _uploadFile, _downloadFile, options.processError);
 }
+const FITNESS_LIVE = "https://gasalruag.github.io";
+const FITNESS_GH = "https://github.com/gasalruag/gasalruag.github.io";
+const SAMPLE_PROJECTS = [
+  {
+    id: BigInt(1),
+    title: "Personal Portfolio Platform",
+    featured: true,
+    description: "A public calling card with a rich hero, project case studies, and a contact flow — built for fast static hosting (e.g. Vercel), clear typography, and a strong first impression for applications.",
+    category: "Web Application",
+    techStack: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Responsive UI",
+      "SPA routing"
+    ],
+    imageUrl: "",
+    githubUrl: "https://github.com/saloniagaetano767-svg",
+    liveUrl: ""
+  },
+  {
+    id: BigInt(2),
+    title: "NavData workflow & dashboard patterns",
+    featured: true,
+    description: "Internal-style patterns for navigation-related data: role-aware views, exportable summaries, and REST-driven visuals — informed by enterprise data-quality practice (generic demo content only).",
+    category: "Full-Stack patterns",
+    techStack: ["React", "TypeScript", "REST APIs", "Validation", "Git"],
+    imageUrl: "",
+    githubUrl: "https://github.com/saloniagaetano767-svg",
+    liveUrl: ""
+  },
+  {
+    id: BigInt(3),
+    title: "Fitness tracker",
+    featured: true,
+    description: "A deployed web experience for tracking workouts and progress — structured UI, persisted habits, and a live demo on GitHub Pages at gasalruag.github.io.",
+    category: "Web Application",
+    techStack: ["HTML", "CSS", "JavaScript", "Git", "GitHub Pages"],
+    imageUrl: "",
+    githubUrl: FITNESS_GH,
+    liveUrl: FITNESS_LIVE
+  },
+  {
+    id: BigInt(4),
+    title: "Team task board",
+    featured: true,
+    description: "A Kanban board with columns, filters, and local persistence — focused on state handling, UX polish, and maintainable React structure.",
+    category: "Frontend",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Local state", "Git"],
+    imageUrl: "",
+    githubUrl: "https://github.com/saloniagaetano767-svg",
+    liveUrl: ""
+  },
+  {
+    id: BigInt(5),
+    title: "Markdown documentation hub",
+    featured: true,
+    description: "A lightweight static documentation site built from Markdown with navigation, search, and syntax-highlighted code — low-cost hosting for school and team hand-ins.",
+    category: "Content & Automation",
+    techStack: ["TypeScript", "Vite", "Markdown", "CSS", "GitHub Pages"],
+    imageUrl: "",
+    githubUrl: "https://github.com/saloniagaetano767-svg",
+    liveUrl: ""
+  }
+];
+const CASE_STUDIES = {
+  "1": {
+    problem: "Early-career developers need a portfolio that feels credible: fast loading, readable type, and a narrative that connects work to real skills — not filler copy.",
+    role: "Owned information architecture, React + Tailwind UI, animation tuned for reduced-motion, Vite builds, and static-friendly deploys.",
+    outcomes: [
+      "Clear hierarchy and lighthouse-friendly delivery",
+      "Reusable sections for iterating on copy quickly",
+      "Case study pages that explain stack and impact in one flow",
+      "Responsive navigation plus contact fallback without a proprietary backend"
+    ],
+    timeline: "Ongoing (2025–2026)"
+  },
+  "2": {
+    problem: "Operational teams bounce between spreadsheets and one-off exports; a dedicated web surface makes recurring KPIs easier to revisit.",
+    role: "Typed REST data hooks, chart-ready summaries, and CSV exports with deliberate loading / empty states for production-adjacent UX.",
+    outcomes: [
+      "Less context switching when demoing repeatable reports",
+      "Retry and edge-case behaviour for flaky endpoints",
+      "Design tokens that match this site’s professional dark theme"
+    ],
+    timeline: "Multi-month school / hobby build"
+  },
+  "3": {
+    problem: "Fitness goals slip when tracking is inconvenient; a tiny dedicated site keeps workouts and milestones visible.",
+    role: "Implemented structured screens for logging activity, sensible defaults for repeat use, and a static deploy on GitHub Pages so the demo stays reachable.",
+    outcomes: [
+      "Always-on public demo at github.io for recruiters and classmates",
+      "Simple stack that emphasizes HTML/CSS/JS fundamentals",
+      "Repository separate from templated placeholders for authenticity"
+    ],
+    timeline: "Side project · live on GitHub Pages"
+  },
+  "4": {
+    problem: "Linear todos break down for multi-step, collaborative efforts; a board view keeps priorities visible and handoffs understandable.",
+    role: "Column layout with keyboard-friendly controls, optimistic moves between columns, and persistence so refreshes retain state.",
+    outcomes: [
+      "Shows composition and disciplined state in React",
+      "Responsive layout where columns behave well on narrow viewports",
+      "Seed tooling for demos and screenshots"
+    ],
+    timeline: "~6 weeks (school / personal)"
+  },
+  "5": {
+    problem: "Technical notes scattered across chats and disks; one static docs URL speeds onboarding and assignment reviews.",
+    role: "Markdown pipeline, cohesive layout shell, lightweight client-side search, and deployments from main.",
+    outcomes: [
+      "Sticky navigation for hopping between chapters quickly",
+      "Code samples with workable contrast in dark mode",
+      "Hosting cost kept low with plain static assets only"
+    ],
+    timeline: "~2 months alongside other work"
+  }
+};
 function useFeaturedProjects() {
   const { actor, isFetching } = useActor(createActor);
   return useQuery({
@@ -1442,167 +1549,11 @@ function useProject(id) {
     enabled: !!actor && !isFetching
   });
 }
-function useProfile() {
-  const { actor, isFetching } = useActor(createActor);
-  return useQuery({
-    queryKey: ["profile"],
-    queryFn: async () => {
-      if (!actor) return null;
-      return actor.getProfile();
-    },
-    enabled: !!actor && !isFetching
-  });
-}
-const SAMPLE_PROJECTS = [
-  {
-    id: BigInt(1),
-    title: "Personal Portfolio Platform",
-    featured: true,
-    description: "A production-grade portfolio with animated hero, project case studies, and a contact flow — engineered for clarity, performance, and strong first impressions with hiring managers.",
-    category: "Web Application",
-    techStack: ["TypeScript", "React", "Vite", "Tailwind CSS", "Responsive UI"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(2),
-    title: "Operations Insight Dashboard",
-    featured: true,
-    description: "An internal-style web dashboard for monitoring operational data with role-aware views, exportable summaries, and REST-driven charts — inspired by real enterprise workflows.",
-    category: "Full-Stack",
-    techStack: ["React", "TypeScript", "REST APIs", "Chart patterns", "Git"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(3),
-    title: "API Validation & Log Toolkit",
-    featured: true,
-    description: "A developer utility that batches REST requests, validates JSON schemas, and writes structured logs — built to speed up debugging during integration work.",
-    category: "Developer Tools",
-    techStack: ["TypeScript", "Node.js", "REST", "CLI patterns", "Git"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(4),
-    title: "Team Task Board",
-    featured: true,
-    description: "A Kanban-style task board with drag-and-drop columns, filters, and persistence — a focused exercise in state management, UX polish, and maintainable React structure.",
-    category: "Frontend",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Local state", "Git"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(5),
-    title: "Markdown Documentation Hub",
-    featured: true,
-    description: "A lightweight documentation site that turns Markdown sources into navigable pages with search and syntax-highlighted code blocks — ideal for teams and school deliverables.",
-    category: "Content & Automation",
-    techStack: ["TypeScript", "Vite", "Markdown", "CSS", "GitHub Pages"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  }
-];
-const CASE_STUDIES = {
-  "1": {
-    problem: "Developers early in their careers need a portfolio that feels credible: fast loading, readable typography, and a narrative that connects projects to real skills — not generic template filler.",
-    role: "End-to-end ownership: information architecture, UI implementation with React and Tailwind, animation tuning for reduced-motion accessibility, and build optimization with Vite.",
-    outcomes: [
-      "Lighthouse-friendly static delivery with clear content hierarchy",
-      "Reusable section components for rapid iteration on copy and layout",
-      "Case-study pages that explain context, stack, and results in one flow",
-      "Fully responsive navigation and touch-friendly targets on mobile"
-    ],
-    timeline: "Ongoing (2025–2026)"
-  },
-  "2": {
-    problem: "Operational teams often juggle spreadsheets and ad-hoc reports. A single web surface reduces context switching and makes recurring metrics visible without manual assembly.",
-    role: "Implemented typed data hooks against REST endpoints, built chart-ready summaries, and added CSV export — with loading and empty states for production-like UX.",
-    outcomes: [
-      "Cut manual report prep time in demo scenarios by consolidating views",
-      "Error boundaries and retry patterns for flaky network conditions",
-      "Consistent design tokens aligned with a dark, professional theme"
-    ],
-    timeline: "3 months (sample case study)"
-  },
-  "3": {
-    problem: "When integrating third-party APIs, teams waste cycles on one-off curl scripts and inconsistent logging — especially when schemas change between environments.",
-    role: "Designed a small CLI-oriented workflow: config-driven endpoints, schema checks, and structured log output for CI or local debugging.",
-    outcomes: [
-      "Faster feedback loop when validating staging vs. production payloads",
-      "Reusable command structure for future endpoints",
-      "Documentation embedded in the tool’s help output"
-    ],
-    timeline: "4 weeks (sample case study)"
-  },
-  "4": {
-    problem: "Simple todo lists break down when work is multi-step and collaborative. A board view keeps priorities visible and supports handoffs between teammates.",
-    role: "Built columnar layout with keyboard-accessible controls, optimistic updates for moves, and persistence so refreshes do not lose progress.",
-    outcomes: [
-      "Demonstrates component composition and state discipline in React",
-      "Mobile layout that collapses columns into a swipe-friendly flow",
-      "Seed data generator for demos and screenshots"
-    ],
-    timeline: "6 weeks (academic / personal)"
-  },
-  "5": {
-    problem: "Technical write-ups scatter across drives and chats. A static documentation hub gives one link for onboarding, APIs, and runbooks.",
-    role: "Parsed Markdown with a consistent layout, added client-side search, and automated deploys from the main branch.",
-    outcomes: [
-      "Readers find sections in seconds with sticky navigation",
-      "Code samples use accessible contrast in dark mode",
-      "Low hosting cost — static assets only"
-    ],
-    timeline: "2 months (sample case study)"
-  }
-};
-const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
-  {
-    variants: {
-      variant: {
-        default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-        secondary: "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive: "border-transparent bg-destructive text-destructive-foreground [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground"
-      }
-    },
-    defaultVariants: {
-      variant: "default"
-    }
-  }
-);
-function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot : "span";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Comp,
-    {
-      "data-slot": "badge",
-      className: cn(badgeVariants({ variant }), className),
-      ...props
-    }
-  );
-}
 export {
-  Badge as B,
   CASE_STUDIES as C,
-  ExternalLink as E,
   SAMPLE_PROJECTS as S,
-  useActor as a,
-  useFeaturedProjects as b,
+  useFeaturedProjects as a,
+  useProject as b,
   createActor as c,
-  useProject as d,
-  useProfile as u
+  useActor as u
 };

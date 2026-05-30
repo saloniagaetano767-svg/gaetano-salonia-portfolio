@@ -1,291 +1,153 @@
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-
-const NAME = "Gaetano Salonia";
-const TITLE = "Software Engineer · Switzerland";
-const LOCATION =
-  "Based in Switzerland · RUAG · Open to Software Engineer & IT Support roles";
-const VALUE_PROP =
-  "I build reliable applications with clean architecture — from requirements to delivery — combining apprenticeship rigor with curiosity for modern web technology.";
+import { AvatarPortrait } from "@/components/AvatarPortrait";
+import { useTranslation } from "@/i18n";
+import { scrollToSection } from "@/lib/motion";
+import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
-  const [mounted, setMounted] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef = useRef<number>(0);
+  const { t, locale } = useTranslation();
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [roleVisible, setRoleVisible] = useState(true);
+  const roleKey = `${locale}-${roleIdx}`;
 
   useEffect(() => {
-    // Staggered entrance
-    const t = setTimeout(() => setMounted(true), 80);
-    return () => clearTimeout(t);
-  }, []);
-
-  // Animated particle mesh background
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    // Respect prefers-reduced-motion — skip animation entirely
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let width = 0;
-    let height = 0;
-
-    interface Particle {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-      opacity: number;
-    }
-
-    const particles: Particle[] = [];
-    const PARTICLE_COUNT = 70;
-    const CONNECTION_DIST = 160;
-    const CYAN = "66% 0.17 218";
-
-    function resize() {
-      if (!canvas) return;
-      width = canvas.offsetWidth;
-      height = canvas.offsetHeight;
-      canvas.width = width;
-      canvas.height = height;
-    }
-
-    function init() {
-      particles.length = 0;
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
-          radius: Math.random() * 1.5 + 0.5,
-          opacity: Math.random() * 0.5 + 0.15,
-        });
-      }
-    }
-
-    function draw() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, width, height);
-
-      // Connect nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.35;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `oklch(${CYAN} / ${alpha})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw particles
-      for (const p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `oklch(${CYAN} / ${p.opacity})`;
-        ctx.fill();
-      }
-    }
-
-    function tick() {
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-      }
-      draw();
-      rafRef.current = requestAnimationFrame(tick);
-    }
-
-    const ro = new ResizeObserver(() => {
-      resize();
-      init();
-    });
-    ro.observe(canvas.parentElement ?? canvas);
-    resize();
-    init();
-    rafRef.current = requestAnimationFrame(tick);
-
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      ro.disconnect();
-    };
-  }, []);
-
-  function scrollToProjects() {
-    const el = document.getElementById("projects");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }
-
-  function scrollDown() {
-    window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" });
-  }
+    const interval = setInterval(() => {
+      setRoleVisible(false);
+      setTimeout(() => {
+        setRoleIdx((i) => (i + 1) % t.hero.roles.length);
+        setRoleVisible(true);
+      }, 380);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, [t.hero.roles.length]);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center pt-24 pb-16 px-8"
       data-ocid="hero.section"
     >
-      {/* Hero background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('/assets/generated/hero-mesh-bg.dim_1600x900.jpg')",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Dark overlay */}
-      <div
-        className="absolute inset-0 bg-background/58 dark:bg-background/68"
-        aria-hidden="true"
-      />
-
-      {/* Animated gradient radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: [
-            "radial-gradient(ellipse 72% 58% at 58% 42%, oklch(0.58 0.16 218 / 0.2) 0%, transparent 68%)",
-            "radial-gradient(ellipse 50% 45% at 18% 78%, oklch(0.62 0.14 295 / 0.12) 0%, transparent 65%)",
-          ].join(","),
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Particle mesh canvas */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <canvas ref={canvasRef} className="w-full h-full" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col gap-6">
-        {/* Eyebrow label */}
-        <div
-          className="flex items-center gap-3"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(12px)",
-            transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
-            transitionDelay: "0.05s",
-          }}
-        >
-          <div className="h-px w-8 bg-primary" />
-          <span className="text-primary font-mono text-sm tracking-[0.2em] uppercase">
-            {TITLE}
-          </span>
-        </div>
-        <p
-          className="text-muted-foreground/90 font-mono text-xs sm:text-sm tracking-wide max-w-2xl"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(12px)",
-            transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
-            transitionDelay: "0.12s",
-          }}
-        >
-          {LOCATION}
-        </p>
-
-        {/* Name heading */}
-        <h1
-          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
-            transitionDelay: "0.18s",
-          }}
-        >
-          <span className="text-gradient">{NAME}</span>
-        </h1>
-
-        {/* Value proposition */}
-        <p
-          className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
-            transitionDelay: "0.34s",
-          }}
-        >
-          {VALUE_PROP}
-        </p>
-
-        {/* CTAs */}
-        <div
-          className="flex flex-wrap items-center gap-4 pt-2"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
-            transitionDelay: "0.50s",
-          }}
-        >
-          <Button
-            type="button"
-            size="lg"
-            onClick={scrollToProjects}
-            className="font-display font-semibold tracking-wide px-8 py-6 text-base glow-primary transition-smooth hover:scale-[1.04] active:scale-[0.98]"
-            data-ocid="hero.primary_button"
+      <div className="relative z-10 w-full max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1.5 mb-7"
           >
-            View selected work
-          </Button>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary badge-dot shadow-[0_0_8px] shadow-primary" />
+            <span className="font-mono text-[11px] text-primary font-semibold tracking-wider">
+              {t.about.status} · RUAG · 🇨🇭
+            </span>
+          </motion.div>
 
-          <Button
-            type="button"
-            variant="outline"
-            size="lg"
-            asChild
-            className="font-display font-semibold tracking-wide px-8 py-6 text-base border-border hover:border-primary hover:text-primary transition-smooth hover:scale-[1.04] active:scale-[0.98]"
-            data-ocid="hero.secondary_button"
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="text-[17px] text-[#5a6a88] font-medium mb-2"
           >
-            <a href="/cv.pdf" download aria-label="Download CV as PDF">
-              Download CV
+            {t.hero.greeting}
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.14 }}
+            className="font-display font-extrabold text-[clamp(52px,8vw,84px)] leading-none tracking-tight mb-4"
+          >
+            <span className="grad-light block">Gaetano</span>
+            <span className="grad-teal block">Salonia.</span>
+          </motion.h1>
+
+          <div className="h-8 overflow-hidden mb-6" key={locale}>
+            <p
+              key={roleKey}
+              className={`font-mono text-base text-primary font-semibold transition-all duration-350 ${
+                roleVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-2"
+              }`}
+            >
+              {"// "}
+              {t.hero.roles[roleIdx % t.hero.roles.length]}
+            </p>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.28 }}
+            className="text-[15px] text-[#8a9ab8] leading-relaxed max-w-md mb-9"
+          >
+            {t.hero.tagline}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.36 }}
+            className="flex flex-wrap gap-3"
+          >
+            <button
+              type="button"
+              onClick={() => scrollToSection("work")}
+              className="btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all duration-200"
+              data-ocid="hero.primary_button"
+            >
+              {t.hero.cta}
+            </button>
+            <a
+              href="/cv.pdf"
+              download
+              className="font-semibold text-sm px-6 py-3 rounded-[11px] border border-white/15 text-[#c8d0e0] hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+              data-ocid="hero.secondary_button"
+            >
+              {t.hero.cv}
             </a>
-          </Button>
-        </div>
-      </div>
+          </motion.div>
 
-      {/* Scroll indicator */}
-      <button
-        type="button"
-        onClick={scrollDown}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-muted-foreground hover:text-primary transition-smooth group"
-        aria-label="Scroll down"
-        data-ocid="hero.scroll_indicator"
-        style={{
-          opacity: mounted ? 1 : 0,
-          transition: "opacity 0.7s ease-out",
-          transitionDelay: "0.8s",
-        }}
-      >
-        <span className="text-xs font-mono tracking-[0.15em] uppercase opacity-60 group-hover:opacity-100 transition-smooth">
-          Scroll
-        </span>
-        <ChevronDown
-          className="animate-bounce w-5 h-5 opacity-60 group-hover:opacity-100"
-          strokeWidth={1.5}
-        />
-      </button>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.48 }}
+            className="flex flex-wrap gap-5 mt-11"
+          >
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+            >
+              ⌘ {t.hero.github}
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+            >
+              ◈ {t.hero.linkedin}
+            </a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-[#3a4a68] text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+            >
+              ✉ {t.hero.email}
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="order-first lg:order-last"
+        >
+          <AvatarPortrait />
+        </motion.div>
+      </div>
     </section>
   );
 }

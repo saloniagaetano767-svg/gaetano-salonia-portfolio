@@ -1,20 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { CONTACT_EMAIL } from "@/lib/site";
-import { Download, Mail, Send } from "lucide-react";
+import { useTranslation } from "@/i18n";
+import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { useContact } from "../../hooks/useContact";
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import type { ContactFormData } from "../../types/portfolio";
 
-const CV_URL = "/cv.pdf";
-
 export function ContactSection() {
-  const { ref, isVisible } = useScrollAnimation<HTMLElement>({
-    threshold: 0.08,
-  });
+  const { t } = useTranslation();
   const { mutate, isPending, isSuccess, isError, error } = useContact();
   const [form, setForm] = useState<ContactFormData>({
     name: "",
@@ -30,17 +22,15 @@ export function ContactSection() {
   });
 
   const errors = {
-    name: touched.name && !form.name.trim() ? "Please enter your name." : null,
+    name: touched.name && !form.name.trim() ? t.contact.nameError : null,
     email:
       touched.email && !form.email.trim()
-        ? "Please enter your email."
+        ? t.contact.emailError
         : touched.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
-          ? "Please enter a valid email address."
+          ? t.contact.emailInvalid
           : null,
     message:
-      touched.message && !form.message.trim()
-        ? "Please enter a short message."
-        : null,
+      touched.message && !form.message.trim() ? t.contact.messageError : null,
   };
 
   const isFormValid =
@@ -58,8 +48,7 @@ export function ContactSection() {
   function handleBlur(
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
-    const { name } = e.target;
-    setTouched((prev) => ({ ...prev, [name]: true }));
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -69,226 +58,169 @@ export function ContactSection() {
     mutate(form);
   }
 
+  const contactItems = [
+    {
+      icon: "✉",
+      label: "Email",
+      value: t.contact.email,
+      href: `mailto:${CONTACT_EMAIL}`,
+    },
+    {
+      icon: "⌘",
+      label: "GitHub",
+      value: t.contact.github,
+      href: GITHUB_URL,
+    },
+    {
+      icon: "◈",
+      label: "LinkedIn",
+      value: t.contact.linkedin,
+      href: LINKEDIN_URL,
+    },
+  ];
+
   return (
     <section
       id="contact"
-      ref={ref}
-      className={`scroll-fade ${isVisible ? "visible" : ""} pt-24 pb-16 md:pb-20 px-6`}
+      className="max-w-[1100px] mx-auto px-8 py-[90px]"
       data-ocid="contact.section"
     >
-      <div className="max-w-5xl mx-auto">
-        {/* Header Row */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-6 mb-12 md:mb-14">
-          <div>
-            <p className="text-primary font-mono text-sm tracking-widest uppercase mb-2 opacity-80">
-              Contact
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              Let&apos;s <span className="text-gradient">talk</span>
-            </h2>
-          </div>
-          <a
-            href={CV_URL}
-            download
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/40 text-primary font-display font-medium text-sm hover:bg-primary/10 hover:border-primary/70 transition-smooth group shrink-0"
-            data-ocid="contact.download_cv_button"
-          >
-            <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            Download CV
-          </a>
-        </div>
+      <motion.div
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-3.5">
+          05 / {t.contact.label}
+        </p>
+        <h2 className="font-display font-extrabold text-[clamp(34px,5vw,52px)] tracking-tight leading-tight mb-4">
+          <span className="grad-light">{t.contact.titleLight}</span>
+          <br />
+          <span className="grad-teal">{t.contact.titleAccent}</span>
+        </h2>
+        <p className="text-sm text-[#5a6a88] leading-relaxed mb-11 max-w-lg">
+          {t.contact.sub}
+        </p>
+      </motion.div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
-          {/* Form Column */}
-          <div className="lg:col-span-3">
-            {isSuccess ? (
-              <div
-                className="flex flex-col items-center justify-center py-16 px-8 rounded-2xl border border-primary/20 bg-card/50 text-center"
-                data-ocid="contact.success_state"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-5">
-                  <Send className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Message sent
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Thanks — I&apos;ll get back to you soon.
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="space-y-3"
+        >
+          {contactItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.label === "Email" ? undefined : "_blank"}
+              rel={item.label === "Email" ? undefined : "noopener noreferrer"}
+              className="flex items-center gap-4 p-4 glass-card rounded-[13px] hover:border-primary/30 hover:bg-primary/[0.04] transition-all"
+              data-ocid={`contact.${item.label.toLowerCase()}_link`}
+            >
+              <span className="text-xl text-primary min-w-6">{item.icon}</span>
+              <div>
+                <p className="font-mono text-[10px] text-[#3a4a68] tracking-wider uppercase mb-0.5">
+                  {item.label}
+                </p>
+                <p className="text-[13px] text-[#c8d0e0] font-medium">
+                  {item.value}
                 </p>
               </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                noValidate
-                className="space-y-5"
-                data-ocid="contact.form"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="space-y-1.5">
-                    <Label
-                      htmlFor="contact-name"
-                      className="text-xs font-display tracking-wider uppercase text-muted-foreground"
-                    >
-                      Name
-                    </Label>
-                    <Input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      autoComplete="name"
-                      placeholder="Your name"
-                      value={form.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="bg-card/60 border-border focus:border-primary/60 focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50 h-11"
-                      data-ocid="contact.name_input"
-                      aria-describedby={
-                        errors.name ? "contact-name-error" : undefined
-                      }
-                    />
-                    {errors.name && (
-                      <p
-                        id="contact-name-error"
-                        className="text-xs text-destructive mt-1"
-                        data-ocid="contact.name.field_error"
-                      >
-                        {errors.name}
-                      </p>
-                    )}
-                  </div>
+            </a>
+          ))}
+        </motion.div>
 
-                  <div className="space-y-1.5">
-                    <Label
-                      htmlFor="contact-email"
-                      className="text-xs font-display tracking-wider uppercase text-muted-foreground"
-                    >
-                      Email
-                    </Label>
-                    <Input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      placeholder="you@example.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="bg-card/60 border-border focus:border-primary/60 focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50 h-11"
-                      data-ocid="contact.email_input"
-                      aria-describedby={
-                        errors.email ? "contact-email-error" : undefined
-                      }
-                    />
-                    {errors.email && (
-                      <p
-                        id="contact-email-error"
-                        className="text-xs text-destructive mt-1"
-                        data-ocid="contact.email.field_error"
-                      >
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="space-y-1.5">
-                  <Label
-                    htmlFor="contact-message"
-                    className="text-xs font-display tracking-wider uppercase text-muted-foreground"
-                  >
-                    Message
-                  </Label>
-                  <Textarea
-                    id="contact-message"
-                    name="message"
-                    placeholder="Tell me about your project, role, or question…"
-                    value={form.message}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    rows={5}
-                    className="bg-card/60 border-border focus:border-primary/60 focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50 resize-none"
-                    data-ocid="contact.message_textarea"
-                    aria-describedby={
-                      errors.message ? "contact-message-error" : undefined
-                    }
-                  />
-                  {errors.message && (
-                    <p
-                      id="contact-message-error"
-                      className="text-xs text-destructive mt-1"
-                      data-ocid="contact.message.field_error"
-                    >
-                      {errors.message}
-                    </p>
-                  )}
-                </div>
-
-                {isError && (
-                  <p
-                    className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-3"
-                    data-ocid="contact.error_state"
-                  >
-                    {error?.message ??
-                      "Something went wrong — try again or email me directly."}
-                  </p>
-                )}
-
-                <Button
-                  type="submit"
-                  disabled={isPending}
-                  className="w-full h-11 font-display font-semibold tracking-wide text-sm bg-primary text-primary-foreground hover:bg-primary/90 glow-primary transition-smooth"
-                  data-ocid="contact.submit_button"
-                >
-                  {isPending ? (
-                    <span
-                      className="flex items-center gap-2"
-                      data-ocid="contact.loading_state"
-                    >
-                      <span className="w-4 h-4 rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground animate-spin" />
-                      Sending…
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <Send className="w-4 h-4" />
-                      Send message
-                    </span>
-                  )}
-                </Button>
-              </form>
-            )}
-          </div>
-
-          {/* Sidebar Column */}
-          <div className="lg:col-span-2 flex flex-col gap-8 pt-1">
-            {/* Email contact */}
-            <div>
-              <p className="text-xs font-display tracking-widest uppercase text-muted-foreground mb-3">
-                Or email me directly
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          {isSuccess ? (
+            <div
+              className="glass-card rounded-[18px] p-10 text-center"
+              data-ocid="contact.success_state"
+            >
+              <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                {t.contact.successTitle}
+              </h3>
+              <p className="text-sm text-[#8a9ab8]">
+                {t.contact.successMessage}
               </p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="group inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-200"
-                data-ocid="contact.email_link"
+            </div>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="flex flex-col gap-3"
+              data-ocid="contact.form"
+            >
+              <input
+                type="text"
+                name="name"
+                autoComplete="name"
+                placeholder={t.contact.namePlaceholder}
+                value={form.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                data-ocid="contact.name_input"
+              />
+              {errors.name && (
+                <p className="text-xs text-destructive -mt-1">{errors.name}</p>
+              )}
+              <input
+                type="email"
+                name="email"
+                autoComplete="email"
+                placeholder={t.contact.emailPlaceholder}
+                value={form.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                data-ocid="contact.email_input"
+              />
+              {errors.email && (
+                <p className="text-xs text-destructive -mt-1">{errors.email}</p>
+              )}
+              <textarea
+                name="message"
+                rows={5}
+                placeholder={t.contact.messagePlaceholder}
+                value={form.message}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="bg-white/[0.04] border border-white/[0.09] rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none"
+                data-ocid="contact.message_textarea"
+              />
+              {errors.message && (
+                <p className="text-xs text-destructive -mt-1">
+                  {errors.message}
+                </p>
+              )}
+              {isError && (
+                <p
+                  className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-3"
+                  data-ocid="contact.error_state"
+                >
+                  {error?.message ?? t.contact.errorFallback}
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={isPending}
+                className="btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,231,208,0.25)] transition-all disabled:opacity-60"
+                data-ocid="contact.submit_button"
               >
-                <span className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/5 transition-smooth">
-                  <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </span>
-                <span className="font-body text-sm">{CONTACT_EMAIL}</span>
-              </a>
-            </div>
-
-            {/* Availability badge */}
-            <div className="mt-auto pt-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-display text-primary/80 tracking-wide">
-                  Open to opportunities
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+                {isPending ? t.contact.sending : t.contact.send}
+              </button>
+            </form>
+          )}
+        </motion.div>
       </div>
     </section>
   );

@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --font-display: "Space Grotesk";
+    --font-display: "Syne";
     --font-body: "DM Sans";
-    --font-mono: "Geist Mono";
-    --radius: 0.5rem;
+    --font-mono: "JetBrains Mono";
+    --radius: 0.6875rem;
 
     --background: 0.975 0.028 268;
     --foreground: 0.22 0.032 265;
@@ -53,30 +53,30 @@
   .dark {
     color-scheme: dark;
 
-    --background: 0.13 0.035 270;
-    --foreground: 0.96 0.018 250;
-    --card: 0.176 0.038 272;
-    --card-foreground: 0.96 0.018 250;
-    --popover: 0.195 0.038 272;
-    --popover-foreground: 0.96 0.018 250;
+    --background: 0.1 0.025 260;
+    --foreground: 0.96 0.02 260;
+    --card: 0.14 0.028 262;
+    --card-foreground: 0.96 0.02 260;
+    --popover: 0.16 0.028 262;
+    --popover-foreground: 0.96 0.02 260;
 
-    --primary: 0.72 0.145 218;
-    --primary-foreground: 0.13 0.035 270;
+    --primary: 0.82 0.12 180;
+    --primary-foreground: 0.1 0.025 260;
 
-    --secondary: 0.235 0.032 272;
-    --secondary-foreground: 0.92 0.012 250;
-    --muted: 0.265 0.032 272;
-    --muted-foreground: 0.685 0.025 260;
+    --secondary: 0.2 0.028 262;
+    --secondary-foreground: 0.88 0.02 260;
+    --muted: 0.22 0.028 262;
+    --muted-foreground: 0.62 0.03 260;
 
-    --accent: 0.72 0.16 298;
-    --accent-foreground: 0.13 0.035 270;
+    --accent: 0.72 0.14 295;
+    --accent-foreground: 0.1 0.025 260;
 
     --destructive: 0.64 0.19 22;
     --destructive-foreground: 0.96 0 0;
 
-    --border: 0.3 0.04 272;
-    --input: 0.3 0.04 272;
-    --ring: 0.72 0.145 218;
+    --border: 0.28 0.03 262;
+    --input: 0.28 0.03 262;
+    --ring: 0.82 0.12 180;
 
     --chart-1: 0.49 0.24 264;
     --chart-2: 0.7 0.17 162;
@@ -101,15 +101,27 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased overflow-x-hidden;
+    background-color: #070b14;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070b14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#5ee7d0, #a78bfa);
+    border-radius: 99px;
   }
 }
 
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gozuPTPgm2a.woff2")
+  font-family: "Syne";
+  src: url("https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_04uaP.woff2")
     format("woff2");
-  font-weight: 300 700;
+  font-weight: 700 800;
   font-display: swap;
 }
 
@@ -122,10 +134,10 @@
 }
 
 @font-face {
-  font-family: "Geist Mono";
-  src: url("https://fonts.gstatic.com/s/robotomono/v23/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_SuW4.woff2")
+  font-family: "JetBrains Mono";
+  src: url("https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbD2o-flEEny0F7h8fykJHu.woff2")
     format("woff2");
-  font-weight: 400;
+  font-weight: 400 700;
   font-display: swap;
 }
 
@@ -174,6 +186,89 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .grad-teal {
+    background: linear-gradient(135deg, #5ee7d0, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .grad-light {
+    background: linear-gradient(135deg, #f0f4ff, #8a9ab8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, #5ee7d0, #a78bfa);
+    color: #070b14;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-scrolled {
+    background: rgba(7, 11, 20, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  @keyframes badgePulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .badge-dot {
+    animation: badgePulse 2.2s infinite;
+  }
+
+  @keyframes rimGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 24px rgba(94, 231, 208, 0.35), 0 0 48px
+        rgba(94, 231, 208, 0.12);
+    }
+    50% {
+      box-shadow: 0 0 36px rgba(94, 231, 208, 0.55), 0 0 64px
+        rgba(94, 231, 208, 0.2);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    92%,
+    100% {
+      opacity: 0;
+    }
+    94% {
+      opacity: 1;
+    }
+  }
+
+  .avatar-rim-glow {
+    animation: rimGlow 3s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .badge-dot,
+    .avatar-rim-glow {
+      animation: none;
+    }
+    .scroll-fade {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .border-accent-glow {

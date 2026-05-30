@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-Cqlw1G_y.js","assets/badge-D89uCdfC.js","assets/ProjectDetail-fuhKZHx2.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-BPIDruj5.js","assets/usePortfolio-DLpjZgZG.js","assets/ProjectDetail-BIQCg1yK.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -4477,7 +4477,7 @@ let o = new Uint8Array(p), r$1 = new DataView(o.buffer), s = 0, O = [];
 function dt(t, n) {
   s = 0;
   const e = (n == null ? void 0 : n(t)) ?? t;
-  return it(m, e, n), o.slice(0, s);
+  return it$1(m, e, n), o.slice(0, s);
 }
 function _(t, n) {
   if (s > o.length - C && (o = R(o, o.length * 2), r$1 = new DataView(o.buffer)), t === false || t === true || t === null || t === void 0) {
@@ -4596,7 +4596,7 @@ function X$1(t) {
 function V(t) {
   k(c.ByteString, t);
 }
-function it(t, n, e) {
+function it$1(t, n, e) {
   I(c.Tag, t), _(n, e);
 }
 function hasCborValueMethod(value) {
@@ -12805,7 +12805,7 @@ var react_production = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var REACT_ELEMENT_TYPE$1 = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE$2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE$1 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE$1 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE$1 = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE$1 = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE$1 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE$1 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE$1 = Symbol.for("react.suspense"), REACT_MEMO_TYPE$1 = Symbol.for("react.memo"), REACT_LAZY_TYPE$2 = Symbol.for("react.lazy"), MAYBE_ITERATOR_SYMBOL$1 = Symbol.iterator;
+var REACT_ELEMENT_TYPE$1 = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE$2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE$1 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE$1 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE$1 = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE$1 = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE$1 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE$1 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE$1 = Symbol.for("react.suspense"), REACT_MEMO_TYPE$1 = Symbol.for("react.memo"), REACT_LAZY_TYPE$1 = Symbol.for("react.lazy"), MAYBE_ITERATOR_SYMBOL$1 = Symbol.iterator;
 function getIteratorFn$1(maybeIterable) {
   if (null === maybeIterable || "object" !== typeof maybeIterable) return null;
   maybeIterable = MAYBE_ITERATOR_SYMBOL$1 && maybeIterable[MAYBE_ITERATOR_SYMBOL$1] || maybeIterable["@@iterator"];
@@ -12929,7 +12929,7 @@ function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
           case REACT_PORTAL_TYPE$2:
             invokeCallback = true;
             break;
-          case REACT_LAZY_TYPE$2:
+          case REACT_LAZY_TYPE$1:
             return invokeCallback = children._init, mapIntoArray(
               invokeCallback(children._payload),
               array,
@@ -13138,7 +13138,7 @@ react_production.forwardRef = function(render) {
 react_production.isValidElement = isValidElement;
 react_production.lazy = function(ctor) {
   return {
-    $$typeof: REACT_LAZY_TYPE$2,
+    $$typeof: REACT_LAZY_TYPE$1,
     _payload: { _status: -1, _result: ctor },
     _init: lazyInitializer
   };
@@ -15269,7 +15269,7 @@ function findCurrentHostFiberImpl(node) {
   }
   return null;
 }
-var assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE$1 = Symbol.for("react.lazy");
+var assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
 var REACT_ACTIVITY_TYPE = Symbol.for("react.activity");
 var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel");
 var MAYBE_ITERATOR_SYMBOL = Symbol.iterator;
@@ -15313,7 +15313,7 @@ function getComponentNameFromType(type) {
         return type;
       case REACT_MEMO_TYPE:
         return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
-      case REACT_LAZY_TYPE$1:
+      case REACT_LAZY_TYPE:
         innerType = type._payload;
         type = type._init;
         try {
@@ -16935,7 +16935,7 @@ function createFiberFromTypeAndProps(type, key, pendingProps, owner, mode, lanes
             case REACT_MEMO_TYPE:
               fiberTag = 14;
               break a;
-            case REACT_LAZY_TYPE$1:
+            case REACT_LAZY_TYPE:
               fiberTag = 16;
               owner = null;
               break a;
@@ -17780,7 +17780,7 @@ function useThenable(thenable) {
   null === (null === workInProgressHook ? index2.memoizedState : workInProgressHook.next) && (index2 = index2.alternate, ReactSharedInternals.H = null === index2 || null === index2.memoizedState ? HooksDispatcherOnMount : HooksDispatcherOnUpdate);
   return thenable;
 }
-function use$1(usable) {
+function use(usable) {
   if (null !== usable && "object" === typeof usable) {
     if ("function" === typeof usable.then) return useThenable(usable);
     if (usable.$$typeof === REACT_CONTEXT_TYPE) return readContext(usable);
@@ -18522,7 +18522,7 @@ function entangleTransitionUpdate(root2, queue, lane) {
 }
 var ContextOnlyDispatcher = {
   readContext,
-  use: use$1,
+  use,
   useCallback: throwInvalidHookError,
   useContext: throwInvalidHookError,
   useEffect: throwInvalidHookError,
@@ -18546,7 +18546,7 @@ var ContextOnlyDispatcher = {
   useCacheRefresh: throwInvalidHookError
 }, HooksDispatcherOnMount = {
   readContext,
-  use: use$1,
+  use,
   useCallback: function(callback, deps) {
     mountWorkInProgressHook().memoizedState = [
       callback,
@@ -18722,7 +18722,7 @@ var ContextOnlyDispatcher = {
   }
 }, HooksDispatcherOnUpdate = {
   readContext,
-  use: use$1,
+  use,
   useCallback: updateCallback,
   useContext: readContext,
   useEffect: updateEffect,
@@ -18765,7 +18765,7 @@ var ContextOnlyDispatcher = {
   useCacheRefresh: updateRefresh
 }, HooksDispatcherOnRerender = {
   readContext,
-  use: use$1,
+  use,
   useCallback: updateCallback,
   useContext: readContext,
   useEffect: updateEffect,
@@ -18890,7 +18890,7 @@ function createChildReconciler(shouldTrackSideEffects) {
         lanes,
         element.key
       );
-    if (null !== current && (current.elementType === elementType || "object" === typeof elementType && null !== elementType && elementType.$$typeof === REACT_LAZY_TYPE$1 && resolveLazy(elementType) === current.type))
+    if (null !== current && (current.elementType === elementType || "object" === typeof elementType && null !== elementType && elementType.$$typeof === REACT_LAZY_TYPE && resolveLazy(elementType) === current.type))
       return current = useFiber(current, element.props), coerceRef(current, element), current.return = returnFiber, current;
     current = createFiberFromTypeAndProps(
       element.type,
@@ -18947,7 +18947,7 @@ function createChildReconciler(shouldTrackSideEffects) {
             returnFiber.mode,
             lanes
           ), newChild.return = returnFiber, newChild;
-        case REACT_LAZY_TYPE$1:
+        case REACT_LAZY_TYPE:
           var init = newChild._init;
           newChild = init(newChild._payload);
           return createChild(returnFiber, newChild, lanes);
@@ -18981,7 +18981,7 @@ function createChildReconciler(shouldTrackSideEffects) {
           return newChild.key === key ? updateElement(returnFiber, oldFiber, newChild, lanes) : null;
         case REACT_PORTAL_TYPE:
           return newChild.key === key ? updatePortal(returnFiber, oldFiber, newChild, lanes) : null;
-        case REACT_LAZY_TYPE$1:
+        case REACT_LAZY_TYPE:
           return key = newChild._init, newChild = key(newChild._payload), updateSlot(returnFiber, oldFiber, newChild, lanes);
       }
       if (isArrayImpl(newChild) || getIteratorFn(newChild))
@@ -19017,7 +19017,7 @@ function createChildReconciler(shouldTrackSideEffects) {
           return existingChildren = existingChildren.get(
             null === newChild.key ? newIdx : newChild.key
           ) || null, updatePortal(returnFiber, existingChildren, newChild, lanes);
-        case REACT_LAZY_TYPE$1:
+        case REACT_LAZY_TYPE:
           var init = newChild._init;
           newChild = init(newChild._payload);
           return updateFromMap(
@@ -19155,7 +19155,7 @@ function createChildReconciler(shouldTrackSideEffects) {
                     returnFiber = lanes;
                     break a;
                   }
-                } else if (currentFirstChild.elementType === key || "object" === typeof key && null !== key && key.$$typeof === REACT_LAZY_TYPE$1 && resolveLazy(key) === currentFirstChild.type) {
+                } else if (currentFirstChild.elementType === key || "object" === typeof key && null !== key && key.$$typeof === REACT_LAZY_TYPE && resolveLazy(key) === currentFirstChild.type) {
                   deleteRemainingChildren(
                     returnFiber,
                     currentFirstChild.sibling
@@ -19211,7 +19211,7 @@ function createChildReconciler(shouldTrackSideEffects) {
             returnFiber = lanes;
           }
           return placeSingleChild(returnFiber);
-        case REACT_LAZY_TYPE$1:
+        case REACT_LAZY_TYPE:
           return key = newChild._init, newChild = key(newChild._payload), reconcileChildFibersImpl(
             returnFiber,
             currentFirstChild,
@@ -28885,8 +28885,8 @@ var bt = 1, yt = class {
 }, v = new yt(), ne = (n, e) => {
   let t = (e == null ? void 0 : e.id) || bt++;
   return v.addToast({ title: n, ...e, id: t }), t;
-}, ie = (n) => n && typeof n == "object" && "ok" in n && typeof n.ok == "boolean" && "status" in n && typeof n.status == "number", le = ne, ce = () => v.toasts, de = () => v.getActiveToasts();
-Object.assign(le, { success: v.success, info: v.info, warning: v.warning, error: v.error, custom: v.custom, message: v.message, promise: v.promise, dismiss: v.dismiss, loading: v.loading }, { getHistory: ce, getToasts: de });
+}, ie = (n) => n && typeof n == "object" && "ok" in n && typeof n.ok == "boolean" && "status" in n && typeof n.status == "number", le = ne, ce = () => v.toasts, de$1 = () => v.getActiveToasts();
+Object.assign(le, { success: v.success, info: v.info, warning: v.warning, error: v.error, custom: v.custom, message: v.message, promise: v.promise, dismiss: v.dismiss, loading: v.loading }, { getHistory: ce, getToasts: de$1 });
 function wt(n, { insertAt: e } = {}) {
   if (typeof document == "undefined") return;
   let t = document.head || document.getElementsByTagName("head")[0], a2 = document.createElement("style");
@@ -34305,6 +34305,638 @@ function RouterContextProvider({
 function RouterProvider({ router: router2, ...rest }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RouterContextProvider, { router: router2, ...rest, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Matches, {}) });
 }
+const de = {
+  nav: {
+    about: "Über mich",
+    work: "Arbeit",
+    services: "Services",
+    contact: "Kontakt"
+  },
+  hero: {
+    greeting: "Hallo, ich bin",
+    roles: ["Software Engineer", "Frontend Developer", "IT Support Spezialist"],
+    tagline: "Saubere, moderne und zuverlässige Software — Commit für Commit.",
+    cta: "Meine Arbeit ansehen",
+    cv: "Lebenslauf laden",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    email: "E-Mail"
+  },
+  about: {
+    label: "Über mich",
+    titleLight: "Wer ich",
+    titleAccent: "wirklich bin",
+    p1: "Ich bin ein motivierter Software-Entwickler aus der Schweiz, der aktuell bei RUAG arbeitet und seine Ausbildung als Informatiker EFZ abschliesst.",
+    p2: "Ich liebe es, moderne, performante Anwendungen zu bauen. Sauberer Code und exzellente Nutzererlebnisse begeistern mich täglich — von NavData-Workflows bis zu polierten Frontends.",
+    p3: "Offen für neue Herausforderungen als Software Engineer, Frontend Developer oder IT Support — wo ich wachsen und beitragen kann.",
+    location: "🇨🇭 Schweiz",
+    company: "🏢 RUAG",
+    status: "🟢 Offen für Stellen",
+    languages: "🌐 DE · IT · EN",
+    apprenticeship: "🎓 Informatiker EFZ",
+    rosterTitle: "Roster",
+    roster: [
+      "RUAG AG — NavData & SODC",
+      "Benedict Schule — EFZ Applikationsentwicklung",
+      "Persönliche Projekte & Open Source"
+    ],
+    journeyTitle: "Mein Werdegang"
+  },
+  journey: [
+    {
+      role: "Lernender Applikationsentwickler",
+      company: "RUAG AG",
+      period: "2024 — Heute",
+      description: "Entwicklung interner Softwareanwendungen, Mitarbeit an NavData und dem Swiss Obstacle Database Converter (SODC), Validierungspipelines, Testing, QA und moderne Frontend-Lösungen mit React und TypeScript."
+    },
+    {
+      role: "Informatiker EFZ — Applikationsentwicklung",
+      company: "Benedict Schule",
+      period: "2022 — 2024",
+      description: "Berufliche Grundlage in Softwareentwicklung: objektorientiertes Design, Datenbanken (SQL), Schulprojekte und Präsentation technischer Arbeit."
+    },
+    {
+      role: "Sekundarschule",
+      company: "Sekundarschule Rüti",
+      period: "2019 — 2022",
+      description: "Breite Allgemeinbildung mit Fokus auf strukturiertes Arbeiten, analytisches Denken und Vorbereitung auf die IT-Lehre."
+    }
+  ],
+  services: {
+    label: "Fähigkeiten & Technologien",
+    titleLight: "Technisches",
+    titleAccent: "Arsenal",
+    sub: "Die Tools, mit denen ich Ideen zum Leben erwecke.",
+    categories: [
+      {
+        code: "LNG",
+        title: "Sprachen",
+        items: [
+          "JavaScript",
+          "TypeScript",
+          "HTML & CSS",
+          "SQL",
+          "Java",
+          "C / C++"
+        ]
+      },
+      {
+        code: "FWK",
+        title: "Frameworks",
+        items: [
+          "React.js",
+          "Tailwind CSS",
+          "REST APIs",
+          "Responsive Design",
+          "Node.js",
+          "Vite"
+        ]
+      },
+      {
+        code: "TOL",
+        title: "Tools",
+        items: [
+          "Git & GitHub",
+          "VS Code",
+          "Docker",
+          "Debugging",
+          "Dev Tools",
+          "Linux & Windows"
+        ]
+      },
+      {
+        code: "SFT",
+        title: "Soft Skills",
+        items: [
+          "Problemlösung",
+          "Schnelles Lernen",
+          "Teamarbeit",
+          "Kommunikation",
+          "Code Review",
+          "Technische Dokumentation"
+        ]
+      }
+    ],
+    pills: [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Git",
+      "GitHub",
+      "REST APIs",
+      "SQL",
+      "VS Code",
+      "Responsive Design"
+    ]
+  },
+  work: {
+    label: "Projekte",
+    titleLight: "Ausgewählte",
+    titleAccent: "Arbeit",
+    client: "PROJEKT",
+    prev: "Zurück",
+    next: "Weiter",
+    viewProject: "Case Study ansehen"
+  },
+  contact: {
+    label: "Kontakt",
+    titleLight: "Lass uns etwas",
+    titleAccent: "bauen.",
+    sub: "Offen für neue Möglichkeiten, Zusammenarbeit und Gespräche.",
+    email: "gaetanosalo@outlook.de",
+    github: "github.com/saloniagaetano767-svg",
+    linkedin: "linkedin.com/in/gaetano-salonia",
+    send: "Nachricht senden",
+    namePlaceholder: "Ihr Name",
+    emailPlaceholder: "Ihre E-Mail",
+    messagePlaceholder: "Ihre Nachricht",
+    successTitle: "Nachricht gesendet",
+    successMessage: "Danke — ich melde mich bald bei Ihnen.",
+    nameError: "Bitte geben Sie Ihren Namen ein.",
+    emailError: "Bitte geben Sie Ihre E-Mail ein.",
+    emailInvalid: "Bitte geben Sie eine gültige E-Mail ein.",
+    messageError: "Bitte geben Sie eine Nachricht ein.",
+    sending: "Wird gesendet…",
+    errorFallback: "Etwas ist schiefgelaufen — versuchen Sie es erneut oder schreiben Sie mir direkt."
+  },
+  footer: {
+    copy: "Mit Sorgfalt erstellt von Gaetano Salonia",
+    rights: "Alle Rechte vorbehalten."
+  }
+};
+const en = {
+  nav: {
+    about: "About",
+    work: "Work",
+    services: "Services",
+    contact: "Contact"
+  },
+  hero: {
+    greeting: "Hello, I'm",
+    roles: ["Software Engineer", "Frontend Developer", "IT Support Specialist"],
+    tagline: "Building clean, modern, and reliable software — one commit at a time.",
+    cta: "View My Work",
+    cv: "Download CV",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    email: "Email"
+  },
+  about: {
+    label: "About Me",
+    titleLight: "Who I",
+    titleAccent: "Actually Am",
+    p1: "I'm a motivated software engineer based in Switzerland, currently working at RUAG while completing my Informatiker EFZ apprenticeship in Application Development.",
+    p2: "I thrive building modern, performant applications and solving complex problems. I'm passionate about clean code, great UX, and growing my technical expertise — from NavData workflows to polished frontends.",
+    p3: "I'm open to my next opportunity as a Software Engineer, Frontend Developer, or IT Support Specialist — somewhere I can contribute, grow, and make an impact.",
+    location: "🇨🇭 Switzerland",
+    company: "🏢 RUAG",
+    status: "🟢 Open to Opportunities",
+    languages: "🌐 DE · IT · EN",
+    apprenticeship: "🎓 Informatiker EFZ",
+    rosterTitle: "Roster",
+    roster: [
+      "RUAG AG — NavData & SODC",
+      "Benedict School — EFZ Application Development",
+      "Personal projects & open source"
+    ],
+    journeyTitle: "My Journey"
+  },
+  journey: [
+    {
+      role: "Software Developer Apprentice",
+      company: "RUAG AG",
+      period: "2024 — Present",
+      description: "Developing and maintaining internal software applications, contributing to NavData and the Swiss Obstacle Database Converter (SODC), implementing validation pipelines, testing, QA, and modern frontend solutions with React and TypeScript."
+    },
+    {
+      role: "Informatiker EFZ — Application Development",
+      company: "Benedict School",
+      period: "2022 — 2024",
+      description: "Vocational foundation in software development: object-oriented design, databases (SQL), hands-on school projects, and presenting technical work to practitioners."
+    },
+    {
+      role: "Compulsory Education",
+      company: "Rüti Secondary School",
+      period: "2019 — 2022",
+      description: "Broad general education with an emphasis on structured work, analytical thinking, and preparation for a two-year IT apprenticeship."
+    }
+  ],
+  services: {
+    label: "Skills & Technologies",
+    titleLight: "Technical",
+    titleAccent: "Arsenal",
+    sub: "A curated set of tools I use to bring ideas to life.",
+    categories: [
+      {
+        code: "LNG",
+        title: "Languages",
+        items: [
+          "JavaScript",
+          "TypeScript",
+          "HTML & CSS",
+          "SQL",
+          "Java",
+          "C / C++"
+        ]
+      },
+      {
+        code: "FWK",
+        title: "Frameworks",
+        items: [
+          "React.js",
+          "Tailwind CSS",
+          "REST APIs",
+          "Responsive Design",
+          "Node.js",
+          "Vite"
+        ]
+      },
+      {
+        code: "TOL",
+        title: "Tools",
+        items: [
+          "Git & GitHub",
+          "VS Code",
+          "Docker",
+          "Debugging",
+          "Dev Tools",
+          "Linux & Windows"
+        ]
+      },
+      {
+        code: "SFT",
+        title: "Soft Skills",
+        items: [
+          "Problem-solving",
+          "Fast Learner",
+          "Teamwork",
+          "Communication",
+          "Code Review",
+          "Technical Documentation"
+        ]
+      }
+    ],
+    pills: [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Git",
+      "GitHub",
+      "REST APIs",
+      "SQL",
+      "VS Code",
+      "Responsive Design"
+    ]
+  },
+  work: {
+    label: "Featured Projects",
+    titleLight: "Featured",
+    titleAccent: "Work",
+    client: "PROJECT",
+    prev: "Previous",
+    next: "Next",
+    viewProject: "View case study"
+  },
+  contact: {
+    label: "Let's Connect",
+    titleLight: "Let's Build",
+    titleAccent: "Something.",
+    sub: "Open to new opportunities, collaborations, and conversations.",
+    email: "gaetanosalo@outlook.de",
+    github: "github.com/saloniagaetano767-svg",
+    linkedin: "linkedin.com/in/gaetano-salonia",
+    send: "Send Message",
+    namePlaceholder: "Your Name",
+    emailPlaceholder: "Your Email",
+    messagePlaceholder: "Your Message",
+    successTitle: "Message sent",
+    successMessage: "Thanks — I'll get back to you soon.",
+    nameError: "Please enter your name.",
+    emailError: "Please enter your email.",
+    emailInvalid: "Please enter a valid email address.",
+    messageError: "Please enter a short message.",
+    sending: "Sending…",
+    errorFallback: "Something went wrong — try again or email me directly."
+  },
+  footer: {
+    copy: "Crafted with precision by Gaetano Salonia",
+    rights: "All rights reserved."
+  }
+};
+const it = {
+  nav: {
+    about: "Chi sono",
+    work: "Lavori",
+    services: "Servizi",
+    contact: "Contatti"
+  },
+  hero: {
+    greeting: "Ciao, sono",
+    roles: [
+      "Software Engineer",
+      "Frontend Developer",
+      "Specialista IT Support"
+    ],
+    tagline: "Costruire software pulito, moderno e affidabile — un commit alla volta.",
+    cta: "Vedi il mio lavoro",
+    cv: "Scarica il CV",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    email: "Email"
+  },
+  about: {
+    label: "Chi sono",
+    titleLight: "Chi sono",
+    titleAccent: "davvero",
+    p1: "Sono un software engineer motivato con sede in Svizzera, attualmente in forza a RUAG mentre completo il mio apprendistato come Informatiker EFZ Application Developer.",
+    p2: "Mi appassiono alla creazione di applicazioni moderne e performanti. Credo nel codice pulito e nelle esperienze utente eccellenti — dai workflow NavData ai frontend curati.",
+    p3: "Aperto alla prossima opportunità come Software Engineer, Frontend Developer o Specialista IT Support — dove posso crescere e fare la differenza.",
+    location: "🇨🇭 Svizzera",
+    company: "🏢 RUAG",
+    status: "🟢 Aperto a opportunità",
+    languages: "🌐 DE · IT · EN",
+    apprenticeship: "🎓 Informatiker EFZ",
+    rosterTitle: "Roster",
+    roster: [
+      "RUAG AG — NavData & SODC",
+      "Benedict School — EFZ Application Development",
+      "Progetti personali & open source"
+    ],
+    journeyTitle: "Il mio percorso"
+  },
+  journey: [
+    {
+      role: "Apprendista Sviluppatore Software",
+      company: "RUAG AG",
+      period: "2024 — Presente",
+      description: "Sviluppo e manutenzione di applicazioni interne, contributo a NavData e al Swiss Obstacle Database Converter (SODC), pipeline di validazione, testing, QA e soluzioni frontend moderne con React e TypeScript."
+    },
+    {
+      role: "Informatiker EFZ — Application Development",
+      company: "Benedict School",
+      period: "2022 — 2024",
+      description: "Formazione professionale in sviluppo software: design orientato agli oggetti, database (SQL), progetti scolastici e presentazione del lavoro tecnico."
+    },
+    {
+      role: "Scuola secondaria",
+      company: "Scuola secondaria Rüti",
+      period: "2019 — 2022",
+      description: "Istruzione generale con enfasi sul lavoro strutturato, pensiero analitico e preparazione all'apprendistato IT."
+    }
+  ],
+  services: {
+    label: "Competenze & Tecnologie",
+    titleLight: "Arsenale",
+    titleAccent: "Tecnico",
+    sub: "Gli strumenti con cui do vita alle idee.",
+    categories: [
+      {
+        code: "LNG",
+        title: "Linguaggi",
+        items: [
+          "JavaScript",
+          "TypeScript",
+          "HTML & CSS",
+          "SQL",
+          "Java",
+          "C / C++"
+        ]
+      },
+      {
+        code: "FWK",
+        title: "Framework",
+        items: [
+          "React.js",
+          "Tailwind CSS",
+          "REST APIs",
+          "Responsive Design",
+          "Node.js",
+          "Vite"
+        ]
+      },
+      {
+        code: "TOL",
+        title: "Strumenti",
+        items: [
+          "Git & GitHub",
+          "VS Code",
+          "Docker",
+          "Debugging",
+          "Dev Tools",
+          "Linux & Windows"
+        ]
+      },
+      {
+        code: "SFT",
+        title: "Soft Skills",
+        items: [
+          "Problem-solving",
+          "Apprendimento rapido",
+          "Teamwork",
+          "Comunicazione",
+          "Code Review",
+          "Documentazione tecnica"
+        ]
+      }
+    ],
+    pills: [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Git",
+      "GitHub",
+      "REST APIs",
+      "SQL",
+      "VS Code",
+      "Responsive Design"
+    ]
+  },
+  work: {
+    label: "Progetti in evidenza",
+    titleLight: "Lavori",
+    titleAccent: "Selezionati",
+    client: "PROGETTO",
+    prev: "Precedente",
+    next: "Successivo",
+    viewProject: "Vedi case study"
+  },
+  contact: {
+    label: "Connettiamoci",
+    titleLight: "Costruiamo",
+    titleAccent: "qualcosa.",
+    sub: "Aperto a nuove opportunità, collaborazioni e conversazioni.",
+    email: "gaetanosalo@outlook.de",
+    github: "github.com/saloniagaetano767-svg",
+    linkedin: "linkedin.com/in/gaetano-salonia",
+    send: "Invia messaggio",
+    namePlaceholder: "Il tuo nome",
+    emailPlaceholder: "La tua email",
+    messagePlaceholder: "Il tuo messaggio",
+    successTitle: "Messaggio inviato",
+    successMessage: "Grazie — ti risponderò presto.",
+    nameError: "Inserisci il tuo nome.",
+    emailError: "Inserisci la tua email.",
+    emailInvalid: "Inserisci un indirizzo email valido.",
+    messageError: "Inserisci un messaggio.",
+    sending: "Invio in corso…",
+    errorFallback: "Qualcosa è andato storto — riprova o scrivimi direttamente."
+  },
+  footer: {
+    copy: "Creato con precisione da Gaetano Salonia",
+    rights: "Tutti i diritti riservati."
+  }
+};
+const STORAGE_KEY = "portfolio-locale";
+const translations = { EN: en, DE: de, IT: it };
+const htmlLang = {
+  EN: "en",
+  DE: "de",
+  IT: "it"
+};
+const LocaleContext = reactExports.createContext(null);
+function readStoredLocale() {
+  if (typeof window === "undefined") return "EN";
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === "DE" || stored === "IT" || stored === "EN") return stored;
+  return "EN";
+}
+function LocaleProvider({ children }) {
+  const [locale, setLocaleState] = reactExports.useState(readStoredLocale);
+  const setLocale = reactExports.useCallback((next) => {
+    setLocaleState(next);
+    localStorage.setItem(STORAGE_KEY, next);
+  }, []);
+  reactExports.useEffect(() => {
+    document.documentElement.lang = htmlLang[locale];
+  }, [locale]);
+  const value = reactExports.useMemo(
+    () => ({
+      locale,
+      t: translations[locale],
+      setLocale
+    }),
+    [locale, setLocale]
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(LocaleContext.Provider, { value, children });
+}
+function useTranslation() {
+  const ctx = reactExports.useContext(LocaleContext);
+  if (!ctx) {
+    throw new Error("useTranslation must be used within LocaleProvider");
+  }
+  return ctx;
+}
+function LanguageSwitcher({ className = "" }) {
+  const { locale, setLocale } = useTranslation();
+  const locales = ["EN", "DE", "IT"];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex items-center gap-1.5 ${className}`, children: locales.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "button",
+    {
+      type: "button",
+      onClick: () => setLocale(l),
+      className: `font-mono text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md transition-all duration-200 ${locale === l ? "btn-gradient text-[#070b14]" : "bg-white/5 text-[#5a6a88] hover:text-primary"}`,
+      "aria-pressed": locale === l,
+      "aria-label": `Switch language to ${l}`,
+      children: l
+    },
+    l
+  )) });
+}
+const CONTACT_EMAIL = "gaetanosalo@outlook.de";
+const BRAND_MARK = "GS.";
+const GITHUB_URL = "https://github.com/saloniagaetano767-svg";
+const LINKEDIN_URL = "https://www.linkedin.com/in/gaetano-salonia";
+function Footer() {
+  const { t } = useTranslation();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "footer",
+    {
+      className: "border-t border-white/5 py-8 px-8",
+      "data-ocid": "footer.section",
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1100px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display font-extrabold text-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: BRAND_MARK.replace(".", "") }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-[#3a4a68]", children: t.footer.copy }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[#2a3a58] mt-1", children: t.footer.rights })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, {})
+      ] })
+    }
+  );
+}
+function projectCode(title) {
+  const words = title.split(/\s+/).filter(Boolean);
+  if (words.length >= 3) {
+    return words.slice(0, 3).map((w2) => {
+      var _a3;
+      return ((_a3 = w2[0]) == null ? void 0 : _a3.toUpperCase()) ?? "";
+    }).join("");
+  }
+  if (words.length === 2) {
+    return (words[0].slice(0, 2) + words[1][0]).toUpperCase().slice(0, 3);
+  }
+  return title.replace(/[^a-zA-Z]/g, "").slice(0, 3).toUpperCase().padEnd(3, "X");
+}
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const handler = () => setReduced(mq.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return reduced;
+}
+function useMouseParallax({
+  maxTilt = 8,
+  enabled = true
+} = {}) {
+  const ref = reactExports.useRef(null);
+  const [transform, setTransform] = reactExports.useState(
+    "perspective(800px) rotateX(0deg) rotateY(0deg)"
+  );
+  reactExports.useEffect(() => {
+    if (!enabled) return;
+    const el = ref.current;
+    if (!el) return;
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
+      const rotateY = dx * maxTilt;
+      const rotateX = -dy * maxTilt;
+      setTransform(
+        `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`
+      );
+    };
+    const onLeave = () => {
+      setTransform("perspective(800px) rotateX(0deg) rotateY(0deg)");
+    };
+    el.addEventListener("mousemove", onMove);
+    el.addEventListener("mouseleave", onLeave);
+    return () => {
+      el.removeEventListener("mousemove", onMove);
+      el.removeEventListener("mouseleave", onLeave);
+    };
+  }, [enabled, maxTilt]);
+  return { ref, transform };
+}
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -34410,64 +35042,6 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$5 = [
-  ["path", { d: "M12 15V3", key: "m9g1x1" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
-];
-const Download = createLucideIcon("download", __iconNode$5);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$4 = [
-  [
-    "path",
-    {
-      d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
-      key: "tonef"
-    }
-  ],
-  ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
-];
-const Github = createLucideIcon("github", __iconNode$4);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$3 = [
-  [
-    "path",
-    {
-      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
-      key: "c2jq9f"
-    }
-  ],
-  ["rect", { width: "4", height: "12", x: "2", y: "9", key: "mk3on5" }],
-  ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }]
-];
-const Linkedin = createLucideIcon("linkedin", __iconNode$3);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$2 = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$2);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 const __iconNode$1 = [
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 18h16", key: "19g7jn" }],
@@ -34485,352 +35059,73 @@ const __iconNode = [
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ];
 const X = createLucideIcon("x", __iconNode);
-const YEAR = (/* @__PURE__ */ new Date()).getFullYear();
-const SOCIAL = [
-  {
-    icon: Mail,
-    href: "mailto:hello@gaetanosalonia.com",
-    label: "Email"
-  },
-  {
-    icon: Github,
-    href: "https://github.com/saloniagaetano767-svg",
-    label: "GitHub"
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/gaetano-salonia",
-    label: "LinkedIn"
-  }
-];
-function Footer() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "footer",
-    {
-      className: "bg-card border-t border-border/60",
-      "data-ocid": "footer.section",
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container mx-auto px-6 py-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-display font-bold text-lg text-foreground", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: "<" }),
-          "Gaetano",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: "/>" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground text-center", children: [
-          "© ",
-          YEAR,
-          " Gaetano Salonia · Switzerland"
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "ul",
-          {
-            className: "flex items-center gap-4",
-            "aria-label": "Social media links",
-            children: SOCIAL.map(({ icon: Icon2, href, label }) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href,
-                target: href.startsWith("mailto:") ? void 0 : "_blank",
-                rel: href.startsWith("mailto:") ? void 0 : "noopener noreferrer",
-                "aria-label": label,
-                className: "text-muted-foreground hover:text-primary transition-colors duration-200 p-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                "data-ocid": `footer.${label.toLowerCase()}_link`,
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-5 h-5", "aria-hidden": "true" })
-              }
-            ) }, label))
-          }
-        )
-      ] }) })
-    }
-  );
-}
-function setRef(ref, value) {
-  if (typeof ref === "function") {
-    return ref(value);
-  } else if (ref !== null && ref !== void 0) {
-    ref.current = value;
-  }
-}
-function composeRefs(...refs) {
-  return (node) => {
-    let hasCleanup = false;
-    const cleanups = refs.map((ref) => {
-      const cleanup = setRef(ref, node);
-      if (!hasCleanup && typeof cleanup == "function") {
-        hasCleanup = true;
-      }
-      return cleanup;
-    });
-    if (hasCleanup) {
-      return () => {
-        for (let i = 0; i < cleanups.length; i++) {
-          const cleanup = cleanups[i];
-          if (typeof cleanup == "function") {
-            cleanup();
-          } else {
-            setRef(refs[i], null);
-          }
-        }
-      };
-    }
-  };
-}
-var REACT_LAZY_TYPE = Symbol.for("react.lazy");
-var use = React$4[" use ".trim().toString()];
-function isPromiseLike(value) {
-  return typeof value === "object" && value !== null && "then" in value;
-}
-function isLazyComponent(element) {
-  return element != null && typeof element === "object" && "$$typeof" in element && element.$$typeof === REACT_LAZY_TYPE && "_payload" in element && isPromiseLike(element._payload);
-}
-// @__NO_SIDE_EFFECTS__
-function createSlot(ownerName) {
-  const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
-  const Slot2 = reactExports.forwardRef((props, forwardedRef) => {
-    let { children, ...slotProps } = props;
-    if (isLazyComponent(children) && typeof use === "function") {
-      children = use(children._payload);
-    }
-    const childrenArray = reactExports.Children.toArray(children);
-    const slottable = childrenArray.find(isSlottable);
-    if (slottable) {
-      const newElement = slottable.props.children;
-      const newChildren = childrenArray.map((child) => {
-        if (child === slottable) {
-          if (reactExports.Children.count(newElement) > 1) return reactExports.Children.only(null);
-          return reactExports.isValidElement(newElement) ? newElement.props.children : null;
-        } else {
-          return child;
-        }
-      });
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children: reactExports.isValidElement(newElement) ? reactExports.cloneElement(newElement, void 0, newChildren) : null });
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SlotClone, { ...slotProps, ref: forwardedRef, children });
-  });
-  Slot2.displayName = `${ownerName}.Slot`;
-  return Slot2;
-}
-var Slot = /* @__PURE__ */ createSlot("Slot");
-// @__NO_SIDE_EFFECTS__
-function createSlotClone(ownerName) {
-  const SlotClone = reactExports.forwardRef((props, forwardedRef) => {
-    let { children, ...slotProps } = props;
-    if (isLazyComponent(children) && typeof use === "function") {
-      children = use(children._payload);
-    }
-    if (reactExports.isValidElement(children)) {
-      const childrenRef = getElementRef(children);
-      const props2 = mergeProps(slotProps, children.props);
-      if (children.type !== reactExports.Fragment) {
-        props2.ref = forwardedRef ? composeRefs(forwardedRef, childrenRef) : childrenRef;
-      }
-      return reactExports.cloneElement(children, props2);
-    }
-    return reactExports.Children.count(children) > 1 ? reactExports.Children.only(null) : null;
-  });
-  SlotClone.displayName = `${ownerName}.SlotClone`;
-  return SlotClone;
-}
-var SLOTTABLE_IDENTIFIER = Symbol("radix.slottable");
-function isSlottable(child) {
-  return reactExports.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER;
-}
-function mergeProps(slotProps, childProps) {
-  const overrideProps = { ...childProps };
-  for (const propName in childProps) {
-    const slotPropValue = slotProps[propName];
-    const childPropValue = childProps[propName];
-    const isHandler = /^on[A-Z]/.test(propName);
-    if (isHandler) {
-      if (slotPropValue && childPropValue) {
-        overrideProps[propName] = (...args) => {
-          const result = childPropValue(...args);
-          slotPropValue(...args);
-          return result;
-        };
-      } else if (slotPropValue) {
-        overrideProps[propName] = slotPropValue;
-      }
-    } else if (propName === "style") {
-      overrideProps[propName] = { ...slotPropValue, ...childPropValue };
-    } else if (propName === "className") {
-      overrideProps[propName] = [slotPropValue, childPropValue].filter(Boolean).join(" ");
-    }
-  }
-  return { ...slotProps, ...overrideProps };
-}
-function getElementRef(element) {
-  var _a3, _b3;
-  let getter = (_a3 = Object.getOwnPropertyDescriptor(element.props, "ref")) == null ? void 0 : _a3.get;
-  let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.ref;
-  }
-  getter = (_b3 = Object.getOwnPropertyDescriptor(element, "ref")) == null ? void 0 : _b3.get;
-  mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.props.ref;
-  }
-  return element.props.ref || element.ref;
-}
-const falsyToString = (value) => typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
-const cx = clsx;
-const cva = (base, config) => (props) => {
-  var _config_compoundVariants;
-  if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-  const { variants, defaultVariants } = config;
-  const getVariantClassNames = Object.keys(variants).map((variant) => {
-    const variantProp = props === null || props === void 0 ? void 0 : props[variant];
-    const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
-    if (variantProp === null) return null;
-    const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
-    return variants[variant][variantKey];
-  });
-  const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param) => {
-    let [key, value] = param;
-    if (value === void 0) {
-      return acc;
-    }
-    acc[key] = value;
-    return acc;
-  }, {});
-  const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param) => {
-    let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
-    return Object.entries(compoundVariantOptions).every((param2) => {
-      let [key, value] = param2;
-      return Array.isArray(value) ? value.includes({
-        ...defaultVariants,
-        ...propsWithoutUndefined
-      }[key]) : {
-        ...defaultVariants,
-        ...propsWithoutUndefined
-      }[key] === value;
-    }) ? [
-      ...acc,
-      cvClass,
-      cvClassName
-    ] : acc;
-  }, []);
-  return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+const SECTION_IDS = {
+  about: "about",
+  work: "work",
+  services: "services",
+  contact: "contact"
 };
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline: "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline"
-      },
-      size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9"
-      }
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default"
-    }
-  }
-);
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot : "button";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Comp,
-    {
-      "data-slot": "button",
-      className: cn(buttonVariants({ variant, size, className })),
-      ...props
-    }
-  );
-}
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" }
-];
 function Navbar() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = reactExports.useState(false);
   const [scrolled, setScrolled] = reactExports.useState(false);
+  const navLinks = [
+    { label: t.nav.about, id: SECTION_IDS.about },
+    { label: t.nav.work, id: SECTION_IDS.work },
+    { label: t.nav.services, id: SECTION_IDS.services },
+    { label: t.nav.contact, id: SECTION_IDS.contact }
+  ];
   reactExports.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const handleNavClick = (href) => {
+  const handleNavClick = (id) => {
     setIsOpen(false);
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToSection(id);
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "header",
     {
-      className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-card/95 backdrop-blur-md border-b border-border shadow-elevated" : "bg-transparent"}`,
+      className: `fixed top-0 left-0 right-0 z-50 h-16 px-8 flex items-center transition-all duration-400 ${scrolled ? "nav-scrolled" : "bg-transparent"}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "nav",
           {
-            className: "container mx-auto px-6 h-16 flex items-center justify-between",
+            className: "w-full max-w-[1100px] mx-auto flex items-center justify-between",
             "aria-label": "Main navigation",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 Link,
                 {
                   to: "/",
-                  className: "font-display font-bold text-xl text-foreground hover:text-primary transition-colors duration-200",
+                  className: "font-display font-extrabold text-xl tracking-tight",
                   "data-ocid": "nav.home_link",
-                  "aria-label": "Home",
+                  "aria-label": "Home — Gaetano Salonia",
+                  onClick: () => scrollToSection("hero"),
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: "<" }),
-                    "Gaetano",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: "/>" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grad-teal", children: BRAND_MARK.replace(".", "") }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#2a3a68]", children: "." })
                   ]
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "hidden md:flex items-center gap-8", children: NAV_LINKS.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "hidden md:flex items-center gap-7", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
-                  onClick: () => handleNavClick(link.href),
-                  className: "text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
-                  "data-ocid": `nav.${link.label.toLowerCase()}_link`,
+                  onClick: () => handleNavClick(link.id),
+                  className: "text-[13px] font-medium text-[#6a7a98] hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body",
+                  "data-ocid": `nav.${link.id}_link`,
                   children: link.label
                 }
-              ) }, link.href)) }),
+              ) }, link.id)) }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    variant: "outline",
-                    size: "sm",
-                    className: "hidden md:flex items-center gap-2 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary transition-smooth font-display",
-                    asChild: true,
-                    "data-ocid": "nav.resume_button",
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/cv.pdf", download: true, "aria-label": "Download CV as PDF", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4", "aria-hidden": "true" }),
-                      "Résumé"
-                    ] })
-                  }
-                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, { className: "hidden sm:flex" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "button",
                   {
                     type: "button",
-                    className: "md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                    className: "md:hidden p-2 rounded-md text-[#6a7a98] hover:text-foreground transition-colors",
                     onClick: () => setIsOpen(!isOpen),
                     "aria-label": isOpen ? "Close menu" : "Open menu",
                     "aria-expanded": isOpen,
@@ -34847,32 +35142,20 @@ function Navbar() {
           "div",
           {
             id: "mobile-menu",
-            className: `md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} bg-card/95 backdrop-blur-md border-b border-border`,
+            className: `md:hidden absolute top-16 left-0 right-0 overflow-hidden transition-all duration-300 nav-scrolled ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`,
             "aria-hidden": !isOpen,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "container mx-auto px-6 py-4 flex flex-col gap-4", children: [
-              NAV_LINKS.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "px-8 py-4 flex flex-col gap-3", children: [
+              navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
-                  onClick: () => handleNavClick(link.href),
-                  className: "block w-full text-left text-sm font-body text-muted-foreground hover:text-foreground py-2 transition-colors duration-200",
-                  "data-ocid": `nav.mobile_${link.label.toLowerCase()}_link`,
+                  onClick: () => handleNavClick(link.id),
+                  className: "block w-full text-left text-sm text-[#6a7a98] hover:text-primary py-2 transition-colors",
+                  "data-ocid": `nav.mobile_${link.id}_link`,
                   children: link.label
                 }
-              ) }, link.href)),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "pt-2 border-t border-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "/cv.pdf",
-                  download: true,
-                  className: "flex items-center gap-2 text-sm font-display text-primary hover:text-primary/80 py-2 transition-colors duration-200",
-                  "data-ocid": "nav.mobile_resume_button",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4", "aria-hidden": "true" }),
-                    "Résumé"
-                  ]
-                }
-              ) })
+              ) }, link.id)),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "pt-2 border-t border-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSwitcher, {}) })
             ] })
           }
         )
@@ -34880,8 +35163,51 @@ function Navbar() {
     }
   );
 }
+function PageBackground() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "pointer-events-none fixed inset-0 -z-10 overflow-hidden",
+      "aria-hidden": true,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute inset-0",
+            style: {
+              backgroundImage: [
+                "linear-gradient(rgba(94,231,208,0.025) 1px, transparent 1px)",
+                "linear-gradient(90deg, rgba(94,231,208,0.025) 1px, transparent 1px)"
+              ].join(","),
+              backgroundSize: "60px 60px"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[40px]",
+            style: {
+              background: "radial-gradient(circle, rgba(94,231,208,0.07) 0%, transparent 65%)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute bottom-0 -right-[10%] w-[500px] h-[500px] rounded-full blur-[40px]",
+            style: {
+              background: "radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 65%)"
+            }
+          }
+        )
+      ]
+    }
+  );
+}
 function Layout({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col bg-background text-foreground", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(LocaleProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col bg-background text-foreground relative", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(PageBackground, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
@@ -34894,10 +35220,10 @@ function Layout({ children }) {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
-  ] });
+  ] }) });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-Cqlw1G_y.js"), true ? __vite__mapDeps([0,1]) : void 0));
-const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-fuhKZHx2.js"), true ? __vite__mapDeps([2,1]) : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-BPIDruj5.js"), true ? __vite__mapDeps([0,1]) : void 0));
+const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-BIQCg1yK.js"), true ? __vite__mapDeps([2,1]) : void 0));
 function PageLoader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
@@ -34941,75 +35267,78 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InternetIdentityProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
 );
 export {
-  timeUntilStale as $,
-  encode$2 as A,
-  Button as B,
-  Certificate as C,
-  Download as D,
+  pendingThenable as $,
+  CertifiedRejectErrorCode as A,
+  UNREACHABLE_ERROR as B,
+  CONTACT_EMAIL as C,
+  InvalidReadStateRequestErrorCode as D,
   ExternalError as E,
-  UncertifiedRejectErrorCode as F,
-  Github as G,
-  HttpAgent as H,
+  ReadRequestType as F,
+  GITHUB_URL as G,
+  Principal$1 as H,
   InputError as I,
-  isV3ResponseBody as J,
-  isV2ResponseBody as K,
-  Link as L,
-  Mail as M,
-  UncertifiedRejectUpdateErrorCode as N,
-  UnexpectedErrorCode as O,
+  IDL as J,
+  MissingCanisterIdErrorCode as K,
+  LINKEDIN_URL as L,
+  MissingRootKeyErrorCode as M,
+  HttpAgent as N,
+  encode$2 as O,
   ProtocolError as P,
   QueryResponseStatus as Q,
-  RequestStatusResponseStatus as R,
+  React$4 as R,
   Subscribable as S,
   TimeoutWaitingForResponseErrorCode as T,
   UnknownError as U,
-  decode$2 as V,
-  pendingThenable as W,
-  resolveEnabled as X,
-  resolveStaleTime as Y,
-  environmentManager as Z,
-  isValidTimeout as _,
+  UncertifiedRejectErrorCode as V,
+  isV3ResponseBody as W,
+  isV2ResponseBody as X,
+  UncertifiedRejectUpdateErrorCode as Y,
+  UnexpectedErrorCode as Z,
+  decode$2 as _,
   noop$6 as a,
-  timeoutManager as a0,
-  focusManager as a1,
-  fetchState as a2,
-  replaceData as a3,
-  useInternetIdentity as a4,
-  createActorWithConfig as a5,
-  Record as a6,
-  Vec as a7,
-  Opt as a8,
-  Service as a9,
-  Func as aa,
-  Nat as ab,
-  Text as ac,
-  Bool as ad,
-  Int as ae,
-  Slot as af,
-  cva as ag,
+  resolveEnabled as a0,
+  resolveStaleTime as a1,
+  environmentManager as a2,
+  isValidTimeout as a3,
+  timeUntilStale as a4,
+  timeoutManager as a5,
+  focusManager as a6,
+  fetchState as a7,
+  replaceData as a8,
+  useInternetIdentity as a9,
+  createActorWithConfig as aa,
+  Record as ab,
+  Vec as ac,
+  Opt as ad,
+  Service as ae,
+  Func as af,
+  Nat as ag,
+  Text as ah,
+  Bool as ai,
+  Int as aj,
   shouldThrowError as b,
   createLucideIcon as c,
-  Skeleton as d,
-  cn as e,
-  createSlot as f,
+  useTranslation as d,
+  usePrefersReducedMotion as e,
+  useMouseParallax as f,
   getDefaultState as g,
   hashKey as h,
-  useParams as i,
+  scrollToSection as i,
   jsxRuntimeExports as j,
-  utf8ToBytes as k,
-  MissingRootKeyErrorCode as l,
-  lookupResultToBuffer as m,
+  Skeleton as k,
+  Link as l,
+  clsx as m,
   notifyManager as n,
-  RequestStatusDoneNoReplyErrorCode as o,
-  RejectError as p,
-  CertifiedRejectErrorCode as q,
+  cn as o,
+  projectCode as p,
+  useParams as q,
   reactExports as r,
   shallowEqualObjects as s,
-  UNREACHABLE_ERROR as t,
+  utf8ToBytes as t,
   useQueryClient as u,
-  InvalidReadStateRequestErrorCode as v,
-  ReadRequestType as w,
-  Principal$1 as x,
-  IDL as y,
-  MissingCanisterIdErrorCode as z
+  Certificate as v,
+  lookupResultToBuffer as w,
+  RequestStatusResponseStatus as x,
+  RequestStatusDoneNoReplyErrorCode as y,
+  RejectError as z
 };

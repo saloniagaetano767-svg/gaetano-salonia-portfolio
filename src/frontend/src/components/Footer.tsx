@@ -1,78 +1,25 @@
-import { BRAND_MARK, CONTACT_EMAIL } from "@/lib/site";
-import { Github, Linkedin, Mail } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
-const YEAR = new Date().getFullYear();
-
-interface SocialItem {
-  icon: LucideIcon;
-  href: string;
-  label: string;
-}
-
-const SOCIAL: SocialItem[] = [
-  {
-    icon: Mail,
-    href: `mailto:${CONTACT_EMAIL}`,
-    label: "Email",
-  },
-  {
-    icon: Github,
-    href: "https://github.com/saloniagaetano767-svg",
-    label: "GitHub",
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/gaetano-salonia",
-    label: "LinkedIn",
-  },
-];
+import { LanguageSwitcher, useTranslation } from "@/i18n";
+import { BRAND_MARK } from "@/lib/site";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer
-      className="bg-card border-t border-border/60"
+      className="border-t border-white/5 py-8 px-8"
       data-ocid="footer.section"
     >
-      <div className="container mx-auto px-6 py-10 md:py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-8">
-          {/* Brand */}
-          <div className="font-display font-bold text-lg text-foreground tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              {BRAND_MARK}
-            </span>
-          </div>
-
-          {/* Tagline */}
-          <p className="text-sm text-muted-foreground text-center">
-            © {YEAR} Gaetano Salonia · Switzerland
-          </p>
-
-          {/* Social links */}
-          <ul
-            className="flex items-center gap-4"
-            aria-label="Social media links"
-          >
-            {SOCIAL.map(({ icon: Icon, href, label }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target={href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={
-                    href.startsWith("mailto:")
-                      ? undefined
-                      : "noopener noreferrer"
-                  }
-                  aria-label={label}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 p-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  data-ocid={`footer.${label.toLowerCase()}_link`}
-                >
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
+      <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
+        <div className="font-display font-extrabold text-lg">
+          <span className="grad-teal">{BRAND_MARK.replace(".", "")}</span>
         </div>
+        <div className="text-center">
+          <p className="text-[13px] text-[#3a4a68]">{t.footer.copy}</p>
+          <p className="font-mono text-[10px] text-[#2a3a58] mt-1">
+            {t.footer.rights}
+          </p>
+        </div>
+        <LanguageSwitcher />
       </div>
     </footer>
   );
