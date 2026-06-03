@@ -2,6 +2,7 @@ import { InternetIdentityProvider } from "@caffeineai/core-infrastructure";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import "lenis/dist/lenis.css";
 import "./index.css";
 import { initTheme } from "./lib/theme";
 

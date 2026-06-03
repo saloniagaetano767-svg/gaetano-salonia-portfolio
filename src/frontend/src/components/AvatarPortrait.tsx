@@ -1,12 +1,23 @@
 import { useMouseParallax, usePrefersReducedMotion } from "@/lib/motion";
-import { useState } from "react";
+import type { SiteTheme } from "@/lib/theme";
+import { useSiteTheme } from "@/lib/useSiteTheme";
+import { useEffect, useState } from "react";
 
-const AVATAR_SRC = "/assets/images/avatar.png";
+const AVATAR_BY_THEME: Record<SiteTheme, string> = {
+  dark: "/assets/images/avatar_dark.png",
+  light: "/assets/images/avatar_light.png",
+};
 const FALLBACK_SRC = "/assets/images/placeholder.svg";
 
 export function AvatarPortrait() {
   const reducedMotion = usePrefersReducedMotion();
-  const [src, setSrc] = useState(AVATAR_SRC);
+  const theme = useSiteTheme();
+  const avatarSrc = AVATAR_BY_THEME[theme];
+  const [src, setSrc] = useState(avatarSrc);
+
+  useEffect(() => {
+    setSrc(avatarSrc);
+  }, [avatarSrc]);
   const { ref, transform } = useMouseParallax<HTMLDivElement>({
     enabled: !reducedMotion,
     maxTilt: 6,
@@ -41,14 +52,20 @@ export function AvatarPortrait() {
               width={480}
               height={600}
             />
-            <div className="avatar-haunt-chroma-left pointer-events-none" aria-hidden />
-            <div className="avatar-haunt-chroma-right pointer-events-none" aria-hidden />
+            <div
+              className="avatar-haunt-chroma-left pointer-events-none"
+              aria-hidden
+            />
+            <div
+              className="avatar-haunt-chroma-right pointer-events-none"
+              aria-hidden
+            />
             <div
               className="absolute inset-0 pointer-events-none opacity-0 animate-[blink_6s_ease-in-out_infinite] z-30"
-            style={{
-              background:
-                "linear-gradient(to bottom, transparent 38%, var(--vignette) 42%, transparent 46%)",
-            }}
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 38%, var(--vignette) 42%, transparent 46%)",
+              }}
               aria-hidden
             />
           </>

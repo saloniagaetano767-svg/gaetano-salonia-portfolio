@@ -1,24 +1,22 @@
-import { toggleTheme, type SiteTheme } from "@/lib/theme";
-import { useEffect, useState } from "react";
+import { useTranslation } from "@/i18n";
+import { toggleTheme } from "@/lib/theme";
+import { useSiteTheme } from "@/lib/useSiteTheme";
+import { Moon, Sun } from "lucide-react";
 import { ThemeFlashOverlay, useThemeFlash } from "./ThemeFlash";
 
 export function ThemeToggle() {
-  const [theme, setThemeState] = useState<SiteTheme>("dark");
+  const { t } = useTranslation();
+  const theme = useSiteTheme();
   const { active: flashActive, triggerFlash } = useThemeFlash();
   const isLight = theme === "light";
 
-  useEffect(() => {
-    const current = document.documentElement.dataset.theme as SiteTheme | undefined;
-    setThemeState(current === "light" ? "light" : "dark");
-  }, []);
-
   const handleToggle = () => {
     triggerFlash();
-    const next = toggleTheme();
-    setThemeState(next);
+    toggleTheme();
   };
 
-  const tooltip = isLight ? "Hellblau-Theme deaktivieren" : "Hellblau-Theme aktivieren";
+  const label = isLight ? t.theme.buttonDark : t.theme.buttonLight;
+  const tooltip = isLight ? t.theme.disableLight : t.theme.enableLight;
 
   return (
     <>
@@ -26,29 +24,17 @@ export function ThemeToggle() {
       <button
         type="button"
         onClick={handleToggle}
-        className="theme-switch group"
+        className="theme-toggle-btn"
         aria-label={tooltip}
-        aria-pressed={isLight}
         title={tooltip}
         data-ocid="theme.toggle"
       >
-        <span className="theme-switch-track">
-          <span
-            className={`theme-switch-thumb ${isLight ? "is-on" : ""}`}
-            aria-hidden
-          />
-          <span
-            className={`theme-switch-label ${!isLight ? "is-active" : "is-inactive"}`}
-          >
-            OFF
-          </span>
-          <span
-            className={`theme-switch-label ${isLight ? "is-active" : "is-inactive"}`}
-          >
-            ON
-          </span>
-        </span>
-        <span className="theme-switch-tooltip">{tooltip}</span>
+        {isLight ? (
+          <Moon className="size-4 shrink-0" aria-hidden />
+        ) : (
+          <Sun className="size-4 shrink-0" aria-hidden />
+        )}
+        <span>{label}</span>
       </button>
     </>
   );

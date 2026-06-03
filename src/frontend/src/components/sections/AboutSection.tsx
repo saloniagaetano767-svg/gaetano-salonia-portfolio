@@ -14,7 +14,10 @@ function InfoRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function JourneyNode({ item, futureIndex }: { item: JourneyItem; futureIndex?: number }) {
+function JourneyNode({
+  item,
+  futureIndex,
+}: { item: JourneyItem; futureIndex?: number }) {
   const isFuture = item.phase === "future";
   const FutureIcon = futureIndex === 1 ? GraduationCap : Brain;
 
@@ -28,7 +31,9 @@ function JourneyNode({ item, futureIndex }: { item: JourneyItem; futureIndex?: n
         >
           {item.role}
         </h3>
-        <span className="text-[13px] text-primary font-semibold">@ {item.company}</span>
+        <span className="text-[13px] text-primary font-semibold">
+          @ {item.company}
+        </span>
         {item.badge && (
           <span className="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full border border-primary/30 text-primary bg-primary/10">
             {item.badge}
@@ -143,42 +148,13 @@ export function AboutSection() {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-12 lg:gap-16 items-start">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="space-y-4"
-        >
-          <p className="text-sm text-muted-foreground leading-relaxed">{t.about.p1}</p>
-          <p className="text-sm text-muted-foreground leading-relaxed">{t.about.p2}</p>
-          <p className="text-sm text-muted-foreground leading-relaxed">{t.about.p3}</p>
-
-          <div className="pt-8">
-            <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-4">
-              {t.about.rosterTitle}
-            </p>
-            <ul className="space-y-2">
-              {t.about.roster.map((item) => (
-                <li
-                  key={item}
-                  className="text-sm text-foreground/90 font-medium flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-16 items-start">
         <motion.aside
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-card rounded-[18px] p-7"
+          viewport={{ once: true, margin: "-8%" }}
+          transition={{ duration: 0.7 }}
+          className="glass-card rounded-[18px] p-7 lg:sticky lg:top-28 lg:self-start order-2 lg:order-1"
         >
           <InfoRow label="Location" value={t.about.location} />
           <InfoRow label="Company" value={t.about.company} />
@@ -186,6 +162,23 @@ export function AboutSection() {
           <InfoRow label="Languages" value={t.about.languages} />
           <InfoRow label="Apprenticeship" value={t.about.apprenticeship} />
         </motion.aside>
+
+        <div className="space-y-8 order-1 lg:order-2">
+          {[t.about.p1, t.about.p2, t.about.p3, t.about.p4, t.about.p5].map(
+            (paragraph, index) => (
+              <motion.p
+                key={paragraph.slice(0, 24)}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-12%" }}
+                transition={{ duration: 0.65, delay: index * 0.06 }}
+                className="text-sm text-muted-foreground leading-relaxed"
+              >
+                {paragraph}
+              </motion.p>
+            ),
+          )}
+        </div>
       </div>
 
       <motion.div
@@ -220,7 +213,10 @@ export function AboutSection() {
           >
             <div className="flex gap-5 mb-8">
               <div className="flex flex-col items-center min-w-[14px]">
-                <Sparkles className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden />
+                <Sparkles
+                  className="w-4 h-4 text-primary mt-0.5 shrink-0"
+                  aria-hidden
+                />
                 <JourneyConnector dashed showGlow />
               </div>
               <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase pt-0.5">

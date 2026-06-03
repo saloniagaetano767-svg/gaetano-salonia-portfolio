@@ -21,20 +21,16 @@ export const de: Translation = {
     label: "Über mich",
     titleLight: "Wer ich",
     titleAccent: "wirklich bin",
-    p1: "Ich bin ein motivierter Software-Entwickler aus der Schweiz, der aktuell bei RUAG arbeitet und seine Ausbildung als Informatiker EFZ abschliesst.",
-    p2: "Ich liebe es, moderne, performante Anwendungen zu bauen. Sauberer Code und exzellente Nutzererlebnisse begeistern mich täglich — von NavData-Workflows bis zu polierten Frontends.",
-    p3: "Offen für neue Herausforderungen als Software Engineer, Frontend Developer oder IT Support — wo ich wachsen und beitragen kann.",
+    p1: "Ich bin Gaetano — ein Software-Entwickler aus der Schweiz mit der Leidenschaft, Dinge zu bauen, die nicht nur funktionieren, sondern auch wirklich Freude machen.",
+    p2: "Aktuell arbeite ich bei RUAG und schliesse meine Lehre als Informatiker EFZ in Applikationsentwicklung ab. In den letzten Jahren hatte ich die Möglichkeit, an verschiedenen Projekten mitzuarbeiten, meine technischen Fähigkeiten auszubauen und professionelle Softwareentwicklung in der Praxis kennenzulernen.",
+    p3: "Was mich am meisten antreibt, ist der Prozess dahinter: Probleme lösen, Ideen verbessern und Konzepte in echte Anwendungen verwandeln, mit denen Menschen interagieren können. Ich arbeite gerne an modernen Interfaces, sauberen Frontend-Erlebnissen und lerne Technologien, die mich jeden Tag weiterbringen.",
+    p4: "Abseits der Technik schätze ich Zuverlässigkeit, Neugier und kontinuierliches Wachstum. Ich mag Umgebungen, in denen man gemeinsam Grosses baut, Ideen austauscht und sich gegenseitig fordert.",
+    p5: "Momentan suche ich einen Ort, an dem ich mitwirken, weiterlernen und zum Entwickler heranwachsen kann, der ich werden möchte.",
     location: "🇨🇭 Schweiz",
     company: "🏢 RUAG",
     status: "🟢 Offen für Stellen",
     languages: "🌐 DE · IT · EN",
     apprenticeship: "🎓 Informatiker EFZ",
-    rosterTitle: "Roster",
-    roster: [
-      "RUAG AG — NavData & SODC",
-      "Benedict Schule — EFZ Applikationsentwicklung",
-      "Persönliche Projekte & Open Source",
-    ],
     journeyTitle: "Mein Werdegang",
     nextStepsTitle: "Nächste Schritte",
   },
@@ -89,7 +85,6 @@ export const de: Translation = {
     sub: "Die Tools, mit denen ich Ideen zum Leben erwecke.",
     categories: [
       {
-        code: "LNG",
         title: "Sprachen",
         items: [
           "JavaScript",
@@ -101,7 +96,6 @@ export const de: Translation = {
         ],
       },
       {
-        code: "FWK",
         title: "Frameworks",
         items: [
           "React.js",
@@ -113,7 +107,6 @@ export const de: Translation = {
         ],
       },
       {
-        code: "TOL",
         title: "Tools",
         items: [
           "Git & GitHub",
@@ -125,7 +118,6 @@ export const de: Translation = {
         ],
       },
       {
-        code: "SFT",
         title: "Soft Skills",
         items: [
           "Problemlösung",
@@ -136,20 +128,6 @@ export const de: Translation = {
           "Technische Dokumentation",
         ],
       },
-    ],
-    pills: [
-      "JavaScript",
-      "TypeScript",
-      "React.js",
-      "Tailwind CSS",
-      "HTML",
-      "CSS",
-      "Git",
-      "GitHub",
-      "REST APIs",
-      "SQL",
-      "VS Code",
-      "Responsive Design",
     ],
   },
   work: {
@@ -186,5 +164,11 @@ export const de: Translation = {
   footer: {
     copy: "Mit Sorgfalt erstellt von Gaetano Salonia",
     rights: "Alle Rechte vorbehalten.",
+  },
+  theme: {
+    enableLight: "Hellblau-Theme aktivieren",
+    disableLight: "Hellblau-Theme deaktivieren",
+    buttonLight: "Hell",
+    buttonDark: "Dunkel",
   },
 };

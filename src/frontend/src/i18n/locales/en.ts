@@ -22,20 +22,16 @@ export const en: Translation = {
     label: "About Me",
     titleLight: "Who I",
     titleAccent: "Actually Am",
-    p1: "I'm a motivated software engineer based in Switzerland, currently working at RUAG while completing my Informatiker EFZ apprenticeship in Application Development.",
-    p2: "I thrive building modern, performant applications and solving complex problems. I'm passionate about clean code, great UX, and growing my technical expertise — from NavData workflows to polished frontends.",
-    p3: "I'm open to my next opportunity as a Software Engineer, Frontend Developer, or IT Support Specialist — somewhere I can contribute, grow, and make an impact.",
+    p1: "I'm Gaetano — a software engineer from Switzerland with a passion for building things that are not only functional, but actually enjoyable to use.",
+    p2: "Right now, I'm working at RUAG while finishing my apprenticeship as an Informatiker EFZ in Application Development. Over the last few years, I've had the chance to work on different projects, improve my technical skills, and experience what professional software development really looks like in practice.",
+    p3: "What drives me most is the process behind it all: solving problems, improving ideas, and turning concepts into real applications people can interact with. I enjoy working on modern interfaces, clean frontend experiences, and learning technologies that push me further every day.",
+    p4: "Outside of the technical side, I'm someone who values reliability, curiosity, and continuous growth. I like being part of environments where people build great things together, exchange ideas, and challenge each other to improve.",
+    p5: "At the moment, I'm looking for a place where I can contribute, keep learning, and grow into the developer I aim to become.",
     location: "🇨🇭 Switzerland",
     company: "🏢 RUAG",
     status: "🟢 Open to Opportunities",
     languages: "🌐 DE · IT · EN",
     apprenticeship: "🎓 Informatiker EFZ",
-    rosterTitle: "Roster",
-    roster: [
-      "RUAG AG — NavData & SODC",
-      "Benedict School — EFZ Application Development",
-      "Personal projects & open source",
-    ],
     journeyTitle: "My Journey",
     nextStepsTitle: "Next Steps",
   },
@@ -90,7 +86,6 @@ export const en: Translation = {
     sub: "A curated set of tools I use to bring ideas to life.",
     categories: [
       {
-        code: "LNG",
         title: "Languages",
         items: [
           "JavaScript",
@@ -102,7 +97,6 @@ export const en: Translation = {
         ],
       },
       {
-        code: "FWK",
         title: "Frameworks",
         items: [
           "React.js",
@@ -114,7 +108,6 @@ export const en: Translation = {
         ],
       },
       {
-        code: "TOL",
         title: "Tools",
         items: [
           "Git & GitHub",
@@ -126,7 +119,6 @@ export const en: Translation = {
         ],
       },
       {
-        code: "SFT",
         title: "Soft Skills",
         items: [
           "Problem-solving",
@@ -137,20 +129,6 @@ export const en: Translation = {
           "Technical Documentation",
         ],
       },
-    ],
-    pills: [
-      "JavaScript",
-      "TypeScript",
-      "React.js",
-      "Tailwind CSS",
-      "HTML",
-      "CSS",
-      "Git",
-      "GitHub",
-      "REST APIs",
-      "SQL",
-      "VS Code",
-      "Responsive Design",
     ],
   },
   work: {
@@ -186,5 +164,11 @@ export const en: Translation = {
   footer: {
     copy: "Crafted with precision by Gaetano Salonia",
     rights: "All rights reserved.",
+  },
+  theme: {
+    enableLight: "Enable light theme",
+    disableLight: "Disable light theme",
+    buttonLight: "Light",
+    buttonDark: "Dark",
   },
 };

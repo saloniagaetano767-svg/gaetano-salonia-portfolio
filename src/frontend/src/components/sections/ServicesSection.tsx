@@ -32,26 +32,21 @@ export function ServicesSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {t.services.categories.map((cat, i) => (
           <motion.article
-            key={cat.code}
+            key={cat.title}
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
             className="glass-card rounded-[18px] p-7 hover:border-primary/30 hover:bg-primary/[0.03] transition-all duration-300 group"
-            data-ocid={`services.card.${cat.code}`}
+            data-ocid={`services.card.${cat.title}`}
           >
-            <div className="flex items-start justify-between gap-4 mb-5">
-              <div>
-                <p className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1">
-                  SERVICE
-                </p>
-                <h3 className="font-display text-xl font-bold text-foreground">
-                  {cat.title}
-                </h3>
-              </div>
-              <span className="font-display text-3xl font-extrabold grad-teal opacity-80 group-hover:opacity-100 transition-opacity">
-                {cat.code}
-              </span>
+            <div className="mb-5">
+              <p className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1">
+                SERVICE
+              </p>
+              <h3 className="font-display text-xl font-bold text-foreground">
+                {cat.title}
+              </h3>
             </div>
             <ul className="flex flex-wrap gap-2">
               {cat.items.map((item) => (
@@ -66,23 +61,6 @@ export function ServicesSection() {
           </motion.article>
         ))}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        className="flex flex-wrap gap-2.5 mt-14"
-      >
-        {t.services.pills.map((pill) => (
-          <span
-            key={pill}
-            className="font-mono text-xs font-semibold px-4 py-2 rounded-[11px] surface-muted text-muted-foreground hover:border-primary/30 hover:text-primary hover:bg-primary/[0.05] transition-all cursor-default"
-          >
-            {pill}
-          </span>
-        ))}
-      </motion.div>
     </section>
   );
 }

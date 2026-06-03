@@ -12,7 +12,6 @@ export interface JourneyItem {
 }
 
 export interface ServiceCategory {
-  code: string;
   title: string;
   items: string[];
 }
@@ -41,13 +40,13 @@ export interface Translation {
     p1: string;
     p2: string;
     p3: string;
+    p4: string;
+    p5: string;
     location: string;
     company: string;
     status: string;
     languages: string;
     apprenticeship: string;
-    rosterTitle: string;
-    roster: string[];
     journeyTitle: string;
     nextStepsTitle: string;
   };
@@ -58,7 +57,6 @@ export interface Translation {
     titleAccent: string;
     sub: string;
     categories: ServiceCategory[];
-    pills: string[];
   };
   work: {
     label: string;
@@ -93,5 +91,11 @@ export interface Translation {
   footer: {
     copy: string;
     rights: string;
+  };
+  theme: {
+    enableLight: string;
+    disableLight: string;
+    buttonLight: string;
+    buttonDark: string;
   };
 }

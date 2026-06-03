@@ -19,7 +19,21 @@ export function projectCode(title: string): string {
     .padEnd(3, "X");
 }
 
+let scrollToSectionImpl: ((id: string) => void) | null = null;
+
+export function registerScrollToSection(fn: (id: string) => void) {
+  scrollToSectionImpl = fn;
+}
+
+export function unregisterScrollToSection() {
+  scrollToSectionImpl = null;
+}
+
 export function scrollToSection(id: string) {
+  if (scrollToSectionImpl) {
+    scrollToSectionImpl(id);
+    return;
+  }
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }

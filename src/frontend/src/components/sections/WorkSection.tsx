@@ -42,7 +42,9 @@ function WorkSlide({
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">
               {project.title}
             </h3>
-            <p className="text-sm text-muted-foreground mt-1">{project.category}</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {project.category}
+            </p>
           </div>
           <p className="font-mono text-sm text-primary font-bold shrink-0">
             {index + 1}/{total}
@@ -164,7 +166,9 @@ export function WorkSection() {
                     type="button"
                     onClick={() => emblaApi?.scrollTo(i)}
                     className={`h-1 rounded-full transition-all duration-300 ${
-                      i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-[var(--surface-border)]"
+                      i === selectedIndex
+                        ? "w-8 bg-primary"
+                        : "w-2 bg-[var(--surface-border)]"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
