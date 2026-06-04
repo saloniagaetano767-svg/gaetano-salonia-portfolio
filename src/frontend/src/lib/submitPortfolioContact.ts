@@ -1,5 +1,9 @@
-import type { ContactFormData } from "@/types/portfolio";
+import type { ContactFormData } from "../types/portfolio";
 import { CONTACT_EMAIL } from "./site";
+
+export interface PortfolioContactActor {
+  submitContact(name: string, email: string, message: string): Promise<bigint>;
+}
 
 /** Static-hosting fallback when the Internet-Computer backend actor is unavailable. */
 export async function submitPortfolioContactViaForm(
@@ -28,4 +32,23 @@ export async function submitPortfolioContactViaForm(
         "Could not send — please email me directly using the address on this page.",
     );
   }
+}
+
+export async function submitPortfolioContact(
+  data: ContactFormData,
+  actor?: PortfolioContactActor | null,
+  fallback: (data: ContactFormData) => Promise<void> =
+    submitPortfolioContactViaForm,
+): Promise<bigint | undefined> {
+  if (actor) {
+    try {
+      return await actor.submitContact(data.name, data.email, data.message);
+    } catch {
+      await fallback(data);
+      return undefined;
+    }
+  }
+
+  await fallback(data);
+  return undefined;
 }
