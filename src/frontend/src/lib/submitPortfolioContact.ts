@@ -21,11 +21,33 @@ export async function submitPortfolioContactViaForm(
     }),
   });
 
-  if (!response.ok) {
-    const text = await response.text().catch(() => "");
+  const bodyText = await response.text().catch(() => "");
+  const responseBody = parseFormSubmitResponse(bodyText);
+  const deliveryFailed =
+    responseBody?.success === false || responseBody?.success === "false";
+
+  if (!response.ok || deliveryFailed) {
     throw new Error(
-      text.trim() ||
+      responseBody?.message ||
+        bodyText.trim() ||
         "Could not send — please email me directly using the address on this page.",
     );
+  }
+}
+
+type FormSubmitResponse = {
+  success?: boolean | string;
+  message?: string;
+};
+
+function parseFormSubmitResponse(bodyText: string): FormSubmitResponse | null {
+  if (!bodyText.trim()) return null;
+
+  try {
+    const parsed = JSON.parse(bodyText) as unknown;
+    if (!parsed || typeof parsed !== "object") return null;
+    return parsed as FormSubmitResponse;
+  } catch {
+    return null;
   }
 }
