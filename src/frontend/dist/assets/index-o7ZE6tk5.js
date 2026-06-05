@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-BPIDruj5.js","assets/usePortfolio-DLpjZgZG.js","assets/ProjectDetail-BIQCg1yK.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-ZBarTgpI.js","assets/usePortfolio-B8XKDDNW.js","assets/ProjectDetail-Ckoro_8E.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -35222,8 +35222,8 @@ function Layout({ children }) {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] }) });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-BPIDruj5.js"), true ? __vite__mapDeps([0,1]) : void 0));
-const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-BIQCg1yK.js"), true ? __vite__mapDeps([2,1]) : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-ZBarTgpI.js"), true ? __vite__mapDeps([0,1]) : void 0));
+const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-Ckoro_8E.js"), true ? __vite__mapDeps([2,1]) : void 0));
 function PageLoader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
