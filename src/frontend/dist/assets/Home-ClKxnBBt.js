@@ -7,8 +7,8 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentResult, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn, _a;
-import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-CWpk0u9u.js";
-import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-DLpjZgZG.js";
+import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-CVu72C1y.js";
+import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-CVPGTY4w.js";
 var MutationObserver$1 = (_a = class extends Subscribable {
   constructor(client, options) {
     super();
@@ -8160,7 +8160,23 @@ function AboutSection() {
     }
   );
 }
+const CONTACT_DELIVERY_ERROR = "Could not send — please email me directly using the address on this page.";
+function parseFormSubmitResponse(body) {
+  const trimmed = body.trim();
+  if (!trimmed) return null;
+  return JSON.parse(trimmed);
+}
+function getFormSubmitError(response) {
+  var _a2;
+  if (!response) return null;
+  const success = typeof response.success === "string" ? response.success.trim().toLowerCase() : response.success;
+  if (success === false || success === "false") {
+    return ((_a2 = response.message) == null ? void 0 : _a2.trim()) || CONTACT_DELIVERY_ERROR;
+  }
+  return null;
+}
 async function submitPortfolioContactViaForm(data) {
+  var _a2;
   const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
     method: "POST",
     headers: {
@@ -8176,22 +8192,45 @@ async function submitPortfolioContactViaForm(data) {
       _captcha: "false"
     })
   });
+  const body = await response.text().catch(() => "");
   if (!response.ok) {
-    const text = await response.text().catch(() => "");
+    const payload2 = tryParseFormSubmitResponse(body);
     throw new Error(
-      text.trim() || "Could not send — please email me directly using the address on this page."
+      ((_a2 = payload2 == null ? void 0 : payload2.message) == null ? void 0 : _a2.trim()) || body.trim() || CONTACT_DELIVERY_ERROR
     );
   }
+  let payload;
+  try {
+    payload = parseFormSubmitResponse(body);
+  } catch {
+    throw new Error(CONTACT_DELIVERY_ERROR);
+  }
+  const formSubmitError = getFormSubmitError(payload);
+  if (formSubmitError) throw new Error(formSubmitError);
+}
+function tryParseFormSubmitResponse(body) {
+  try {
+    return parseFormSubmitResponse(body);
+  } catch {
+    return null;
+  }
+}
+async function submitContactMessage(data, actor) {
+  if (actor) {
+    try {
+      return await actor.submitContact(data.name, data.email, data.message);
+    } catch {
+      await submitPortfolioContactViaForm(data);
+      return void 0;
+    }
+  }
+  await submitPortfolioContactViaForm(data);
+  return void 0;
 }
 function useContact() {
   const { actor } = useActor(createActor);
   return useMutation({
-    mutationFn: async (data) => {
-      if (actor)
-        return actor.submitContact(data.name, data.email, data.message);
-      await submitPortfolioContactViaForm(data);
-      return void 0;
-    }
+    mutationFn: (data) => submitContactMessage(data, actor)
   });
 }
 function ContactSection() {

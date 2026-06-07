@@ -16,7 +16,9 @@ function parseFormSubmitResponse(body: string): FormSubmitResponse | null {
   return JSON.parse(trimmed) as FormSubmitResponse;
 }
 
-function getFormSubmitError(response: FormSubmitResponse | null): string | null {
+function getFormSubmitError(
+  response: FormSubmitResponse | null,
+): string | null {
   if (!response) return null;
 
   const success =
