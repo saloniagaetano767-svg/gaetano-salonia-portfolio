@@ -9,8 +9,15 @@ export function useContact() {
 
   return useMutation<bigint | undefined, Error, ContactFormData>({
     mutationFn: async (data: ContactFormData) => {
-      if (actor)
-        return actor.submitContact(data.name, data.email, data.message);
+      if (actor) {
+        try {
+          return await actor.submitContact(data.name, data.email, data.message);
+        } catch {
+          await submitPortfolioContactViaForm(data);
+          return undefined;
+        }
+      }
+
       await submitPortfolioContactViaForm(data);
       return undefined;
     },
