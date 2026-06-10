@@ -32,9 +32,23 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 function readStoredLocale(): Locale {
   if (typeof window === "undefined") return "EN";
-  const stored = localStorage.getItem(STORAGE_KEY);
+  let stored: string | null = null;
+  try {
+    stored = window.localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return "EN";
+  }
   if (stored === "DE" || stored === "IT" || stored === "EN") return stored;
   return "EN";
+}
+
+function writeStoredLocale(locale: Locale) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(STORAGE_KEY, locale);
+  } catch {
+    // Some privacy modes deny storage; language changes should still work in-memory.
+  }
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
@@ -42,7 +56,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    writeStoredLocale(next);
   }, []);
 
   useEffect(() => {
