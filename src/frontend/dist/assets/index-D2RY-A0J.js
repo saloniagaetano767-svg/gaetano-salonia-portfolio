@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-BPIDruj5.js","assets/usePortfolio-DLpjZgZG.js","assets/ProjectDetail-BIQCg1yK.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-BaIFl5UX.js","assets/usePortfolio-BUyTUIiY.js","assets/ProjectDetail-DTGub8pW.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -34805,15 +34805,22 @@ const htmlLang = {
 const LocaleContext = reactExports.createContext(null);
 function readStoredLocale() {
   if (typeof window === "undefined") return "EN";
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "DE" || stored === "IT" || stored === "EN") return stored;
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored === "DE" || stored === "IT" || stored === "EN") return stored;
+  } catch {
+    return "EN";
+  }
   return "EN";
 }
 function LocaleProvider({ children }) {
   const [locale, setLocaleState] = reactExports.useState(readStoredLocale);
   const setLocale = reactExports.useCallback((next) => {
     setLocaleState(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+    }
   }, []);
   reactExports.useEffect(() => {
     document.documentElement.lang = htmlLang[locale];
@@ -35222,8 +35229,8 @@ function Layout({ children }) {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] }) });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-BPIDruj5.js"), true ? __vite__mapDeps([0,1]) : void 0));
-const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-BIQCg1yK.js"), true ? __vite__mapDeps([2,1]) : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-BaIFl5UX.js"), true ? __vite__mapDeps([0,1]) : void 0));
+const ProjectDetailPage = reactExports.lazy(() => __vitePreload(() => import("./ProjectDetail-DTGub8pW.js"), true ? __vite__mapDeps([2,1]) : void 0));
 function PageLoader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",

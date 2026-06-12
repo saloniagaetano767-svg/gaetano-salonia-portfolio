@@ -7,8 +7,8 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentResult, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn, _a;
-import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-CWpk0u9u.js";
-import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-DLpjZgZG.js";
+import { S as Subscribable, s as shallowEqualObjects, h as hashKey, g as getDefaultState, n as notifyManager, u as useQueryClient, r as reactExports, a as noop$1, b as shouldThrowError, c as createLucideIcon, j as jsxRuntimeExports, d as useTranslation, C as CONTACT_EMAIL, G as GITHUB_URL, L as LINKEDIN_URL, e as usePrefersReducedMotion, f as useMouseParallax, i as scrollToSection, k as Skeleton, p as projectCode, l as Link } from "./index-D2RY-A0J.js";
+import { u as useActor, c as createActor, a as useFeaturedProjects, S as SAMPLE_PROJECTS } from "./usePortfolio-BUyTUIiY.js";
 var MutationObserver$1 = (_a = class extends Subscribable {
   constructor(client, options) {
     super();
@@ -8187,8 +8187,14 @@ function useContact() {
   const { actor } = useActor(createActor);
   return useMutation({
     mutationFn: async (data) => {
-      if (actor)
-        return actor.submitContact(data.name, data.email, data.message);
+      if (actor) {
+        try {
+          return await actor.submitContact(data.name, data.email, data.message);
+        } catch {
+          await submitPortfolioContactViaForm(data);
+          return void 0;
+        }
+      }
       await submitPortfolioContactViaForm(data);
       return void 0;
     }
