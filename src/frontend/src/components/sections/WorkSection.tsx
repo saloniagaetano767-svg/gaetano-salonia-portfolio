@@ -1,7 +1,9 @@
+import { SectionHeader } from "@/components/sections/SectionHeader";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SAMPLE_PROJECTS } from "@/data/projectContent";
 import { useFeaturedProjects } from "@/hooks/usePortfolio";
 import { useTranslation } from "@/i18n";
+import { FOCUS_RING, SECTION_CONTAINER } from "@/lib/layout";
 import { projectCode } from "@/lib/motion";
 import type { Project } from "@/types/portfolio";
 import { Link } from "@tanstack/react-router";
@@ -24,7 +26,7 @@ function WorkSlide({
       <Link
         to="/projects/$id"
         params={{ id: project.id.toString() }}
-        className="block glass-card rounded-[18px] p-8 md:p-12 relative overflow-hidden group hover:border-primary/30 hover:bg-primary/[0.03] transition-all duration-400"
+        className={`block glass-card rounded-[18px] p-8 md:p-12 relative overflow-hidden group hover:border-primary/30 hover:bg-primary/[0.03] transition-all duration-300 ${FOCUS_RING}`}
         data-ocid={`work.slide.${index + 1}`}
       >
         <div
@@ -50,7 +52,7 @@ function WorkSlide({
             {index + 1}/{total}
           </p>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-8">
+        <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mb-8">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
@@ -96,27 +98,16 @@ export function WorkSection() {
     };
   }, [emblaApi]);
 
+  const carouselControlClass = `min-w-11 min-h-11 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors cursor-pointer ${FOCUS_RING}`;
+
   return (
-    <section
-      id="work"
-      className="max-w-[1100px] mx-auto px-8 py-[90px]"
-      data-ocid="work.section"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 36 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.8 }}
-      >
-        <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-3.5">
-          02 / {t.work.label}
-        </p>
-        <h2 className="font-display font-extrabold text-[clamp(34px,5vw,52px)] tracking-tight leading-tight mb-10">
-          <span className="grad-light">{t.work.titleLight}</span>
-          <br />
-          <span className="grad-teal">{t.work.titleAccent}</span>
-        </h2>
-      </motion.div>
+    <section id="work" className={SECTION_CONTAINER} data-ocid="work.section">
+      <SectionHeader
+        index={t.sections.work}
+        label={t.work.label}
+        titleLight={t.work.titleLight}
+        titleAccent={t.work.titleAccent}
+      />
 
       {isLoading ? (
         <Skeleton className="h-80 w-full rounded-[18px] bg-muted" />
@@ -140,12 +131,12 @@ export function WorkSection() {
                 ))}
               </div>
             </div>
-            <div className="flex items-center justify-between mt-6">
+            <div className="flex items-center justify-between mt-6 gap-4">
               <div className="flex gap-2">
                 <button
                   type="button"
                   onClick={scrollPrev}
-                  className="w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                  className={carouselControlClass}
                   aria-label={t.work.prev}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -153,25 +144,36 @@ export function WorkSection() {
                 <button
                   type="button"
                   onClick={scrollNext}
-                  className="w-10 h-10 rounded-lg surface-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                  className={carouselControlClass}
                   aria-label={t.work.next}
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
-              <div className="flex gap-1.5">
+              <div
+                className="flex gap-1.5"
+                role="tablist"
+                aria-label={t.work.label}
+              >
                 {projects.map((p, i) => (
                   <button
                     key={p.id.toString()}
                     type="button"
+                    role="tab"
+                    aria-selected={i === selectedIndex}
                     onClick={() => emblaApi?.scrollTo(i)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      i === selectedIndex
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-[var(--surface-border)]"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
+                    className={`min-h-11 min-w-11 flex items-center justify-center ${FOCUS_RING}`}
+                    aria-label={`${t.a11y.goToSlide} ${i + 1}`}
+                  >
+                    <span
+                      className={`block h-1 rounded-full transition-all duration-300 ${
+                        i === selectedIndex
+                          ? "w-8 bg-primary"
+                          : "w-2 bg-[var(--surface-border)]"
+                      }`}
+                      aria-hidden
+                    />
+                  </button>
                 ))}
               </div>
             </div>

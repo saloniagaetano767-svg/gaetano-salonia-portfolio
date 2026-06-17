@@ -1,5 +1,7 @@
+import { SectionHeader } from "@/components/sections/SectionHeader";
 import { useTranslation } from "@/i18n";
 import type { JourneyItem } from "@/i18n/types";
+import { SECTION_CONTAINER } from "@/lib/layout";
 import { Brain, GraduationCap, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -126,27 +128,22 @@ export function AboutSection() {
   const pastAndCurrent = t.journey.filter((item) => item.phase !== "future");
   const futureItems = t.journey.filter((item) => item.phase === "future");
 
+  const infoRows = [
+    { label: t.about.fields.location, value: t.about.location },
+    { label: t.about.fields.company, value: t.about.company },
+    { label: t.about.fields.status, value: t.about.status },
+    { label: t.about.fields.languages, value: t.about.languages },
+    { label: t.about.fields.apprenticeship, value: t.about.apprenticeship },
+  ];
+
   return (
-    <section
-      id="about"
-      className="max-w-[1100px] mx-auto px-8 py-[90px]"
-      data-ocid="about.section"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 36 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.8 }}
-      >
-        <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-3.5">
-          01 / {t.about.label}
-        </p>
-        <h2 className="font-display font-extrabold text-[clamp(34px,5vw,52px)] tracking-tight leading-tight mb-10">
-          <span className="grad-light">{t.about.titleLight}</span>
-          <br />
-          <span className="grad-teal">{t.about.titleAccent}</span>
-        </h2>
-      </motion.div>
+    <section id="about" className={SECTION_CONTAINER} data-ocid="about.section">
+      <SectionHeader
+        index={t.sections.about}
+        label={t.about.label}
+        titleLight={t.about.titleLight}
+        titleAccent={t.about.titleAccent}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-16 items-start">
         <motion.aside
@@ -156,11 +153,9 @@ export function AboutSection() {
           transition={{ duration: 0.7 }}
           className="glass-card rounded-[18px] p-7 lg:sticky lg:top-28 lg:self-start order-2 lg:order-1"
         >
-          <InfoRow label="Location" value={t.about.location} />
-          <InfoRow label="Company" value={t.about.company} />
-          <InfoRow label="Status" value={t.about.status} />
-          <InfoRow label="Languages" value={t.about.languages} />
-          <InfoRow label="Apprenticeship" value={t.about.apprenticeship} />
+          {infoRows.map((row) => (
+            <InfoRow key={row.label} label={row.label} value={row.value} />
+          ))}
         </motion.aside>
 
         <div className="space-y-8 order-1 lg:order-2">
@@ -172,7 +167,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-12%" }}
                 transition={{ duration: 0.65, delay: index * 0.06 }}
-                className="text-sm text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed"
               >
                 {paragraph}
               </motion.p>
@@ -189,7 +184,7 @@ export function AboutSection() {
         className="mt-20"
       >
         <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-8">
-          04 / {t.about.journeyTitle}
+          {t.sections.journey} / {t.about.journeyTitle}
         </p>
         <div className="space-y-0">
           {pastAndCurrent.map((item, i) => (
@@ -220,7 +215,7 @@ export function AboutSection() {
                 <JourneyConnector dashed showGlow />
               </div>
               <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase pt-0.5">
-                05 / {t.about.nextStepsTitle}
+                {t.sections.nextSteps} / {t.about.nextStepsTitle}
               </p>
             </div>
 

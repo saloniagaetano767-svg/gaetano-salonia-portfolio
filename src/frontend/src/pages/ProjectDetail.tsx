@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { CASE_STUDIES, SAMPLE_PROJECTS } from "@/data/projectContent";
+import { useProject } from "@/hooks/usePortfolio";
 import { Link, useParams } from "@tanstack/react-router";
 import {
   ArrowLeft,
@@ -11,7 +12,6 @@ import {
   Github,
   Layers,
 } from "lucide-react";
-import { useProject } from "../hooks/usePortfolio";
 
 function LoadingSkeleton() {
   return (

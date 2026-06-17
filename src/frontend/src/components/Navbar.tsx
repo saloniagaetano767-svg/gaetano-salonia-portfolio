@@ -1,28 +1,24 @@
+import { useCursorScroll } from "@/context/CursorScrollContext";
 import { LanguageSwitcher, useTranslation } from "@/i18n";
+import { FOCUS_RING } from "@/lib/layout";
 import { scrollToSection } from "@/lib/motion";
 import { BRAND_MARK } from "@/lib/site";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const SECTION_IDS = {
-  about: "about",
-  work: "work",
-  services: "services",
-  contact: "contact",
-} as const;
+const SECTION_IDS = ["about", "work", "services", "contact"] as const;
 
 export function Navbar() {
   const { t } = useTranslation();
+  const { activeSection } = useCursorScroll();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = [
-    { label: t.nav.about, id: SECTION_IDS.about },
-    { label: t.nav.work, id: SECTION_IDS.work },
-    { label: t.nav.services, id: SECTION_IDS.services },
-    { label: t.nav.contact, id: SECTION_IDS.contact },
-  ];
+  const navLinks = SECTION_IDS.map((id) => ({
+    id,
+    label: t.nav[id],
+  }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -30,14 +26,30 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
   const handleNavClick = (id: string) => {
     setIsOpen(false);
     scrollToSection(id);
   };
 
+  const linkClass = (id: string) =>
+    `text-base font-medium tracking-wide bg-transparent border-none cursor-pointer font-body transition-colors ${FOCUS_RING} ${
+      activeSection === id
+        ? "text-primary"
+        : "text-muted-foreground hover:text-primary"
+    }`;
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-16 px-8 flex items-center transition-all duration-400 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-16 px-6 sm:px-8 flex items-center transition-all duration-300 ${
         scrolled ? "nav-scrolled" : "bg-transparent"
       }`}
     >
@@ -47,7 +59,7 @@ export function Navbar() {
       >
         <Link
           to="/"
-          className="font-display font-extrabold text-xl tracking-tight"
+          className={`font-display font-extrabold text-xl tracking-tight ${FOCUS_RING}`}
           data-ocid="nav.home_link"
           aria-label="Home — Gaetano Salonia"
           onClick={() => scrollToSection("hero")}
@@ -62,7 +74,8 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="text-base font-medium text-muted-foreground hover:text-primary transition-colors tracking-wide bg-transparent border-none cursor-pointer font-body"
+                className={linkClass(link.id)}
+                aria-current={activeSection === link.id ? "true" : undefined}
                 data-ocid={`nav.${link.id}_link`}
               >
                 {link.label}
@@ -75,9 +88,9 @@ export function Navbar() {
           <LanguageSwitcher className="hidden sm:flex" />
           <button
             type="button"
-            className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors"
+            className={`md:hidden min-w-11 min-h-11 p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors ${FOCUS_RING}`}
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-label={isOpen ? t.a11y.closeMenu : t.a11y.openMenu}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             data-ocid="nav.hamburger_toggle"
@@ -94,13 +107,14 @@ export function Navbar() {
         }`}
         aria-hidden={!isOpen}
       >
-        <ul className="px-8 py-4 flex flex-col gap-3">
+        <ul className="px-6 sm:px-8 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <li key={link.id}>
               <button
                 type="button"
                 onClick={() => handleNavClick(link.id)}
-                className="block w-full text-left text-base text-muted-foreground hover:text-primary py-2 transition-colors"
+                className={`block w-full text-left text-base py-3 transition-colors ${linkClass(link.id)}`}
+                aria-current={activeSection === link.id ? "true" : undefined}
                 data-ocid={`nav.mobile_${link.id}_link`}
               >
                 {link.label}

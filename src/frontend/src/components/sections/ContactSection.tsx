@@ -1,11 +1,16 @@
+import { SectionHeader } from "@/components/sections/SectionHeader";
+import { useContact } from "@/hooks/useContact";
 import { useTranslation } from "@/i18n";
+import { FOCUS_RING, SECTION_CONTAINER } from "@/lib/layout";
+import type { ContactFormData } from "@/types/portfolio";
 import { motion } from "motion/react";
-import { useState } from "react";
-import { useContact } from "../../hooks/useContact";
-import type { ContactFormData } from "../../types/portfolio";
+import { useId, useState } from "react";
+
+const inputClass = `surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-base outline-none focus:border-primary/40 transition-colors w-full ${FOCUS_RING}`;
 
 export function ContactSection() {
   const { t } = useTranslation();
+  const formId = useId();
   const { mutate, isPending, isSuccess, isError, error } = useContact();
   const [form, setForm] = useState<ContactFormData>({
     name: "",
@@ -60,27 +65,21 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="max-w-[1100px] mx-auto px-8 py-[90px]"
+      className={SECTION_CONTAINER}
       data-ocid="contact.section"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 36 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.8 }}
-      >
-        <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-3.5">
-          05 / {t.contact.label}
-        </p>
-        <h2 className="font-display font-extrabold text-[clamp(34px,5vw,52px)] tracking-tight leading-tight mb-4">
-          <span className="grad-light">{t.contact.titleLight}</span>
-          <br />
-          <span className="grad-teal">{t.contact.titleAccent}</span>
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-11 max-w-lg">
-          {t.contact.sub}
-        </p>
-      </motion.div>
+      <SectionHeader
+        index={t.sections.contact}
+        label={t.contact.label}
+        titleLight={t.contact.titleLight}
+        titleAccent={t.contact.titleAccent}
+        subtitle={
+          <p className="text-base text-muted-foreground leading-relaxed mt-4 max-w-lg">
+            {t.contact.sub}
+          </p>
+        }
+        className="mb-11"
+      />
 
       <motion.div
         initial={{ opacity: 0, y: 28 }}
@@ -89,26 +88,32 @@ export function ContactSection() {
         transition={{ duration: 0.7 }}
         className="max-w-lg"
       >
-          {isSuccess ? (
-            <div
-              className="glass-card rounded-[18px] p-10 text-center"
-              data-ocid="contact.success_state"
-            >
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">
-                {t.contact.successTitle}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {t.contact.successMessage}
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="flex flex-col gap-3"
-              data-ocid="contact.form"
-            >
+        {isSuccess ? (
+          <output
+            className="glass-card rounded-[18px] p-10 text-center block"
+            data-ocid="contact.success_state"
+          >
+            <h3 className="font-display text-xl font-bold text-foreground mb-2">
+              {t.contact.successTitle}
+            </h3>
+            <p className="text-base text-muted-foreground">
+              {t.contact.successMessage}
+            </p>
+          </output>
+        ) : (
+          <form
+            id={formId}
+            onSubmit={handleSubmit}
+            noValidate
+            className="flex flex-col gap-4"
+            data-ocid="contact.form"
+          >
+            <div>
+              <label htmlFor={`${formId}-name`} className="sr-only">
+                {t.contact.namePlaceholder}
+              </label>
               <input
+                id={`${formId}-name`}
                 type="text"
                 name="name"
                 autoComplete="name"
@@ -116,13 +121,30 @@ export function ContactSection() {
                 value={form.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                aria-invalid={errors.name ? true : undefined}
+                aria-describedby={
+                  errors.name ? `${formId}-name-error` : undefined
+                }
+                className={inputClass}
                 data-ocid="contact.name_input"
               />
               {errors.name && (
-                <p className="text-xs text-destructive -mt-1">{errors.name}</p>
+                <p
+                  id={`${formId}-name-error`}
+                  className="text-xs text-destructive mt-1"
+                  role="alert"
+                >
+                  {errors.name}
+                </p>
               )}
+            </div>
+
+            <div>
+              <label htmlFor={`${formId}-email`} className="sr-only">
+                {t.contact.emailPlaceholder}
+              </label>
               <input
+                id={`${formId}-email`}
                 type="email"
                 name="email"
                 autoComplete="email"
@@ -130,45 +152,74 @@ export function ContactSection() {
                 value={form.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors"
+                aria-invalid={errors.email ? true : undefined}
+                aria-describedby={
+                  errors.email ? `${formId}-email-error` : undefined
+                }
+                className={inputClass}
                 data-ocid="contact.email_input"
               />
               {errors.email && (
-                <p className="text-xs text-destructive -mt-1">{errors.email}</p>
+                <p
+                  id={`${formId}-email-error`}
+                  className="text-xs text-destructive mt-1"
+                  role="alert"
+                >
+                  {errors.email}
+                </p>
               )}
+            </div>
+
+            <div>
+              <label htmlFor={`${formId}-message`} className="sr-only">
+                {t.contact.messagePlaceholder}
+              </label>
               <textarea
+                id={`${formId}-message`}
                 name="message"
                 rows={5}
                 placeholder={t.contact.messagePlaceholder}
                 value={form.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="surface-muted rounded-[11px] px-4 py-3.5 text-foreground text-sm outline-none focus:border-primary/40 transition-colors resize-none"
+                aria-invalid={errors.message ? true : undefined}
+                aria-describedby={
+                  errors.message ? `${formId}-message-error` : undefined
+                }
+                className={`${inputClass} resize-none`}
                 data-ocid="contact.message_textarea"
               />
               {errors.message && (
-                <p className="text-xs text-destructive -mt-1">
+                <p
+                  id={`${formId}-message-error`}
+                  className="text-xs text-destructive mt-1"
+                  role="alert"
+                >
                   {errors.message}
                 </p>
               )}
-              {isError && (
-                <p
-                  className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-3"
-                  data-ocid="contact.error_state"
-                >
-                  {error?.message ?? t.contact.errorFallback}
-                </p>
-              )}
-              <button
-                type="submit"
-                disabled={isPending}
-                className="btn-gradient self-start font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all disabled:opacity-60"
-                data-ocid="contact.submit_button"
+            </div>
+
+            {isError && (
+              <p
+                className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-3"
+                role="alert"
+                data-ocid="contact.error_state"
               >
-                {isPending ? t.contact.sending : t.contact.send}
-              </button>
-            </form>
-          )}
+                {error?.message ?? t.contact.errorFallback}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={isPending}
+              className={`btn-gradient self-start font-bold text-sm px-6 py-3 min-h-11 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all disabled:opacity-60 cursor-pointer ${FOCUS_RING}`}
+              data-ocid="contact.submit_button"
+            >
+              {isPending ? t.contact.sending : t.contact.send}
+            </button>
+          </form>
+        )}
       </motion.div>
     </section>
   );

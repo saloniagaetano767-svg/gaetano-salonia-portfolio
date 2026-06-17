@@ -15,7 +15,7 @@ export function Footer() {
         </div>
         <div className="text-center">
           <p className="text-[13px] text-muted-foreground">{t.footer.copy}</p>
-          <p className="font-mono text-[10px] text-[#2a3a58] mt-1">
+          <p className="font-mono text-[10px] text-[var(--brand-dot)] mt-1">
             {t.footer.rights}
           </p>
         </div>

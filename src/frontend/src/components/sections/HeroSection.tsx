@@ -1,7 +1,9 @@
 import { AvatarPortrait } from "@/components/AvatarPortrait";
 import { useTranslation } from "@/i18n";
+import { FOCUS_RING } from "@/lib/layout";
 import { scrollToSection } from "@/lib/motion";
 import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
@@ -70,7 +72,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="text-[17px] text-muted-foreground font-medium mb-2"
+              className="text-base text-muted-foreground font-medium mb-2"
             >
               {t.hero.greeting}
             </motion.p>
@@ -104,7 +106,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.28 }}
-              className="text-[15px] text-muted-foreground leading-relaxed max-w-md mb-9"
+              className="text-base text-muted-foreground leading-relaxed max-w-md mb-9"
             >
               {t.hero.tagline}
             </motion.p>
@@ -118,7 +120,7 @@ export function HeroSection() {
               <button
                 type="button"
                 onClick={() => scrollToSection("work")}
-                className="btn-gradient font-bold text-sm px-6 py-3 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all duration-200"
+                className={`btn-gradient font-bold text-sm px-6 py-3 min-h-11 rounded-[11px] hover:-translate-y-0.5 cta-glow transition-all duration-200 cursor-pointer ${FOCUS_RING}`}
                 data-ocid="hero.primary_button"
               >
                 {t.hero.cta}
@@ -126,7 +128,7 @@ export function HeroSection() {
               <a
                 href="/cv.pdf"
                 download
-                className="font-semibold text-sm px-6 py-3 rounded-[11px] surface-border text-foreground/90 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+                className={`font-semibold text-sm px-6 py-3 min-h-11 inline-flex items-center rounded-[11px] surface-border text-foreground/90 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-200 ${FOCUS_RING}`}
                 data-ocid="hero.secondary_button"
               >
                 {t.hero.cv}
@@ -143,23 +145,26 @@ export function HeroSection() {
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+                className={`inline-flex items-center gap-2 text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors ${FOCUS_RING}`}
               >
-                ⌘ {t.hero.github}
+                <Github className="w-4 h-4" aria-hidden />
+                {t.hero.github}
               </a>
               <a
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+                className={`inline-flex items-center gap-2 text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors ${FOCUS_RING}`}
               >
-                ◈ {t.hero.linkedin}
+                <Linkedin className="w-4 h-4" aria-hidden />
+                {t.hero.linkedin}
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors"
+                className={`inline-flex items-center gap-2 text-muted-foreground/70 text-xs font-semibold tracking-wider hover:text-primary transition-colors ${FOCUS_RING}`}
               >
-                ✉ {t.hero.email}
+                <Mail className="w-4 h-4" aria-hidden />
+                {t.hero.email}
               </a>
             </motion.div>
           </div>

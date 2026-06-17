@@ -1,4 +1,6 @@
+import { SectionHeader } from "@/components/sections/SectionHeader";
 import { useTranslation } from "@/i18n";
+import { SECTION_CONTAINER } from "@/lib/layout";
 import { motion } from "motion/react";
 
 export function ServicesSection() {
@@ -7,27 +9,21 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="max-w-[1100px] mx-auto px-8 py-[90px]"
+      className={SECTION_CONTAINER}
       data-ocid="services.section"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 36 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.8 }}
-      >
-        <p className="font-mono text-[11px] text-primary tracking-[0.14em] uppercase mb-3.5">
-          03 / {t.services.label}
-        </p>
-        <h2 className="font-display font-extrabold text-[clamp(34px,5vw,52px)] tracking-tight leading-tight mb-4">
-          <span className="grad-light">{t.services.titleLight}</span>
-          <br />
-          <span className="grad-teal">{t.services.titleAccent}</span>
-        </h2>
-        <p className="text-sm text-muted-foreground max-w-md leading-relaxed mb-10">
-          {t.services.sub}
-        </p>
-      </motion.div>
+      <SectionHeader
+        index={t.sections.services}
+        label={t.services.label}
+        titleLight={t.services.titleLight}
+        titleAccent={t.services.titleAccent}
+        subtitle={
+          <p className="text-base text-muted-foreground max-w-md leading-relaxed mt-4">
+            {t.services.sub}
+          </p>
+        }
+        className="mb-10"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {t.services.categories.map((cat, i) => (
@@ -42,7 +38,7 @@ export function ServicesSection() {
           >
             <div className="mb-5">
               <p className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.12em] uppercase mb-1">
-                SERVICE
+                {t.services.cardLabel}
               </p>
               <h3 className="font-display text-xl font-bold text-foreground">
                 {cat.title}

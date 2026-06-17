@@ -1,6 +1,20 @@
 import type { Translation } from "../types";
 
 export const en: Translation = {
+  a11y: {
+    skipToContent: "Skip to main content",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    goToSlide: "Go to slide",
+  },
+  sections: {
+    about: "01",
+    work: "02",
+    services: "03",
+    journey: "04",
+    nextSteps: "05",
+    contact: "06",
+  },
   nav: {
     about: "About",
     work: "Work",
@@ -34,6 +48,13 @@ export const en: Translation = {
     apprenticeship: "🎓 Informatiker EFZ",
     journeyTitle: "My Journey",
     nextStepsTitle: "Next Steps",
+    fields: {
+      location: "Location",
+      company: "Company",
+      status: "Status",
+      languages: "Languages",
+      apprenticeship: "Apprenticeship",
+    },
   },
   journey: [
     {
@@ -84,6 +105,7 @@ export const en: Translation = {
     titleLight: "Technical",
     titleAccent: "Arsenal",
     sub: "A curated set of tools I use to bring ideas to life.",
+    cardLabel: "Service",
     categories: [
       {
         title: "Languages",

@@ -1,6 +1,20 @@
 import type { Translation } from "../types";
 
 export const de: Translation = {
+  a11y: {
+    skipToContent: "Zum Hauptinhalt springen",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schliessen",
+    goToSlide: "Zu Folie",
+  },
+  sections: {
+    about: "01",
+    work: "02",
+    services: "03",
+    journey: "04",
+    nextSteps: "05",
+    contact: "06",
+  },
   nav: {
     about: "Über mich",
     work: "Arbeit",
@@ -33,6 +47,13 @@ export const de: Translation = {
     apprenticeship: "🎓 Informatiker EFZ",
     journeyTitle: "Mein Werdegang",
     nextStepsTitle: "Nächste Schritte",
+    fields: {
+      location: "Standort",
+      company: "Unternehmen",
+      status: "Status",
+      languages: "Sprachen",
+      apprenticeship: "Lehre",
+    },
   },
   journey: [
     {
@@ -83,6 +104,7 @@ export const de: Translation = {
     titleLight: "Technisches",
     titleAccent: "Arsenal",
     sub: "Die Tools, mit denen ich Ideen zum Leben erwecke.",
+    cardLabel: "Service",
     categories: [
       {
         title: "Sprachen",

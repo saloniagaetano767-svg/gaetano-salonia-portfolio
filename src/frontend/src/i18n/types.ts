@@ -17,6 +17,20 @@ export interface ServiceCategory {
 }
 
 export interface Translation {
+  a11y: {
+    skipToContent: string;
+    openMenu: string;
+    closeMenu: string;
+    goToSlide: string;
+  };
+  sections: {
+    about: string;
+    work: string;
+    services: string;
+    journey: string;
+    nextSteps: string;
+    contact: string;
+  };
   nav: {
     about: string;
     work: string;
@@ -49,6 +63,13 @@ export interface Translation {
     apprenticeship: string;
     journeyTitle: string;
     nextStepsTitle: string;
+    fields: {
+      location: string;
+      company: string;
+      status: string;
+      languages: string;
+      apprenticeship: string;
+    };
   };
   journey: JourneyItem[];
   services: {
@@ -56,6 +77,7 @@ export interface Translation {
     titleLight: string;
     titleAccent: string;
     sub: string;
+    cardLabel: string;
     categories: ServiceCategory[];
   };
   work: {
