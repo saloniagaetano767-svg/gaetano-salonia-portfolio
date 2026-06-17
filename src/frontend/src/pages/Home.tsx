@@ -1,17 +1,17 @@
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { WorkSection } from "@/components/sections/WorkSection";
+import { JourneyAbout } from "@/components/sections/JourneyAbout";
+import { JourneyContact } from "@/components/sections/JourneyContact";
+import { JourneyIntro } from "@/components/sections/JourneyIntro";
+import { JourneyMilestones } from "@/components/sections/JourneyMilestones";
+import { JourneySkills } from "@/components/sections/JourneySkills";
 
 export default function Home() {
   return (
-    <div className="relative z-[1]" data-ocid="home.page">
-      <HeroSection />
-      <AboutSection />
-      <WorkSection />
-      <ServicesSection />
-      <ContactSection />
+    <div data-ocid="home.journey">
+      <JourneyIntro />
+      <JourneyAbout />
+      <JourneySkills />
+      <JourneyMilestones />
+      <JourneyContact />
     </div>
   );
 }

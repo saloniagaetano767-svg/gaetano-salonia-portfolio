@@ -5,16 +5,20 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const locales: Locale[] = ["EN", "DE", "IT"];
 
   return (
-    <div className={`flex items-center gap-1.5 ${className}`}>
+    <div
+      className={`inline-flex items-center gap-1 rounded-full p-1 bg-white/6 border border-white/10 ${className}`}
+      role="group"
+      aria-label="Language"
+    >
       {locales.map((l) => (
         <button
           key={l}
           type="button"
           onClick={() => setLocale(l)}
-          className={`font-mono text-[11px] font-bold tracking-wider px-2.5 py-1 rounded-md transition-all duration-200 ${
+          className={`font-mono text-[10px] font-semibold tracking-wider min-w-[2.25rem] px-2.5 py-1.5 rounded-full transition-all duration-200 ${
             locale === l
-              ? "btn-gradient text-[var(--btn-text)]"
-              : "surface-muted text-muted-foreground hover:text-primary"
+              ? "bg-[var(--ocean-sunset)]/90 text-[#1a1208] shadow-sm"
+              : "text-white/55 hover:text-white/85"
           }`}
           aria-pressed={locale === l}
           aria-label={`Switch language to ${l}`}

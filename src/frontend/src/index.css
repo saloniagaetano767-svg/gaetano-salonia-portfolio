@@ -763,3 +763,551 @@
     animation: shimmer 2s linear infinite;
   }
 }
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("https://fonts.gstatic.com/s/fraunces/v36/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea8zqai__1uUqfGDcoXk.woff2")
+    format("woff2");
+  font-weight: 600 800;
+  font-display: swap;
+}
+
+.ocean-journey {
+  --font-display: "Fraunces", "Syne", serif;
+  --body-bg: #061018;
+  --ocean-bg: #061018;
+  --ocean-surface: rgba(6, 16, 28, 0.78);
+  --ocean-sunset: #e8b060;
+  --ocean-sunset-bright: #f0c878;
+  --ocean-teal: #72d4c4;
+  --ocean-teal-dim: #5ab8aa;
+  --ocean-reef: #3d8a7a;
+  --ocean-text: #f4efe6;
+  --ocean-text-muted: rgba(244, 239, 230, 0.78);
+  --ocean-text-dim: rgba(244, 239, 230, 0.52);
+  --ocean-border: rgba(255, 255, 255, 0.14);
+  --ocean-border-soft: rgba(255, 255, 255, 0.08);
+  --ocean-glass-bg: rgba(4, 14, 24, 0.82);
+  --ocean-glass-bg-strong: rgba(3, 10, 18, 0.9);
+  --ocean-nav-height: max(4.25rem, calc(3.5rem + env(safe-area-inset-top)));
+  --section-px: clamp(1.25rem, 4vw, 2rem);
+  --section-gap: clamp(1.25rem, 3vw, 2.5rem);
+  background: transparent;
+  color: var(--ocean-text);
+}
+
+.ocean-journey body,
+html:has(.ocean-journey) body {
+  background: transparent;
+}
+
+.ocean-nav-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 16, 24, 0.92) 0%,
+    rgba(6, 16, 24, 0.55) 55%,
+    rgba(6, 16, 24, 0) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
+}
+
+.journey-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ocean-sunset);
+  margin-bottom: 0.875rem;
+}
+
+.journey-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
+  color: var(--ocean-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.journey-title-accent {
+  color: var(--ocean-teal);
+}
+
+.journey-lead {
+  color: var(--ocean-text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 32rem;
+  margin-bottom: 2.5rem;
+}
+
+.ocean-glass {
+  background: var(--ocean-glass-bg);
+  border: 1px solid var(--ocean-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.ocean-glass-accent {
+  border-color: rgba(232, 176, 96, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(114, 212, 196, 0.06),
+    0 16px 48px rgba(0, 0, 0, 0.42);
+}
+
+.ocean-glass-dashed {
+  border-style: dashed;
+  border-color: rgba(114, 212, 196, 0.22);
+  background: rgba(4, 14, 24, 0.72);
+}
+
+[data-station-theme="sea"] .ocean-glass,
+[data-station-theme="deep"] .ocean-glass,
+[data-station-theme="reef"] .ocean-glass {
+  background: var(--ocean-glass-bg-strong);
+}
+
+.journey-content-frame {
+  isolation: isolate;
+}
+
+/* Section readability scrims */
+.journey-station-scrim {
+  position: absolute;
+  inset: 0;
+  transition: background 1.2s ease;
+}
+
+.journey-station-scrim--sunset {
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 50% 38%,
+      rgba(6, 16, 24, 0.42) 0%,
+      transparent 72%
+    ),
+    linear-gradient(180deg, transparent 0%, rgba(6, 16, 24, 0.25) 100%);
+}
+
+.journey-station-scrim--surface {
+  background: radial-gradient(
+    ellipse 85% 60% at 50% 45%,
+    rgba(6, 16, 24, 0.55) 0%,
+    transparent 75%
+  );
+}
+
+.journey-station-scrim--sea {
+  background:
+    radial-gradient(
+      ellipse 92% 72% at 50% 48%,
+      rgba(3, 12, 22, 0.78) 0%,
+      rgba(4, 14, 24, 0.42) 58%,
+      transparent 88%
+    ),
+    linear-gradient(180deg, rgba(6, 16, 24, 0.2) 0%, rgba(3, 10, 18, 0.55) 100%);
+}
+
+.journey-station-scrim--deep {
+  background:
+    radial-gradient(
+      ellipse 88% 68% at 50% 46%,
+      rgba(2, 8, 16, 0.85) 0%,
+      rgba(4, 12, 20, 0.55) 62%,
+      transparent 90%
+    ),
+    linear-gradient(180deg, rgba(4, 14, 24, 0.35) 0%, rgba(2, 8, 14, 0.65) 100%);
+}
+
+.journey-station-scrim--reef {
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 50% 44%,
+      rgba(2, 8, 14, 0.88) 0%,
+      rgba(4, 14, 22, 0.58) 60%,
+      transparent 92%
+    ),
+    linear-gradient(180deg, rgba(3, 10, 18, 0.4) 0%, rgba(2, 6, 12, 0.7) 100%);
+}
+
+/* Decorative elements */
+.journey-deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.journey-deco-sun {
+  top: 12%;
+  left: 50%;
+  width: min(280px, 55vw);
+  height: min(280px, 55vw);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240, 200, 120, 0.14) 0%,
+    rgba(232, 176, 96, 0.06) 40%,
+    transparent 70%
+  );
+}
+
+.journey-deco-rays {
+  top: 8%;
+  left: 50%;
+  width: min(420px, 90vw);
+  height: min(320px, 50vh);
+  transform: translateX(-50%);
+  background: conic-gradient(
+    from 180deg at 50% 100%,
+    transparent 0deg,
+    rgba(240, 200, 120, 0.04) 20deg,
+    transparent 40deg,
+    rgba(240, 200, 120, 0.03) 60deg,
+    transparent 80deg,
+    rgba(240, 200, 120, 0.04) 100deg,
+    transparent 120deg,
+    rgba(240, 200, 120, 0.03) 140deg,
+    transparent 160deg,
+    rgba(240, 200, 120, 0.04) 180deg,
+    transparent 200deg,
+    rgba(240, 200, 120, 0.03) 220deg,
+    transparent 240deg,
+    rgba(240, 200, 120, 0.04) 260deg,
+    transparent 280deg,
+    rgba(240, 200, 120, 0.03) 300deg,
+    transparent 320deg,
+    rgba(240, 200, 120, 0.04) 340deg,
+    transparent 360deg
+  );
+  opacity: 0.7;
+}
+
+.journey-deco-waves {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  opacity: 0.85;
+}
+
+.journey-deco-caustics {
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 30% at 20% 30%, rgba(114, 212, 196, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 25% at 75% 55%, rgba(114, 212, 196, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 20% at 45% 75%, rgba(232, 176, 96, 0.04) 0%, transparent 70%);
+  animation: caustics-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes caustics-drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(2%, -1.5%) scale(1.03);
+  }
+}
+
+.journey-deco-bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.15),
+    rgba(114, 212, 196, 0.06)
+  );
+  animation: bubble-rise 8s ease-in-out infinite;
+}
+
+@keyframes bubble-rise {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-18px) scale(1.08);
+    opacity: 0.65;
+  }
+}
+
+.journey-deco-seaweed {
+  bottom: 0;
+  width: 40px;
+  height: min(120px, 18vh);
+  opacity: 0.7;
+}
+
+.journey-deco-seaweed--left {
+  left: max(0.5rem, env(safe-area-inset-left));
+}
+
+.journey-deco-seaweed--right {
+  right: max(0.5rem, env(safe-area-inset-right));
+  transform: scaleX(-1);
+}
+
+.journey-deco-depth-glow {
+  top: 20%;
+  left: 50%;
+  width: min(360px, 80vw);
+  height: min(200px, 30vh);
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(61, 138, 122, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.journey-deco-current {
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(114, 212, 196, 0.03) 50%,
+    transparent 60%
+  );
+  animation: current-sweep 12s ease-in-out infinite;
+}
+
+@keyframes current-sweep {
+  0%,
+  100% {
+    transform: translateX(-8%);
+  }
+  50% {
+    transform: translateX(8%);
+  }
+}
+
+.journey-deco-plankton {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ocean-teal);
+  box-shadow: 0 0 6px var(--ocean-teal);
+  animation: plankton-pulse 3s ease-in-out infinite;
+}
+
+@keyframes plankton-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.journey-deco-reef-glow {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(61, 138, 122, 0.08) 60%,
+    rgba(232, 176, 96, 0.06) 100%
+  );
+}
+
+.journey-deco-coral {
+  bottom: 0;
+  width: min(80px, 14vw);
+  height: min(100px, 16vh);
+  opacity: 0.75;
+}
+
+.journey-deco-coral--left {
+  left: max(0.25rem, env(safe-area-inset-left));
+}
+
+.journey-deco-coral--right {
+  right: max(0.25rem, env(safe-area-inset-right));
+  transform: scaleX(-1);
+}
+
+.journey-deco-bio {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ocean-sunset-bright);
+  box-shadow:
+    0 0 8px var(--ocean-sunset),
+    0 0 16px rgba(114, 212, 196, 0.4);
+  animation: bio-glow 4s ease-in-out infinite;
+}
+
+@keyframes bio-glow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Milestone path */
+.journey-milestone-path {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(114, 212, 196, 0.35) 0,
+    rgba(114, 212, 196, 0.35) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  opacity: 0.5;
+}
+
+.journey-skill-index {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(232, 176, 96, 0.12);
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.journey-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.journey-section-divider::before,
+.journey-section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(114, 212, 196, 0.25),
+    transparent
+  );
+}
+
+.journey-section-divider-icon {
+  color: var(--ocean-sunset);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Mobile depth pill */
+.journey-depth-mobile {
+  position: fixed;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 999px;
+  background: rgba(4, 14, 24, 0.88);
+  border: 1px solid var(--ocean-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.journey-depth-mobile-bar {
+  width: 48px;
+  height: 3px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.journey-depth-mobile-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(
+    90deg,
+    var(--ocean-sunset),
+    var(--ocean-teal)
+  );
+  transition: width 0.15s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-deco-caustics,
+  .journey-deco-current,
+  .journey-deco-bubble,
+  .journey-deco-plankton,
+  .journey-deco-bio {
+    animation: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .journey-title {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .journey-lead {
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+  }
+
+  .journey-deco-seaweed,
+  .journey-deco-coral {
+    opacity: 0.45;
+  }
+
+  #contact {
+    padding-bottom: max(7.5rem, calc(6rem + env(safe-area-inset-bottom))) !important;
+  }
+}
+
+.ocean-static-water {
+  animation: ocean-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes ocean-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-static-water {
+    animation: none;
+  }
+}

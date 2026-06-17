@@ -1,11 +1,11 @@
-import { CursorScrollProvider } from "@/context/CursorScrollContext";
+import { DepthIndicator } from "@/components/journey/DepthIndicator";
+import { JourneyPreloader } from "@/components/journey/JourneyPreloader";
+import { MinimalNav } from "@/components/nav/MinimalNav";
+import { OceanScene } from "@/components/ocean/OceanScene";
+import { JourneyScrollProvider } from "@/context/JourneyScrollContext";
 import { LocaleProvider, useTranslation } from "@/i18n";
 import { FOCUS_RING } from "@/lib/layout";
 import type { ReactNode } from "react";
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
-import { PageBackground } from "./PageBackground";
-import { ThemeToggle } from "./ThemeToggle";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,7 +16,7 @@ function SkipLink() {
   return (
     <a
       href="#main-content"
-      className={`sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-background focus:text-foreground focus:shadow-elevated ${FOCUS_RING}`}
+      className={`sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#0a1628] focus:text-white focus:shadow-lg ${FOCUS_RING}`}
     >
       {t.a11y.skipToContent}
     </a>
@@ -26,18 +26,22 @@ function SkipLink() {
 export function Layout({ children }: LayoutProps) {
   return (
     <LocaleProvider>
-      <CursorScrollProvider>
-        <div className="min-h-screen flex flex-col bg-background text-foreground relative">
+      <JourneyScrollProvider>
+        <div className="min-h-screen flex flex-col text-white relative ocean-journey">
           <SkipLink />
-          <PageBackground />
-          <Navbar />
-          <main className="flex-1" id="main-content" tabIndex={-1}>
+          <OceanScene />
+          <JourneyPreloader />
+          <DepthIndicator />
+          <MinimalNav />
+          <main
+            className="flex-1 relative z-10 md:pl-[3.25rem] lg:pl-[3.75rem]"
+            id="main-content"
+            tabIndex={-1}
+          >
             {children}
           </main>
-          <Footer />
-          <ThemeToggle />
         </div>
-      </CursorScrollProvider>
+      </JourneyScrollProvider>
     </LocaleProvider>
   );
 }

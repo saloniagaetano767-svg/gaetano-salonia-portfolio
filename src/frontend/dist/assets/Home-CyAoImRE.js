@@ -6,8 +6,8 @@ var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read fr
 var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
-var _client, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a;
-import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, t as utf8ToBytes, E as ExternalError, M as MissingRootKeyErrorCode, v as Certificate, w as lookupResultToBuffer, x as RequestStatusResponseStatus, U as UnknownError, y as RequestStatusDoneNoReplyErrorCode, z as RejectError, A as CertifiedRejectErrorCode, B as UNREACHABLE_ERROR, I as InputError, D as InvalidReadStateRequestErrorCode, F as ReadRequestType, H as Principal, J as IDL, K as MissingCanisterIdErrorCode, N as HttpAgent, O as encode, Q as QueryResponseStatus, V as UncertifiedRejectErrorCode, W as isV3ResponseBody, X as isV2ResponseBody, Y as UncertifiedRejectUpdateErrorCode, Z as UnexpectedErrorCode, _ as decode, S as Subscribable, $ as pendingThenable, a0 as resolveEnabled, s as shallowEqualObjects, a1 as resolveStaleTime, a as noop, a2 as environmentManager, a3 as isValidTimeout, a4 as timeUntilStale, a5 as timeoutManager, a6 as focusManager, a7 as fetchState, a8 as replaceData, n as notifyManager, r as reactExports, b as shouldThrowError, u as useQueryClient, a9 as useInternetIdentity, aa as createActorWithConfig, ab as Record, ac as Vec, ad as Opt, ae as Service, af as Func, ag as Nat, ah as Text, ai as Bool, aj as Int } from "./index-C5aS8DVF.js";
+var _client, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a, _client2, _currentResult2, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn2, _b;
+import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, u as utf8ToBytes, E as ExternalError, M as MissingRootKeyErrorCode, C as Certificate, l as lookupResultToBuffer, R as RequestStatusResponseStatus, U as UnknownError, a as RequestStatusDoneNoReplyErrorCode, b as RejectError, c as CertifiedRejectErrorCode, d as UNREACHABLE_ERROR, I as InputError, e as InvalidReadStateRequestErrorCode, f as ReadRequestType, g as Principal, h as IDL, i as MissingCanisterIdErrorCode, H as HttpAgent, j as encode, Q as QueryResponseStatus, k as UncertifiedRejectErrorCode, m as isV3ResponseBody, n as isV2ResponseBody, o as UncertifiedRejectUpdateErrorCode, p as UnexpectedErrorCode, q as decode, S as Subscribable, r as pendingThenable, s as resolveEnabled, t as shallowEqualObjects, v as resolveStaleTime, w as noop, x as environmentManager, y as isValidTimeout, z as timeUntilStale, A as timeoutManager, B as focusManager, D as fetchState, F as replaceData, G as notifyManager, J as hashKey, K as getDefaultState, L as reactExports, N as shouldThrowError, O as useQueryClient, V as useInternetIdentity, W as createActorWithConfig, X as jsxRuntimeExports, Y as useTranslation, Z as motion, _ as usePrefersReducedMotion, $ as useMouseParallax, a0 as Record, a1 as Vec, a2 as Opt, a3 as Service, a4 as Func, a5 as Nat, a6 as Text, a7 as Bool, a8 as Int, a9 as CONTACT_EMAIL, aa as FOCUS_RING, ab as useJourneyScroll, ac as SURFACE_SCROLL_START } from "./index-Du2rLgTg.js";
 const FIVE_MINUTES_IN_MSEC = 5 * 60 * 1e3;
 function defaultStrategy() {
   return chain(conditionalDelay(once(), 1e3), backoff(1e3, 1.2), timeout(FIVE_MINUTES_IN_MSEC));
@@ -292,10 +292,10 @@ function _createActorMethod(actor, methodName, func, blsVerify) {
   let caller;
   if (func.annotations.includes("query") || func.annotations.includes("composite_query")) {
     caller = async (options, ...args) => {
-      var _a2, _b;
+      var _a2, _b2;
       options = {
         ...options,
-        ...(_b = (_a2 = actor[metadataSymbol].config).queryTransform) == null ? void 0 : _b.call(_a2, methodName, args, {
+        ...(_b2 = (_a2 = actor[metadataSymbol].config).queryTransform) == null ? void 0 : _b2.call(_a2, methodName, args, {
           ...actor[metadataSymbol].config,
           ...options
         })
@@ -331,10 +331,10 @@ function _createActorMethod(actor, methodName, func, blsVerify) {
     };
   } else {
     caller = async (options, ...args) => {
-      var _a2, _b;
+      var _a2, _b2;
       options = {
         ...options,
-        ...(_b = (_a2 = actor[metadataSymbol].config).callTransform) == null ? void 0 : _b.call(_a2, methodName, args, {
+        ...(_b2 = (_a2 = actor[metadataSymbol].config).callTransform) == null ? void 0 : _b2.call(_a2, methodName, args, {
           ...actor[metadataSymbol].config,
           ...options
         })
@@ -888,6 +888,146 @@ function shouldAssignObserverCurrentProperties(observer, optimisticResult) {
   }
   return false;
 }
+var MutationObserver = (_b = class extends Subscribable {
+  constructor(client, options) {
+    super();
+    __privateAdd(this, _MutationObserver_instances);
+    __privateAdd(this, _client2);
+    __privateAdd(this, _currentResult2);
+    __privateAdd(this, _currentMutation);
+    __privateAdd(this, _mutateOptions);
+    __privateSet(this, _client2, client);
+    this.setOptions(options);
+    this.bindMethods();
+    __privateMethod(this, _MutationObserver_instances, updateResult_fn).call(this);
+  }
+  bindMethods() {
+    this.mutate = this.mutate.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+  setOptions(options) {
+    var _a2;
+    const prevOptions = this.options;
+    this.options = __privateGet(this, _client2).defaultMutationOptions(options);
+    if (!shallowEqualObjects(this.options, prevOptions)) {
+      __privateGet(this, _client2).getMutationCache().notify({
+        type: "observerOptionsUpdated",
+        mutation: __privateGet(this, _currentMutation),
+        observer: this
+      });
+    }
+    if ((prevOptions == null ? void 0 : prevOptions.mutationKey) && this.options.mutationKey && hashKey(prevOptions.mutationKey) !== hashKey(this.options.mutationKey)) {
+      this.reset();
+    } else if (((_a2 = __privateGet(this, _currentMutation)) == null ? void 0 : _a2.state.status) === "pending") {
+      __privateGet(this, _currentMutation).setOptions(this.options);
+    }
+  }
+  onUnsubscribe() {
+    var _a2;
+    if (!this.hasListeners()) {
+      (_a2 = __privateGet(this, _currentMutation)) == null ? void 0 : _a2.removeObserver(this);
+    }
+  }
+  onMutationUpdate(action) {
+    __privateMethod(this, _MutationObserver_instances, updateResult_fn).call(this);
+    __privateMethod(this, _MutationObserver_instances, notify_fn2).call(this, action);
+  }
+  getCurrentResult() {
+    return __privateGet(this, _currentResult2);
+  }
+  reset() {
+    var _a2;
+    (_a2 = __privateGet(this, _currentMutation)) == null ? void 0 : _a2.removeObserver(this);
+    __privateSet(this, _currentMutation, void 0);
+    __privateMethod(this, _MutationObserver_instances, updateResult_fn).call(this);
+    __privateMethod(this, _MutationObserver_instances, notify_fn2).call(this);
+  }
+  mutate(variables, options) {
+    var _a2;
+    __privateSet(this, _mutateOptions, options);
+    (_a2 = __privateGet(this, _currentMutation)) == null ? void 0 : _a2.removeObserver(this);
+    __privateSet(this, _currentMutation, __privateGet(this, _client2).getMutationCache().build(__privateGet(this, _client2), this.options));
+    __privateGet(this, _currentMutation).addObserver(this);
+    return __privateGet(this, _currentMutation).execute(variables);
+  }
+}, _client2 = new WeakMap(), _currentResult2 = new WeakMap(), _currentMutation = new WeakMap(), _mutateOptions = new WeakMap(), _MutationObserver_instances = new WeakSet(), updateResult_fn = function() {
+  var _a2;
+  const state = ((_a2 = __privateGet(this, _currentMutation)) == null ? void 0 : _a2.state) ?? getDefaultState();
+  __privateSet(this, _currentResult2, {
+    ...state,
+    isPending: state.status === "pending",
+    isSuccess: state.status === "success",
+    isError: state.status === "error",
+    isIdle: state.status === "idle",
+    mutate: this.mutate,
+    reset: this.reset
+  });
+}, notify_fn2 = function(action) {
+  notifyManager.batch(() => {
+    var _a2, _b2, _c, _d, _e, _f, _g, _h;
+    if (__privateGet(this, _mutateOptions) && this.hasListeners()) {
+      const variables = __privateGet(this, _currentResult2).variables;
+      const onMutateResult = __privateGet(this, _currentResult2).context;
+      const context = {
+        client: __privateGet(this, _client2),
+        meta: this.options.meta,
+        mutationKey: this.options.mutationKey
+      };
+      if ((action == null ? void 0 : action.type) === "success") {
+        try {
+          (_b2 = (_a2 = __privateGet(this, _mutateOptions)).onSuccess) == null ? void 0 : _b2.call(
+            _a2,
+            action.data,
+            variables,
+            onMutateResult,
+            context
+          );
+        } catch (e) {
+          void Promise.reject(e);
+        }
+        try {
+          (_d = (_c = __privateGet(this, _mutateOptions)).onSettled) == null ? void 0 : _d.call(
+            _c,
+            action.data,
+            null,
+            variables,
+            onMutateResult,
+            context
+          );
+        } catch (e) {
+          void Promise.reject(e);
+        }
+      } else if ((action == null ? void 0 : action.type) === "error") {
+        try {
+          (_f = (_e = __privateGet(this, _mutateOptions)).onError) == null ? void 0 : _f.call(
+            _e,
+            action.error,
+            variables,
+            onMutateResult,
+            context
+          );
+        } catch (e) {
+          void Promise.reject(e);
+        }
+        try {
+          (_h = (_g = __privateGet(this, _mutateOptions)).onSettled) == null ? void 0 : _h.call(
+            _g,
+            void 0,
+            action.error,
+            variables,
+            onMutateResult,
+            context
+          );
+        } catch (e) {
+          void Promise.reject(e);
+        }
+      }
+    }
+    this.listeners.forEach((listener) => {
+      listener(__privateGet(this, _currentResult2));
+    });
+  });
+}, _b);
 var IsRestoringContext = reactExports.createContext(false);
 var useIsRestoring = () => reactExports.useContext(IsRestoringContext);
 IsRestoringContext.Provider;
@@ -949,12 +1089,12 @@ var fetchOptimistic = (defaultedOptions, observer, errorResetBoundary) => observ
   errorResetBoundary.clearReset();
 });
 function useBaseQuery(options, Observer, queryClient) {
-  var _a2, _b, _c, _d;
+  var _a2, _b2, _c, _d;
   const isRestoring = useIsRestoring();
   const errorResetBoundary = useQueryErrorResetBoundary();
   const client = useQueryClient();
   const defaultedOptions = client.defaultQueryOptions(options);
-  (_b = (_a2 = client.getDefaultOptions().queries) == null ? void 0 : _a2._experimental_beforeQuery) == null ? void 0 : _b.call(
+  (_b2 = (_a2 = client.getDefaultOptions().queries) == null ? void 0 : _a2._experimental_beforeQuery) == null ? void 0 : _b2.call(
     _a2,
     defaultedOptions
   );
@@ -1021,6 +1161,36 @@ function useBaseQuery(options, Observer, queryClient) {
 function useQuery(options, queryClient) {
   return useBaseQuery(options, QueryObserver);
 }
+function useMutation(options, queryClient) {
+  const client = useQueryClient();
+  const [observer] = reactExports.useState(
+    () => new MutationObserver(
+      client,
+      options
+    )
+  );
+  reactExports.useEffect(() => {
+    observer.setOptions(options);
+  }, [observer, options]);
+  const result = reactExports.useSyncExternalStore(
+    reactExports.useCallback(
+      (onStoreChange) => observer.subscribe(notifyManager.batchCalls(onStoreChange)),
+      [observer]
+    ),
+    () => observer.getCurrentResult(),
+    () => observer.getCurrentResult()
+  );
+  const mutate = reactExports.useCallback(
+    (variables, mutateOptions) => {
+      observer.mutate(variables, mutateOptions).catch(noop);
+    },
+    [observer]
+  );
+  if (result.error && shouldThrowError(observer.options.throwOnError, [result.error])) {
+    throw result.error;
+  }
+  return { ...result, mutate, mutateAsync: result.mutate };
+}
 function hasAccessControl(actor) {
   return typeof actor === "object" && actor !== null && "_initializeAccessControl" in actor;
 }
@@ -1068,6 +1238,133 @@ function useActor(createActor2) {
     actor: actorQuery.data || null,
     isFetching: actorQuery.isFetching
   };
+}
+function GlassCard({ children, className = "" }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: `ocean-glass rounded-2xl backdrop-blur-xl ${className}`,
+      children
+    }
+  );
+}
+function JourneyStation({
+  id,
+  children,
+  className = "",
+  compact,
+  diveEntry
+}) {
+  const heightClass = compact ? "min-h-[90vh]" : "min-h-screen";
+  const paddingClass = diveEntry ? "pt-24 sm:pt-28 pb-20 sm:pb-24" : compact ? "py-20 sm:py-24" : "py-24 sm:py-28";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "section",
+    {
+      id,
+      className: `relative flex items-center justify-center px-[var(--section-px)] ${heightClass} ${paddingClass} ${className}`,
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full max-w-[1080px] mx-auto", children })
+    }
+  );
+}
+function InfoRow({ label, value }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-4 mb-4 border-b border-white/8 last:mb-0 last:pb-0 last:border-0", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-text-dim)] tracking-[0.14em] uppercase mb-1.5", children: label }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[var(--ocean-text)] font-medium", children: value })
+  ] });
+}
+function JourneyAbout() {
+  const { t } = useTranslation();
+  const infoRows = [
+    { label: t.about.fields.location, value: t.about.location },
+    { label: t.about.fields.company, value: t.about.company },
+    { label: t.about.fields.status, value: t.about.status },
+    { label: t.about.fields.languages, value: t.about.languages },
+    { label: t.about.fields.apprenticeship, value: t.about.apprenticeship }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyStation, { id: "about", diveEntry: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 40 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true, margin: "-10%" },
+      transition: { duration: 0.75 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.about.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title", children: [
+          t.about.titleLight,
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.about.titleAccent })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-[var(--section-gap)] items-start", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { className: "p-6 sm:p-7 order-2 lg:order-1", children: infoRows.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsx(InfoRow, { label: row.label, value: row.value }, row.label)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6 order-1 lg:order-2", children: [t.about.p1, t.about.p2, t.about.p3, t.about.p4].map(
+            (paragraph, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.p,
+              {
+                initial: { opacity: 0, y: 24 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { duration: 0.6, delay: i * 0.06 },
+                className: "text-[15px] text-[var(--ocean-text-muted)] leading-[1.75]",
+                children: paragraph
+              },
+              paragraph.slice(0, 20)
+            )
+          ) })
+        ] })
+      ]
+    }
+  ) });
+}
+const HORIZON_SRC = "/assets/images/avatar_light.png";
+const FALLBACK_SRC = "/assets/images/placeholder.svg";
+function AvatarPortrait({ variant = "horizon" }) {
+  const reducedMotion = usePrefersReducedMotion();
+  const [src, setSrc] = reactExports.useState(HORIZON_SRC);
+  const { ref, transform } = useMouseParallax({
+    enabled: !reducedMotion,
+    maxTilt: variant === "horizon" ? 5 : 6
+  });
+  reactExports.useEffect(() => {
+    setSrc(HORIZON_SRC);
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      ref,
+      className: "group relative w-full transition-transform duration-200 ease-out",
+      style: { transform },
+      "data-ocid": "avatar.portrait",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-3 rounded-2xl bg-gradient-to-br from-[var(--ocean-sunset)]/25 to-[var(--ocean-teal)]/15 blur-xl opacity-70" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.4)]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src,
+              alt: "Portrait of Gaetano Salonia",
+              className: "relative z-10 w-full h-full object-cover object-[center_15%]",
+              width: 480,
+              height: 600,
+              loading: "lazy",
+              decoding: "async",
+              onError: () => setSrc(FALLBACK_SRC)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 pointer-events-none z-[5]",
+              style: {
+                background: "linear-gradient(to top, rgba(10,22,40,0.55) 0%, transparent 45%)"
+              },
+              "aria-hidden": true
+            }
+          )
+        ] })
+      ]
+    }
+  );
 }
 const ProjectId = Nat;
 const Project = Record({
@@ -1408,152 +1705,383 @@ function createActor(canisterId, _uploadFile, _downloadFile, options = {}) {
   });
   return new Backend(actor, _uploadFile, _downloadFile, options.processError);
 }
-const FITNESS_LIVE = "https://gasalruag.github.io";
-const FITNESS_GH = "https://github.com/gasalruag/gasalruag.github.io";
-const SAMPLE_PROJECTS = [
-  {
-    id: BigInt(1),
-    title: "Personal Portfolio Platform",
-    featured: true,
-    description: "A public calling card with a rich hero, project case studies, and a contact flow — built for fast static hosting (e.g. Vercel), clear typography, and a strong first impression for applications.",
-    category: "Web Application",
-    techStack: [
-      "TypeScript",
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Responsive UI",
-      "SPA routing"
-    ],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(2),
-    title: "NavData workflow & dashboard patterns",
-    featured: true,
-    description: "Internal-style patterns for navigation-related data: role-aware views, exportable summaries, and REST-driven visuals — informed by enterprise data-quality practice (generic demo content only).",
-    category: "Full-Stack patterns",
-    techStack: ["React", "TypeScript", "REST APIs", "Validation", "Git"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(3),
-    title: "Fitness tracker",
-    featured: true,
-    description: "A deployed web experience for tracking workouts and progress — structured UI, persisted habits, and a live demo on GitHub Pages at gasalruag.github.io.",
-    category: "Web Application",
-    techStack: ["HTML", "CSS", "JavaScript", "Git", "GitHub Pages"],
-    imageUrl: "",
-    githubUrl: FITNESS_GH,
-    liveUrl: FITNESS_LIVE
-  },
-  {
-    id: BigInt(4),
-    title: "Team task board",
-    featured: true,
-    description: "A Kanban board with columns, filters, and local persistence — focused on state handling, UX polish, and maintainable React structure.",
-    category: "Frontend",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Local state", "Git"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  },
-  {
-    id: BigInt(5),
-    title: "Markdown documentation hub",
-    featured: true,
-    description: "A lightweight static documentation site built from Markdown with navigation, search, and syntax-highlighted code — low-cost hosting for school and team hand-ins.",
-    category: "Content & Automation",
-    techStack: ["TypeScript", "Vite", "Markdown", "CSS", "GitHub Pages"],
-    imageUrl: "",
-    githubUrl: "https://github.com/saloniagaetano767-svg",
-    liveUrl: ""
-  }
-];
-const CASE_STUDIES = {
-  "1": {
-    problem: "Early-career developers need a portfolio that feels credible: fast loading, readable type, and a narrative that connects work to real skills — not filler copy.",
-    role: "Owned information architecture, React + Tailwind UI, animation tuned for reduced-motion, Vite builds, and static-friendly deploys.",
-    outcomes: [
-      "Clear hierarchy and lighthouse-friendly delivery",
-      "Reusable sections for iterating on copy quickly",
-      "Case study pages that explain stack and impact in one flow",
-      "Responsive navigation plus contact fallback without a proprietary backend"
-    ],
-    timeline: "Ongoing (2025–2026)"
-  },
-  "2": {
-    problem: "Operational teams bounce between spreadsheets and one-off exports; a dedicated web surface makes recurring KPIs easier to revisit.",
-    role: "Typed REST data hooks, chart-ready summaries, and CSV exports with deliberate loading / empty states for production-adjacent UX.",
-    outcomes: [
-      "Less context switching when demoing repeatable reports",
-      "Retry and edge-case behaviour for flaky endpoints",
-      "Design tokens that match this site’s professional dark theme"
-    ],
-    timeline: "Multi-month school / hobby build"
-  },
-  "3": {
-    problem: "Fitness goals slip when tracking is inconvenient; a tiny dedicated site keeps workouts and milestones visible.",
-    role: "Implemented structured screens for logging activity, sensible defaults for repeat use, and a static deploy on GitHub Pages so the demo stays reachable.",
-    outcomes: [
-      "Always-on public demo at github.io for recruiters and classmates",
-      "Simple stack that emphasizes HTML/CSS/JS fundamentals",
-      "Repository separate from templated placeholders for authenticity"
-    ],
-    timeline: "Side project · live on GitHub Pages"
-  },
-  "4": {
-    problem: "Linear todos break down for multi-step, collaborative efforts; a board view keeps priorities visible and handoffs understandable.",
-    role: "Column layout with keyboard-friendly controls, optimistic moves between columns, and persistence so refreshes retain state.",
-    outcomes: [
-      "Shows composition and disciplined state in React",
-      "Responsive layout where columns behave well on narrow viewports",
-      "Seed tooling for demos and screenshots"
-    ],
-    timeline: "~6 weeks (school / personal)"
-  },
-  "5": {
-    problem: "Technical notes scattered across chats and disks; one static docs URL speeds onboarding and assignment reviews.",
-    role: "Markdown pipeline, cohesive layout shell, lightweight client-side search, and deployments from main.",
-    outcomes: [
-      "Sticky navigation for hopping between chapters quickly",
-      "Code samples with workable contrast in dark mode",
-      "Hosting cost kept low with plain static assets only"
-    ],
-    timeline: "~2 months alongside other work"
-  }
-};
-function useFeaturedProjects() {
-  const { actor, isFetching } = useActor(createActor);
-  return useQuery({
-    queryKey: ["projects", "featured"],
-    queryFn: async () => {
-      if (!actor) return [];
-      return actor.getFeaturedProjects();
+async function submitPortfolioContactViaForm(data) {
+  const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
     },
-    enabled: !!actor && !isFetching
+    body: JSON.stringify({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      _subject: `Portfolio contact: ${data.name}`,
+      _replyto: data.email,
+      _captcha: "false"
+    })
+  });
+  if (!response.ok) {
+    const text = await response.text().catch(() => "");
+    throw new Error(
+      text.trim() || "Could not send — please email me directly using the address on this page."
+    );
+  }
+}
+function useContact() {
+  const { actor } = useActor(createActor);
+  return useMutation({
+    mutationFn: async (data) => {
+      if (actor)
+        return actor.submitContact(data.name, data.email, data.message);
+      await submitPortfolioContactViaForm(data);
+      return void 0;
+    }
   });
 }
-function useProject(id) {
-  const { actor, isFetching } = useActor(createActor);
-  return useQuery({
-    queryKey: ["projects", id.toString()],
-    queryFn: async () => {
-      if (!actor) return null;
-      return actor.getProject(id);
-    },
-    enabled: !!actor && !isFetching
+const inputClass = `w-full rounded-xl px-4 py-3.5 text-base text-[var(--ocean-text)] bg-white/5 border border-white/10 outline-none focus:border-[var(--ocean-sunset)]/40 transition-colors placeholder:text-[var(--ocean-text-dim)] ${FOCUS_RING}`;
+function JourneyContact() {
+  const { t } = useTranslation();
+  const formId = reactExports.useId();
+  const { mutate, isPending, isSuccess, isError, error } = useContact();
+  const [form, setForm] = reactExports.useState({
+    name: "",
+    email: "",
+    message: ""
   });
+  const [touched, setTouched] = reactExports.useState({
+    name: false,
+    email: false,
+    message: false
+  });
+  const errors = {
+    name: touched.name && !form.name.trim() ? t.contact.nameError : null,
+    email: touched.email && !form.email.trim() ? t.contact.emailError : touched.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ? t.contact.emailInvalid : null,
+    message: touched.message && !form.message.trim() ? t.contact.messageError : null
+  };
+  const isFormValid = form.name.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) && form.message.trim();
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+  function handleBlur(e) {
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    setTouched({ name: true, email: true, message: true });
+    if (!isFormValid) return;
+    mutate(form);
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyStation, { id: "contact", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 48 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true, margin: "-10%" },
+      transition: { duration: 0.85 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.contact.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title !mb-4", children: [
+          t.contact.titleLight,
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.contact.titleAccent })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-lead", children: t.contact.sub }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[minmax(240px,300px)_1fr] gap-[var(--section-gap)] lg:gap-16 items-start", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0, scale: 0.94 },
+              whileInView: { opacity: 1, scale: 1 },
+              viewport: { once: true },
+              transition: { duration: 0.8, delay: 0.1 },
+              className: "mx-auto lg:mx-0 w-full max-w-xs",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarPortrait, { variant: "horizon" })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { className: "p-6 sm:p-8", children: isSuccess ? /* @__PURE__ */ jsxRuntimeExports.jsxs("output", { className: "block text-center py-10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-xl font-bold text-[var(--ocean-text)] mb-3", children: t.contact.successTitle }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[var(--ocean-text-muted)]", children: t.contact.successMessage })
+          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "form",
+            {
+              id: formId,
+              onSubmit: handleSubmit,
+              noValidate: true,
+              className: "flex flex-col gap-5",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-name`, className: "sr-only", children: t.contact.namePlaceholder }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      id: `${formId}-name`,
+                      type: "text",
+                      name: "name",
+                      autoComplete: "name",
+                      placeholder: t.contact.namePlaceholder,
+                      value: form.name,
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      "aria-invalid": errors.name ? true : void 0,
+                      className: inputClass
+                    }
+                  ),
+                  errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.name })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-email`, className: "sr-only", children: t.contact.emailPlaceholder }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "input",
+                    {
+                      id: `${formId}-email`,
+                      type: "email",
+                      name: "email",
+                      autoComplete: "email",
+                      placeholder: t.contact.emailPlaceholder,
+                      value: form.email,
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      "aria-invalid": errors.email ? true : void 0,
+                      className: inputClass
+                    }
+                  ),
+                  errors.email && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.email })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-message`, className: "sr-only", children: t.contact.messagePlaceholder }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "textarea",
+                    {
+                      id: `${formId}-message`,
+                      name: "message",
+                      rows: 5,
+                      placeholder: t.contact.messagePlaceholder,
+                      value: form.message,
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      "aria-invalid": errors.message ? true : void 0,
+                      className: `${inputClass} resize-none`
+                    }
+                  ),
+                  errors.message && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.message })
+                ] }),
+                isError && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "p",
+                  {
+                    className: "text-sm text-red-300 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3",
+                    role: "alert",
+                    children: (error == null ? void 0 : error.message) ?? t.contact.errorFallback
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "submit",
+                    disabled: isPending,
+                    className: `self-start font-semibold text-sm px-7 py-3 min-h-11 rounded-full bg-[var(--ocean-sunset)] text-[#1a1208] hover:bg-[var(--ocean-sunset-bright)] transition-colors disabled:opacity-50 ${FOCUS_RING}`,
+                    children: isPending ? t.contact.sending : t.contact.send
+                  }
+                )
+              ]
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-20 pt-8 border-t border-white/6 text-center font-mono text-[10px] text-[var(--ocean-text-dim)] tracking-wider", children: [
+          t.footer.copy,
+          " · ",
+          t.footer.rights
+        ] })
+      ]
+    }
+  ) });
+}
+function JourneyIntro() {
+  const { t } = useTranslation();
+  const { experienceReady, introProgress } = useJourneyScroll();
+  const hintOpacity = introProgress < SURFACE_SCROLL_START ? 1 : Math.max(0, 1 - (introProgress - SURFACE_SCROLL_START) * 1.6);
+  const contentFade = Math.max(0.35, 1 - introProgress * 0.6);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JourneyStation,
+    {
+      id: "intro",
+      className: "!min-h-0 !py-0 !items-stretch !justify-start",
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-[270dvh]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 h-[100dvh] flex flex-col px-[var(--section-px)] pt-[calc(var(--ocean-nav-height)+1.5rem)]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "flex-1 flex items-center justify-center",
+            style: { opacity: contentFade },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center w-full max-w-xl mx-auto space-y-6", children: experienceReady && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.p,
+                {
+                  initial: { opacity: 0, y: 16 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.8, delay: 0.15 },
+                  className: "journey-eyebrow !mb-0 !text-white/55 [text-shadow:0_1px_12px_rgba(0,0,0,0.45)]",
+                  children: t.intro.greeting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.h1,
+                {
+                  initial: { opacity: 0, y: 28 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.9, delay: 0.3 },
+                  className: "font-display font-extrabold text-[clamp(2.75rem,9vw,5.5rem)] leading-[0.95] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.5),0_0_60px_rgba(6,16,24,0.35)]",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mb-1", children: t.intro.nameLine1 }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[var(--ocean-sunset-bright)]", children: t.intro.nameLine2 })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.p,
+                {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.8, delay: 0.5 },
+                  className: "text-base sm:text-lg text-white/75 max-w-md mx-auto leading-relaxed [text-shadow:0_1px_16px_rgba(0,0,0,0.4)]",
+                  children: t.intro.tagline
+                }
+              )
+            ] }) })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0 },
+            animate: { opacity: experienceReady ? hintOpacity : 0 },
+            transition: { duration: 0.6 },
+            className: "shrink-0 pb-[12vh] sm:pb-[11vh] flex flex-col items-center gap-4",
+            style: { opacity: experienceReady ? hintOpacity : 0 },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[10px] uppercase tracking-[0.18em] text-white/50 [text-shadow:0_1px_8px_rgba(0,0,0,0.35)]", children: t.intro.scrollHint }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-px h-12 bg-gradient-to-b from-white/45 to-transparent animate-pulse" })
+            ]
+          }
+        )
+      ] }) })
+    }
+  );
+}
+function BuoyCard({ item, index }) {
+  const isCurrent = item.phase === "current";
+  const isFuture = item.phase === "future";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.article,
+    {
+      initial: { opacity: 0, y: 32, x: index % 2 === 0 ? -12 : 12 },
+      whileInView: { opacity: 1, y: 0, x: 0 },
+      viewport: { once: true, margin: "-8%" },
+      transition: { duration: 0.65, delay: index * 0.08 },
+      className: `relative ${index % 2 === 0 ? "md:mr-auto md:max-w-[480px]" : "md:ml-auto md:max-w-[480px]"}`,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: `absolute -top-3 ${index % 2 === 0 ? "left-6" : "right-6"} w-3 h-3 rounded-full ${isCurrent ? "bg-[var(--ocean-sunset)] shadow-[0_0_12px_var(--ocean-sunset)]" : isFuture ? "border-2 border-dashed border-[var(--ocean-teal)]/50 bg-transparent" : "bg-[var(--ocean-teal-dim)]"}`,
+            "aria-hidden": true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          GlassCard,
+          {
+            className: `p-6 sm:p-7 ${isFuture ? "border-dashed border-[var(--ocean-teal)]/20" : ""}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-base font-bold text-[var(--ocean-text)]", children: item.role }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-[var(--ocean-sunset)] font-semibold", children: [
+                  "@ ",
+                  item.company
+                ] }),
+                item.badge && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-[var(--ocean-teal)]/25 text-[var(--ocean-teal)]", children: item.badge })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[var(--ocean-text-dim)] tracking-wider mb-3", children: item.period }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[var(--ocean-text-muted)] leading-[1.7]", children: item.description })
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function JourneyMilestones() {
+  const { t } = useTranslation();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyStation, { id: "milestones", compact: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 36 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true },
+      transition: { duration: 0.7 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.milestones.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title", children: [
+          t.milestones.titleLight,
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.milestones.titleAccent })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-10 md:space-y-12", children: t.journey.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(BuoyCard, { item, index: i }, item.role)) })
+      ]
+    }
+  ) });
+}
+function JourneySkills() {
+  const { t } = useTranslation();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyStation, { id: "skills", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 40 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true, margin: "-10%" },
+      transition: { duration: 0.75 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.services.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title !mb-4", children: [
+          t.services.titleLight,
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.services.titleAccent })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-lead", children: t.services.sub }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-5", children: t.services.categories.map((cat, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            initial: { opacity: 0, y: 28 },
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true },
+            transition: { duration: 0.55, delay: i * 0.07 },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(GlassCard, { className: "p-6 sm:p-7 hover:border-[var(--ocean-sunset)]/20 transition-colors duration-300 h-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-text-dim)] tracking-wider uppercase mb-2", children: t.services.cardLabel }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-lg font-bold text-[var(--ocean-text)] mb-5", children: cat.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "flex flex-wrap gap-2", children: cat.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "li",
+                {
+                  className: "font-mono text-[10px] px-2.5 py-1 rounded-md bg-white/5 border border-white/8 text-[var(--ocean-text-muted)]",
+                  children: item
+                },
+                item
+              )) })
+            ] })
+          },
+          cat.title
+        )) })
+      ]
+    }
+  ) });
+}
+function Home() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { "data-ocid": "home.journey", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyIntro, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyAbout, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneySkills, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyMilestones, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyContact, {})
+  ] });
 }
 export {
-  CASE_STUDIES as C,
-  SAMPLE_PROJECTS as S,
-  useFeaturedProjects as a,
-  useProject as b,
-  createActor as c,
-  useActor as u
+  Home as default
 };

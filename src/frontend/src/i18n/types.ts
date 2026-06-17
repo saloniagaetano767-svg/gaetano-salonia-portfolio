@@ -23,29 +23,29 @@ export interface Translation {
     closeMenu: string;
     goToSlide: string;
   };
-  sections: {
-    about: string;
-    work: string;
-    services: string;
-    journey: string;
-    nextSteps: string;
-    contact: string;
-  };
   nav: {
     about: string;
-    work: string;
-    services: string;
+    skills: string;
+    milestones: string;
     contact: string;
   };
-  hero: {
+  preloader: {
+    loading: string;
+    enter: string;
+  };
+  intro: {
     greeting: string;
-    roles: string[];
+    nameLine1: string;
+    nameLine2: string;
     tagline: string;
-    cta: string;
+    scrollHint: string;
     cv: string;
-    github: string;
-    linkedin: string;
-    email: string;
+  };
+  depth: {
+    label: string;
+    sunset: string;
+    sea: string;
+    reef: string;
   };
   about: {
     label: string;
@@ -55,14 +55,11 @@ export interface Translation {
     p2: string;
     p3: string;
     p4: string;
-    p5: string;
     location: string;
     company: string;
     status: string;
     languages: string;
     apprenticeship: string;
-    journeyTitle: string;
-    nextStepsTitle: string;
     fields: {
       location: string;
       company: string;
@@ -70,6 +67,11 @@ export interface Translation {
       languages: string;
       apprenticeship: string;
     };
+  };
+  milestones: {
+    label: string;
+    titleLight: string;
+    titleAccent: string;
   };
   journey: JourneyItem[];
   services: {
@@ -79,15 +81,6 @@ export interface Translation {
     sub: string;
     cardLabel: string;
     categories: ServiceCategory[];
-  };
-  work: {
-    label: string;
-    titleLight: string;
-    titleAccent: string;
-    client: string;
-    prev: string;
-    next: string;
-    viewProject: string;
   };
   contact: {
     label: string;

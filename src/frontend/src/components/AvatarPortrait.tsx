@@ -1,80 +1,49 @@
 import { useMouseParallax, usePrefersReducedMotion } from "@/lib/motion";
-import type { SiteTheme } from "@/lib/theme";
-import { useSiteTheme } from "@/lib/useSiteTheme";
 import { useEffect, useState } from "react";
 
-const AVATAR_BY_THEME: Record<SiteTheme, string> = {
-  dark: "/assets/images/avatar_dark.png",
-  light: "/assets/images/avatar_light.png",
-};
+const HORIZON_SRC = "/assets/images/avatar_light.png";
 const FALLBACK_SRC = "/assets/images/placeholder.svg";
 
-export function AvatarPortrait() {
-  const reducedMotion = usePrefersReducedMotion();
-  const theme = useSiteTheme();
-  const avatarSrc = AVATAR_BY_THEME[theme];
-  const [src, setSrc] = useState(avatarSrc);
+interface AvatarPortraitProps {
+  variant?: "horizon" | "default";
+}
 
-  useEffect(() => {
-    setSrc(avatarSrc);
-  }, [avatarSrc]);
+export function AvatarPortrait({ variant = "horizon" }: AvatarPortraitProps) {
+  const reducedMotion = usePrefersReducedMotion();
+  const [src, setSrc] = useState(HORIZON_SRC);
   const { ref, transform } = useMouseParallax<HTMLDivElement>({
     enabled: !reducedMotion,
-    maxTilt: 6,
+    maxTilt: variant === "horizon" ? 5 : 6,
   });
+
+  useEffect(() => {
+    setSrc(HORIZON_SRC);
+  }, []);
 
   return (
     <div
       ref={ref}
-      className="group relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto transition-transform duration-200 ease-out cursor-default"
+      className="group relative w-full transition-transform duration-200 ease-out"
       style={{ transform }}
-      data-ocid="hero.avatar"
+      data-ocid="avatar.portrait"
     >
-      <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-xl opacity-60 avatar-rim-glow" />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl surface-border avatar-rim-glow avatar-haunt-frame">
+      <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-[var(--ocean-sunset)]/25 to-[var(--ocean-teal)]/15 blur-xl opacity-70" />
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
         <img
           src={src}
           alt="Portrait of Gaetano Salonia"
-          className="relative z-10 w-full h-full object-cover object-[center_15%] avatar-haunt-base"
+          className="relative z-10 w-full h-full object-cover object-[center_15%]"
           width={480}
           height={600}
-          loading="eager"
+          loading="lazy"
           decoding="async"
           onError={() => setSrc(FALLBACK_SRC)}
         />
-        {!reducedMotion && (
-          <>
-            <img
-              src={src}
-              alt=""
-              aria-hidden
-              className="avatar-haunt-ghost absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none z-20"
-              width={480}
-              height={600}
-            />
-            <div
-              className="avatar-haunt-chroma-left pointer-events-none"
-              aria-hidden
-            />
-            <div
-              className="avatar-haunt-chroma-right pointer-events-none"
-              aria-hidden
-            />
-            <div
-              className="absolute inset-0 pointer-events-none opacity-0 animate-[blink_6s_ease-in-out_infinite] z-30"
-              style={{
-                background:
-                  "linear-gradient(to bottom, transparent 38%, var(--vignette) 42%, transparent 46%)",
-              }}
-              aria-hidden
-            />
-          </>
-        )}
         <div
           className="absolute inset-0 pointer-events-none z-[5]"
           style={{
             background:
-              "linear-gradient(to top, var(--vignette) 0%, transparent 40%)",
+              "linear-gradient(to top, rgba(10,22,40,0.55) 0%, transparent 45%)",
           }}
           aria-hidden
         />

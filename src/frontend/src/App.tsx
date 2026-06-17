@@ -1,4 +1,3 @@
-import { Skeleton } from "@/components/ui/skeleton";
 import { Toaster } from "@/components/ui/sonner";
 import {
   Outlet,
@@ -11,22 +10,14 @@ import { Suspense, lazy } from "react";
 import { Layout } from "./components/Layout";
 
 const HomePage = lazy(() => import("./pages/Home"));
-const ProjectDetailPage = lazy(() => import("./pages/ProjectDetail"));
 
 function PageLoader() {
   return (
     <div
-      className="min-h-screen flex flex-col gap-8 p-8 pt-24"
+      className="min-h-screen bg-[#020608]"
       data-ocid="app.loading_state"
-    >
-      <Skeleton className="h-12 w-64 bg-muted" />
-      <Skeleton className="h-6 w-96 bg-muted" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        {[1, 2, 3].map((i) => (
-          <Skeleton key={i} className="h-64 w-full bg-muted rounded-lg" />
-        ))}
-      </div>
-    </div>
+      aria-hidden
+    />
   );
 }
 
@@ -48,17 +39,7 @@ const homeRoute = createRoute({
   ),
 });
 
-const projectDetailRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/projects/$id",
-  component: () => (
-    <Suspense fallback={<PageLoader />}>
-      <ProjectDetailPage />
-    </Suspense>
-  ),
-});
-
-const routeTree = rootRoute.addChildren([homeRoute, projectDetailRoute]);
+const routeTree = rootRoute.addChildren([homeRoute]);
 
 const router = createRouter({ routeTree });
 
