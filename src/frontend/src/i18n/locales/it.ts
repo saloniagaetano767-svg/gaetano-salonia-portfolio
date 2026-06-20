@@ -39,7 +39,7 @@ export const it: Translation = {
     titleLight: "Uno sguardo",
     titleAccent: "dietro al codice",
     lead: "Qualche scatto — lavoro, team, Svizzera e vita quotidiana. Foto reali in arrivo.",
-    scrollHint: "Scorri in orizzontale",
+    scrollHint: "Continua a scorrere per vedere tutte le foto",
     stripLabel: "Galleria fotografica",
     placeholderLabel: "In arrivo",
     prev: "Immagine precedente",

@@ -39,7 +39,7 @@ export const en: Translation = {
     titleLight: "A glimpse",
     titleAccent: "behind the code",
     lead: "A few snapshots — work, team, Switzerland, and everyday life. Real photos coming soon.",
-    scrollHint: "Scroll sideways",
+    scrollHint: "Keep scrolling to browse all photos",
     stripLabel: "Photo gallery",
     placeholderLabel: "Coming soon",
     prev: "Previous slide",

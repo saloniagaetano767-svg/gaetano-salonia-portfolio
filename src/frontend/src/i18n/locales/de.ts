@@ -39,7 +39,7 @@ export const de: Translation = {
     titleLight: "Ein Blick",
     titleAccent: "hinter den Code",
     lead: "Ein paar Einblicke — Arbeit, Team, Schweiz und Alltag. Echte Fotos folgen bald.",
-    scrollHint: "Seitwärts scrollen",
+    scrollHint: "Weiter scrollen, um alle Bilder zu sehen",
     stripLabel: "Fotogalerie",
     placeholderLabel: "Folgt bald",
     prev: "Vorheriges Bild",

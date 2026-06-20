@@ -857,6 +857,26 @@ html:has(.ocean-journey) body {
   margin-bottom: 2rem;
 }
 
+.gallery-scroll-track {
+  position: relative;
+}
+
+.gallery-cinematic-viewport {
+  touch-action: pan-y;
+}
+
+.gallery-cinematic-strip-inner {
+  width: max-content;
+}
+
+.gallery-scroll-progress-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(232, 176, 96, 0.85),
+    rgba(114, 212, 196, 0.9)
+  );
+}
+
 .gallery-cinematic-strip {
   touch-action: pan-x;
   scrollbar-width: thin;
