@@ -22,12 +22,19 @@ export interface Translation {
     openMenu: string;
     closeMenu: string;
     goToSlide: string;
+    home: string;
+    mainNav: string;
+    language: string;
+    switchLanguage: string;
+    opensInNewTab: string;
   };
   nav: {
     about: string;
+    gallery: string;
     skills: string;
     milestones: string;
     contact: string;
+    instagram: string;
   };
   preloader: {
     loading: string;
@@ -40,6 +47,27 @@ export interface Translation {
     tagline: string;
     scrollHint: string;
     cv: string;
+    viewGallery: string;
+  };
+  gallery: {
+    label: string;
+    titleLight: string;
+    titleAccent: string;
+    lead: string;
+    scrollHint: string;
+    stripLabel: string;
+    placeholderLabel: string;
+    prev: string;
+    next: string;
+    position: string;
+    items: {
+      portrait: { alt: string; caption: string; tag: string };
+      work: { alt: string; caption: string; tag: string };
+      team: { alt: string; caption: string; tag: string };
+      switzerland: { alt: string; caption: string; tag: string };
+      everyday: { alt: string; caption: string; tag: string };
+      moment: { alt: string; caption: string; tag: string };
+    };
   };
   depth: {
     label: string;

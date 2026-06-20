@@ -7,7 +7,7 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _client, _currentQuery, _currentQueryInitialState, _currentResult, _currentResultState, _currentResultOptions, _currentThenable, _selectError, _selectFn, _selectResult, _lastQueryWithDefinedData, _staleTimeoutId, _refetchIntervalId, _currentRefetchInterval, _trackedProps, _QueryObserver_instances, executeFetch_fn, updateStaleTimeout_fn, computeRefetchInterval_fn, updateRefetchInterval_fn, updateTimers_fn, clearStaleTimeout_fn, clearRefetchInterval_fn, updateQuery_fn, notify_fn, _a, _client2, _currentResult2, _currentMutation, _mutateOptions, _MutationObserver_instances, updateResult_fn, notify_fn2, _b;
-import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, u as utf8ToBytes, E as ExternalError, M as MissingRootKeyErrorCode, C as Certificate, l as lookupResultToBuffer, R as RequestStatusResponseStatus, U as UnknownError, a as RequestStatusDoneNoReplyErrorCode, b as RejectError, c as CertifiedRejectErrorCode, d as UNREACHABLE_ERROR, I as InputError, e as InvalidReadStateRequestErrorCode, f as ReadRequestType, g as Principal, h as IDL, i as MissingCanisterIdErrorCode, H as HttpAgent, j as encode, Q as QueryResponseStatus, k as UncertifiedRejectErrorCode, m as isV3ResponseBody, n as isV2ResponseBody, o as UncertifiedRejectUpdateErrorCode, p as UnexpectedErrorCode, q as decode, S as Subscribable, r as pendingThenable, s as resolveEnabled, t as shallowEqualObjects, v as resolveStaleTime, w as noop, x as environmentManager, y as isValidTimeout, z as timeUntilStale, A as timeoutManager, B as focusManager, D as fetchState, F as replaceData, G as notifyManager, J as hashKey, K as getDefaultState, L as reactExports, N as shouldThrowError, O as useQueryClient, V as useInternetIdentity, W as createActorWithConfig, X as jsxRuntimeExports, Y as useTranslation, Z as motion, _ as usePrefersReducedMotion, $ as useMouseParallax, a0 as Record, a1 as Vec, a2 as Opt, a3 as Service, a4 as Func, a5 as Nat, a6 as Text, a7 as Bool, a8 as Int, a9 as CONTACT_EMAIL, aa as FOCUS_RING, ab as useJourneyScroll, ac as SURFACE_SCROLL_START } from "./index-Du2rLgTg.js";
+import { P as ProtocolError, T as TimeoutWaitingForResponseErrorCode, u as utf8ToBytes, E as ExternalError, M as MissingRootKeyErrorCode, C as Certificate, l as lookupResultToBuffer, R as RequestStatusResponseStatus, U as UnknownError, a as RequestStatusDoneNoReplyErrorCode, b as RejectError, c as CertifiedRejectErrorCode, d as UNREACHABLE_ERROR, I as InputError, e as InvalidReadStateRequestErrorCode, f as ReadRequestType, g as Principal, h as IDL, i as MissingCanisterIdErrorCode, H as HttpAgent, j as encode, Q as QueryResponseStatus, k as UncertifiedRejectErrorCode, m as isV3ResponseBody, n as isV2ResponseBody, o as UncertifiedRejectUpdateErrorCode, p as UnexpectedErrorCode, q as decode, S as Subscribable, r as pendingThenable, s as resolveEnabled, t as shallowEqualObjects, v as resolveStaleTime, w as noop, x as environmentManager, y as isValidTimeout, z as timeUntilStale, A as timeoutManager, B as focusManager, D as fetchState, F as replaceData, G as notifyManager, J as hashKey, K as getDefaultState, L as reactExports, N as shouldThrowError, O as useQueryClient, V as useInternetIdentity, W as createActorWithConfig, X as createLucideIcon, Y as jsxRuntimeExports, Z as useTranslation, _ as motion, $ as usePrefersReducedMotion, a0 as useMouseParallax, a1 as Record, a2 as Vec, a3 as Opt, a4 as Service, a5 as Func, a6 as Nat, a7 as Text, a8 as Bool, a9 as Int, aa as CONTACT_EMAIL, ab as JOURNEY_FOCUS_RING, ac as GITHUB_URL, ad as LINKEDIN_URL, ae as JOURNEY_CTA_PRIMARY, af as useJourneyScroll, ag as JOURNEY_CTA_SECONDARY, ah as SURFACE_SCROLL_START } from "./index-DP6bKAC6.js";
 const FIVE_MINUTES_IN_MSEC = 5 * 60 * 1e3;
 function defaultStrategy() {
   return chain(conditionalDelay(once(), 1e3), backoff(1e3, 1.2), timeout(FIVE_MINUTES_IN_MSEC));
@@ -1239,12 +1239,334 @@ function useActor(createActor2) {
     isFetching: actorQuery.isFetching
   };
 }
-function GlassCard({ children, className = "" }) {
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [
+  ["path", { d: "M12 22V8", key: "qkxhtm" }],
+  ["path", { d: "M5 12H2a10 10 0 0 0 20 0h-3", key: "1hv3nh" }],
+  ["circle", { cx: "12", cy: "5", r: "3", key: "rqqgnr" }]
+];
+const Anchor = createLucideIcon("anchor", __iconNode$7);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  [
+    "path",
+    {
+      d: "M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z",
+      key: "1tc9qg"
+    }
+  ],
+  ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
+];
+const Camera = createLucideIcon("camera", __iconNode$6);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$5 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$5);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$4 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$4);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$3 = [
+  [
+    "path",
+    {
+      d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
+      key: "tonef"
+    }
+  ],
+  ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
+];
+const Github = createLucideIcon("github", __iconNode$3);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$2 = [
+  [
+    "path",
+    {
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+      key: "c2jq9f"
+    }
+  ],
+  ["rect", { width: "4", height: "12", x: "2", y: "9", key: "mk3on5" }],
+  ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }]
+];
+const Linkedin = createLucideIcon("linkedin", __iconNode$2);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1 = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$1);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1",
+      key: "knzxuh"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1",
+      key: "2jd2cc"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1",
+      key: "rd2r6e"
+    }
+  ]
+];
+const Waves = createLucideIcon("waves", __iconNode);
+function GlassCard({
+  children,
+  className = "",
+  variant = "default"
+}) {
+  const variantClass = variant === "accent" ? "ocean-glass-accent" : variant === "dashed" ? "ocean-glass-dashed" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: `ocean-glass rounded-2xl backdrop-blur-xl ${className}`,
+      className: `ocean-glass rounded-2xl backdrop-blur-xl ${variantClass} ${className}`,
       children
+    }
+  );
+}
+function SunsetDecor() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-sun" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-rays" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "svg",
+      {
+        className: "journey-deco journey-deco-waves",
+        viewBox: "0 0 400 48",
+        preserveAspectRatio: "none",
+        "aria-hidden": true,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M0 28 Q50 18 100 28 T200 28 T300 28 T400 28 V48 H0 Z",
+              fill: "rgba(232,176,96,0.06)"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M0 34 Q60 24 120 34 T240 34 T360 34 T400 34 V48 H0 Z",
+              fill: "rgba(114,212,196,0.04)"
+            }
+          )
+        ]
+      }
+    )
+  ] });
+}
+function SeaDecor() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-caustics" }),
+    [
+      { left: "8%", top: "22%", size: 6, delay: 0 },
+      { left: "88%", top: "35%", size: 4, delay: 1.2 },
+      { left: "72%", top: "68%", size: 5, delay: 0.6 },
+      { left: "14%", top: "78%", size: 3, delay: 2 },
+      { left: "48%", top: "12%", size: 4, delay: 1.8 }
+    ].map((b, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: "journey-deco-bubble",
+        style: {
+          left: b.left,
+          top: b.top,
+          width: b.size,
+          height: b.size,
+          animationDelay: `${b.delay}s`
+        }
+      },
+      i
+    )),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "svg",
+      {
+        className: "journey-deco journey-deco-seaweed journey-deco-seaweed--left",
+        viewBox: "0 0 40 120",
+        "aria-hidden": true,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M20 120 C8 90 28 70 12 45 C22 65 18 25 20 0",
+            fill: "none",
+            stroke: "rgba(114,212,196,0.12)",
+            strokeWidth: "2"
+          }
+        )
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "svg",
+      {
+        className: "journey-deco journey-deco-seaweed journey-deco-seaweed--right",
+        viewBox: "0 0 40 120",
+        "aria-hidden": true,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M20 120 C32 88 14 68 28 42 C16 62 22 22 20 0",
+            fill: "none",
+            stroke: "rgba(232,176,96,0.1)",
+            strokeWidth: "2"
+          }
+        )
+      }
+    )
+  ] });
+}
+function DeepDecor() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-depth-glow" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-current" }),
+    [
+      { left: "6%", top: "30%" },
+      { left: "92%", top: "55%" },
+      { left: "78%", top: "82%" },
+      { left: "18%", top: "62%" }
+    ].map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: "journey-deco-plankton",
+        style: { left: p.left, top: p.top, animationDelay: `${i * 0.7}s` }
+      },
+      i
+    ))
+  ] });
+}
+function ReefDecor() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-deco journey-deco-reef-glow" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "svg",
+      {
+        className: "journey-deco journey-deco-coral journey-deco-coral--left",
+        viewBox: "0 0 80 100",
+        "aria-hidden": true,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M40 100 L20 60 Q10 40 25 25 Q35 45 40 20 Q45 45 55 25 Q70 40 60 60 Z",
+              fill: "rgba(232,176,96,0.08)"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M30 70 Q25 50 35 35 M50 70 Q55 48 45 32",
+              fill: "none",
+              stroke: "rgba(114,212,196,0.15)",
+              strokeWidth: "1.5"
+            }
+          )
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "svg",
+      {
+        className: "journey-deco journey-deco-coral journey-deco-coral--right",
+        viewBox: "0 0 80 100",
+        "aria-hidden": true,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M40 100 L15 55 Q5 35 22 18 Q32 38 40 12 Q48 38 58 18 Q75 35 65 55 Z",
+            fill: "rgba(114,212,196,0.07)"
+          }
+        )
+      }
+    ),
+    [
+      { left: "22%", top: "18%" },
+      { left: "68%", top: "28%" },
+      { left: "85%", top: "72%" },
+      { left: "12%", top: "85%" },
+      { left: "50%", top: "8%" }
+    ].map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: "journey-deco-bio",
+        style: { left: p.left, top: p.top, animationDelay: `${i * 0.5}s` }
+      },
+      i
+    ))
+  ] });
+}
+function StationDecor({ theme }) {
+  if (theme === "sunset" || theme === "surface") return /* @__PURE__ */ jsxRuntimeExports.jsx(SunsetDecor, {});
+  if (theme === "sea") return /* @__PURE__ */ jsxRuntimeExports.jsx(SeaDecor, {});
+  if (theme === "deep") return /* @__PURE__ */ jsxRuntimeExports.jsx(DeepDecor, {});
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ReefDecor, {});
+}
+const SECTION_THEMES = {
+  intro: "sunset",
+  about: "sea",
+  gallery: "surface",
+  skills: "sea",
+  milestones: "deep",
+  contact: "reef"
+};
+function StationBackdrop({ theme }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "absolute inset-0 pointer-events-none overflow-hidden",
+      "aria-hidden": true,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `journey-station-scrim journey-station-scrim--${theme}` }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(StationDecor, { theme })
+      ]
     }
   );
 }
@@ -1253,23 +1575,29 @@ function JourneyStation({
   children,
   className = "",
   compact,
-  diveEntry
+  diveEntry,
+  theme
 }) {
-  const heightClass = compact ? "min-h-[90vh]" : "min-h-screen";
-  const paddingClass = diveEntry ? "pt-24 sm:pt-28 pb-20 sm:pb-24" : compact ? "py-20 sm:py-24" : "py-24 sm:py-28";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  const stationTheme = theme ?? SECTION_THEMES[id] ?? "sea";
+  const heightClass = compact ? "min-h-[90dvh]" : "min-h-[100dvh]";
+  const paddingClass = diveEntry ? "pt-[calc(var(--ocean-nav-height)+2rem)] pb-[max(5rem,env(safe-area-inset-bottom))] sm:pb-24" : compact ? "py-[max(5rem,calc(4rem+env(safe-area-inset-bottom)))] sm:py-24" : "py-[max(6rem,calc(5rem+env(safe-area-inset-bottom)))] sm:py-28";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "section",
     {
       id,
+      "data-station-theme": stationTheme,
       className: `relative flex items-center justify-center px-[var(--section-px)] ${heightClass} ${paddingClass} ${className}`,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full max-w-[1080px] mx-auto", children })
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(StationBackdrop, { theme: stationTheme }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-[1] w-full max-w-[1080px] mx-auto journey-content-frame", children })
+      ]
     }
   );
 }
 function InfoRow({ label, value }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-4 mb-4 border-b border-white/8 last:mb-0 last:pb-0 last:border-0", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-text-dim)] tracking-[0.14em] uppercase mb-1.5", children: label }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[var(--ocean-text)] font-medium", children: value })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pb-4 mb-4 border-b border-white/10 last:mb-0 last:pb-0 last:border-0", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-sunset)]/70 tracking-[0.14em] uppercase mb-1.5", children: label }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm sm:text-[15px] text-[var(--ocean-text)] font-medium leading-snug", children: value })
   ] });
 }
 function JourneyAbout() {
@@ -1295,9 +1623,17 @@ function JourneyAbout() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.about.titleAccent })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-[var(--section-gap)] items-start", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { className: "p-6 sm:p-7 order-2 lg:order-1", children: infoRows.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsx(InfoRow, { label: row.label, value: row.value }, row.label)) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6 order-1 lg:order-2", children: [t.about.p1, t.about.p2, t.about.p3, t.about.p4].map(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "journey-section-divider",
+            "aria-hidden": true,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Anchor, { className: "journey-section-divider-icon w-4 h-4", strokeWidth: 1.5 })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[minmax(220px,260px)_1fr] gap-[var(--section-gap)] items-start", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { variant: "accent", className: "p-5 sm:p-7 order-2 lg:order-1", children: infoRows.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsx(InfoRow, { label: row.label, value: row.value }, row.label)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-5 sm:space-y-6 order-1 lg:order-2", children: [t.about.p1, t.about.p2, t.about.p3, t.about.p4].map(
             (paragraph, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               motion.p,
               {
@@ -1305,7 +1641,7 @@ function JourneyAbout() {
                 whileInView: { opacity: 1, y: 0 },
                 viewport: { once: true },
                 transition: { duration: 0.6, delay: i * 0.06 },
-                className: "text-[15px] text-[var(--ocean-text-muted)] leading-[1.75]",
+                className: "text-[15px] sm:text-base text-[var(--ocean-text-muted)] leading-[1.75]",
                 children: paragraph
               },
               paragraph.slice(0, 20)
@@ -1739,7 +2075,7 @@ function useContact() {
     }
   });
 }
-const inputClass = `w-full rounded-xl px-4 py-3.5 text-base text-[var(--ocean-text)] bg-white/5 border border-white/10 outline-none focus:border-[var(--ocean-sunset)]/40 transition-colors placeholder:text-[var(--ocean-text-dim)] ${FOCUS_RING}`;
+const inputClass = `w-full rounded-xl px-4 py-3.5 text-base text-[var(--ocean-text)] bg-white/6 border border-[var(--ocean-border-subtle)] outline-none focus:border-[var(--ocean-sunset)]/50 focus:bg-white/8 transition-colors duration-200 placeholder:text-[var(--ocean-text-dim)] ${JOURNEY_FOCUS_RING}`;
 function JourneyContact() {
   const { t } = useTranslation();
   const formId = reactExports.useId();
@@ -1787,8 +2123,50 @@ function JourneyContact() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.contact.titleAccent })
         ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-section-divider !mb-6", "aria-hidden": true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "journey-section-divider-icon w-4 h-4", strokeWidth: 1.5 }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-lead", children: t.contact.sub }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[minmax(240px,300px)_1fr] gap-[var(--section-gap)] lg:gap-16 items-start", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "flex flex-wrap gap-3 mb-8 sm:mb-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "a",
+            {
+              href: `mailto:${CONTACT_EMAIL}`,
+              className: `inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-4 h-4 shrink-0", strokeWidth: 1.5 }),
+                t.contact.email
+              ]
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "a",
+            {
+              href: GITHUB_URL,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              "aria-label": `${t.contact.github} (${t.a11y.opensInNewTab})`,
+              className: `inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-4 h-4 shrink-0", strokeWidth: 1.5 }),
+                t.contact.github
+              ]
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "a",
+            {
+              href: LINKEDIN_URL,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              "aria-label": `${t.contact.linkedin} (${t.a11y.opensInNewTab})`,
+              className: `inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-4 h-4 shrink-0", strokeWidth: 1.5 }),
+                t.contact.linkedin
+              ]
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[minmax(200px,280px)_1fr] gap-[var(--section-gap)] lg:gap-12 xl:gap-16 items-start", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             motion.div,
             {
@@ -1796,20 +2174,28 @@ function JourneyContact() {
               whileInView: { opacity: 1, scale: 1 },
               viewport: { once: true },
               transition: { duration: 0.8, delay: 0.1 },
-              className: "mx-auto lg:mx-0 w-full max-w-xs",
+              className: "mx-auto lg:mx-0 w-full max-w-[280px] sm:max-w-xs",
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarPortrait, { variant: "horizon" })
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { className: "p-6 sm:p-8", children: isSuccess ? /* @__PURE__ */ jsxRuntimeExports.jsxs("output", { className: "block text-center py-10", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-xl font-bold text-[var(--ocean-text)] mb-3", children: t.contact.successTitle }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[var(--ocean-text-muted)]", children: t.contact.successMessage })
-          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GlassCard, { variant: "accent", className: "p-5 sm:p-8", children: isSuccess ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "block text-center py-8 sm:py-10",
+              role: "status",
+              "aria-live": "polite",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-lg sm:text-xl font-bold text-[var(--ocean-text)] mb-3", children: t.contact.successTitle }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[var(--ocean-text-muted)] text-sm sm:text-base", children: t.contact.successMessage })
+              ]
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "form",
             {
               id: formId,
               onSubmit: handleSubmit,
               noValidate: true,
-              className: "flex flex-col gap-5",
+              className: "flex flex-col gap-4 sm:gap-5",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-name`, className: "sr-only", children: t.contact.namePlaceholder }),
@@ -1825,10 +2211,20 @@ function JourneyContact() {
                       onChange: handleChange,
                       onBlur: handleBlur,
                       "aria-invalid": errors.name ? true : void 0,
+                      "aria-required": "true",
+                      "aria-describedby": errors.name ? `${formId}-name-error` : void 0,
                       className: inputClass
                     }
                   ),
-                  errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.name })
+                  errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      id: `${formId}-name-error`,
+                      className: "text-xs text-red-400 mt-1",
+                      role: "alert",
+                      children: errors.name
+                    }
+                  )
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-email`, className: "sr-only", children: t.contact.emailPlaceholder }),
@@ -1844,10 +2240,20 @@ function JourneyContact() {
                       onChange: handleChange,
                       onBlur: handleBlur,
                       "aria-invalid": errors.email ? true : void 0,
+                      "aria-required": "true",
+                      "aria-describedby": errors.email ? `${formId}-email-error` : void 0,
                       className: inputClass
                     }
                   ),
-                  errors.email && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.email })
+                  errors.email && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      id: `${formId}-email-error`,
+                      className: "text-xs text-red-400 mt-1",
+                      role: "alert",
+                      children: errors.email
+                    }
+                  )
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: `${formId}-message`, className: "sr-only", children: t.contact.messagePlaceholder }),
@@ -1862,10 +2268,20 @@ function JourneyContact() {
                       onChange: handleChange,
                       onBlur: handleBlur,
                       "aria-invalid": errors.message ? true : void 0,
-                      className: `${inputClass} resize-none`
+                      "aria-required": "true",
+                      "aria-describedby": errors.message ? `${formId}-message-error` : void 0,
+                      className: `${inputClass} resize-none min-h-[120px]`
                     }
                   ),
-                  errors.message && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-red-400 mt-1", role: "alert", children: errors.message })
+                  errors.message && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      id: `${formId}-message-error`,
+                      className: "text-xs text-red-400 mt-1",
+                      role: "alert",
+                      children: errors.message
+                    }
+                  )
                 ] }),
                 isError && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "p",
@@ -1879,8 +2295,8 @@ function JourneyContact() {
                   "button",
                   {
                     type: "submit",
-                    disabled: isPending,
-                    className: `self-start font-semibold text-sm px-7 py-3 min-h-11 rounded-full bg-[var(--ocean-sunset)] text-[#1a1208] hover:bg-[var(--ocean-sunset-bright)] transition-colors disabled:opacity-50 ${FOCUS_RING}`,
+                    disabled: isPending || !isFormValid,
+                    className: `self-stretch sm:self-start ${JOURNEY_CTA_PRIMARY} disabled:opacity-50 disabled:pointer-events-none ${JOURNEY_FOCUS_RING}`,
                     children: isPending ? t.contact.sending : t.contact.send
                   }
                 )
@@ -1888,7 +2304,7 @@ function JourneyContact() {
             }
           ) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-20 pt-8 border-t border-white/6 text-center font-mono text-[10px] text-[var(--ocean-text-dim)] tracking-wider", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-16 sm:mt-20 pt-6 sm:pt-8 border-t border-white/8 text-center font-mono text-[10px] text-[var(--ocean-text-dim)] tracking-wider px-4", children: [
           t.footer.copy,
           " · ",
           t.footer.rights
@@ -1897,57 +2313,287 @@ function JourneyContact() {
     }
   ) });
 }
+const GALLERY_ITEMS = [
+  {
+    id: "portrait",
+    src: "/assets/gallery/gallery-01.svg",
+    featured: true,
+    placeholder: true
+  },
+  {
+    id: "work",
+    src: "/assets/gallery/gallery-02.svg",
+    placeholder: true
+  },
+  {
+    id: "team",
+    src: "/assets/gallery/gallery-03.svg",
+    placeholder: true
+  },
+  {
+    id: "switzerland",
+    src: "/assets/gallery/gallery-04.svg",
+    featured: true,
+    placeholder: true
+  },
+  {
+    id: "everyday",
+    src: "/assets/gallery/gallery-05.svg",
+    placeholder: true
+  },
+  {
+    id: "moment",
+    src: "/assets/gallery/gallery-06.svg",
+    placeholder: true
+  }
+];
+function GallerySlide({
+  id,
+  src,
+  featured,
+  placeholder
+}) {
+  const { t } = useTranslation();
+  const item = t.gallery.items[id];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "figure",
+    {
+      "data-gallery-id": id,
+      className: `gallery-slide relative shrink-0 snap-center overflow-hidden rounded-2xl border border-[var(--ocean-border-subtle)] bg-[var(--ocean-card-bg)] ${featured ? "w-[min(88vw,42rem)] aspect-[16/10]" : "w-[min(74vw,22rem)] aspect-[4/5]"}`,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "img",
+          {
+            src,
+            alt: item.alt,
+            loading: "lazy",
+            decoding: "async",
+            width: featured ? 672 : 352,
+            height: featured ? 420 : 440,
+            className: "absolute inset-0 h-full w-full object-cover"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-[var(--ocean-card-bg)]/95 via-[var(--ocean-card-bg)]/25 to-transparent" }),
+        placeholder ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute top-3 right-3 font-mono text-[10px] uppercase tracking-[0.14em] px-2.5 py-1 rounded-full bg-black/50 text-[var(--ocean-sunset)]/90 border border-white/10", children: t.gallery.placeholderLabel }) : null,
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("figcaption", { className: "absolute bottom-0 left-0 right-0 p-4 sm:p-5", children: [
+          item.tag ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ocean-sunset)]/80 mb-1.5", children: item.tag }) : null,
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm sm:text-[15px] text-[var(--ocean-text)] font-medium leading-snug", children: item.caption })
+        ] })
+      ]
+    }
+  );
+}
+function JourneyGallery() {
+  const { t } = useTranslation();
+  const stripRef = reactExports.useRef(null);
+  const [activeIndex, setActiveIndex] = reactExports.useState(0);
+  const total = GALLERY_ITEMS.length;
+  const updateActiveIndex = reactExports.useCallback(() => {
+    const strip = stripRef.current;
+    if (!strip) return;
+    const slides = strip.querySelectorAll("[data-gallery-id]");
+    if (!slides.length) return;
+    const stripCenter = strip.scrollLeft + strip.clientWidth / 2;
+    let closest = 0;
+    let minDistance = Number.POSITIVE_INFINITY;
+    slides.forEach((slide, index) => {
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const distance = Math.abs(stripCenter - slideCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closest = index;
+      }
+    });
+    setActiveIndex(closest);
+  }, []);
+  reactExports.useEffect(() => {
+    const strip = stripRef.current;
+    if (!strip) return;
+    strip.addEventListener("scroll", updateActiveIndex, { passive: true });
+    updateActiveIndex();
+    return () => strip.removeEventListener("scroll", updateActiveIndex);
+  }, [updateActiveIndex]);
+  const scrollToIndex = reactExports.useCallback((index) => {
+    var _a2;
+    const strip = stripRef.current;
+    if (!strip) return;
+    const slide = strip.querySelector(
+      `[data-gallery-id="${(_a2 = GALLERY_ITEMS[index]) == null ? void 0 : _a2.id}"]`
+    );
+    if (!slide) return;
+    slide.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
+  }, []);
+  const goPrev = () => scrollToIndex(Math.max(0, activeIndex - 1));
+  const goNext = () => scrollToIndex(Math.min(total - 1, activeIndex + 1));
+  function handleKeyDown(e) {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      goPrev();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      goNext();
+    }
+  }
+  const positionLabel = t.gallery.position.replace("{current}", String(activeIndex + 1)).replace("{total}", String(total));
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyStation, { id: "gallery", theme: "surface", compact: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 40 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true, margin: "-10%" },
+      transition: { duration: 0.75 },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.gallery.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title", children: [
+          t.gallery.titleLight,
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.gallery.titleAccent })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-section-divider", "aria-hidden": true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Camera,
+          {
+            className: "journey-section-divider-icon w-4 h-4",
+            strokeWidth: 1.5
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-lead journey-section-lead", children: t.gallery.lead }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "gallery-carousel relative", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "gallery-strip-edge gallery-strip-edge-left pointer-events-none",
+              "aria-hidden": true
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "gallery-strip-edge gallery-strip-edge-right pointer-events-none",
+              "aria-hidden": true
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              ref: stripRef,
+              "data-lenis-prevent": true,
+              onKeyDown: handleKeyDown,
+              tabIndex: 0,
+              className: "gallery-cinematic-strip -mx-[var(--section-px)] flex gap-4 sm:gap-5 overflow-x-auto overscroll-x-contain px-[var(--section-px)] pb-3 snap-x snap-mandatory scroll-px-[var(--section-px)] cursor-grab active:cursor-grabbing",
+              role: "region",
+              "aria-roledescription": "carousel",
+              "aria-label": t.gallery.stripLabel,
+              children: GALLERY_ITEMS.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(GallerySlide, { ...item }, item.id))
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 flex items-center justify-between gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: goPrev,
+                  disabled: activeIndex === 0,
+                  className: `gallery-nav-btn min-w-11 min-h-11 flex items-center justify-center rounded-full border border-white/15 text-[var(--ocean-text)] hover:bg-white/8 disabled:opacity-35 disabled:pointer-events-none transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+                  "aria-label": t.gallery.prev,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "w-5 h-5", strokeWidth: 1.5 })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: goNext,
+                  disabled: activeIndex >= total - 1,
+                  className: `gallery-nav-btn min-w-11 min-h-11 flex items-center justify-center rounded-full border border-white/15 text-[var(--ocean-text)] hover:bg-white/8 disabled:opacity-35 disabled:pointer-events-none transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+                  "aria-label": t.gallery.next,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-5 h-5", strokeWidth: 1.5 })
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: "font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--ocean-text-dim)]",
+                "aria-live": "polite",
+                children: positionLabel
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "p",
+            {
+              id: "gallery-scroll-hint",
+              className: "font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ocean-text-dim)] mt-3",
+              children: t.gallery.scrollHint
+            }
+          )
+        ] })
+      ]
+    }
+  ) });
+}
+const heroTitleClass = "font-display font-extrabold text-[clamp(2.5rem,10vw,5.5rem)] leading-[0.95] tracking-tight text-[var(--ocean-text)] [text-shadow:0_2px_28px_rgba(0,0,0,0.6),0_0_80px_rgba(6,16,24,0.45)]";
 function JourneyIntro() {
   const { t } = useTranslation();
-  const { experienceReady, introProgress } = useJourneyScroll();
+  const { experienceReady, introProgress, scrollToSection, reducedMotion } = useJourneyScroll();
   const hintOpacity = introProgress < SURFACE_SCROLL_START ? 1 : Math.max(0, 1 - (introProgress - SURFACE_SCROLL_START) * 1.6);
-  const contentFade = Math.max(0.35, 1 - introProgress * 0.6);
+  const contentFade = Math.max(0.4, 1 - introProgress * 0.55);
+  const introHeightClass = reducedMotion ? "min-h-[140dvh]" : "min-h-[200dvh] md:min-h-[240dvh] lg:min-h-[270dvh]";
+  const heroContent = /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow !mb-0 !text-[var(--ocean-sunset-bright)]/80 [text-shadow:0_1px_16px_rgba(0,0,0,0.55)]", children: t.intro.greeting }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: heroTitleClass, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mb-1", children: t.intro.nameLine1 }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[var(--ocean-sunset-bright)]", children: t.intro.nameLine2 })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[0.9375rem] sm:text-lg text-[var(--ocean-text-muted)] max-w-md mx-auto leading-relaxed px-2 [text-shadow:0_1px_20px_rgba(0,0,0,0.5)]", children: t.intro.tagline }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-center gap-3 pt-1", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "a",
+        {
+          href: "/cv.pdf",
+          download: true,
+          className: `${JOURNEY_CTA_PRIMARY} ${JOURNEY_FOCUS_RING}`,
+          children: t.intro.cv
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          type: "button",
+          onClick: () => scrollToSection("gallery"),
+          className: `${JOURNEY_CTA_SECONDARY} ${JOURNEY_FOCUS_RING}`,
+          children: t.intro.viewGallery
+        }
+      )
+    ] })
+  ] });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     JourneyStation,
     {
       id: "intro",
+      theme: "sunset",
       className: "!min-h-0 !py-0 !items-stretch !justify-start",
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-[270dvh]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 h-[100dvh] flex flex-col px-[var(--section-px)] pt-[calc(var(--ocean-nav-height)+1.5rem)]", children: [
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: introHeightClass, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 h-[100dvh] flex flex-col px-[var(--section-px)] pt-[calc(var(--ocean-nav-height)+1.25rem)]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
             className: "flex-1 flex items-center justify-center",
             style: { opacity: contentFade },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center w-full max-w-xl mx-auto space-y-6", children: experienceReady && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                motion.p,
-                {
-                  initial: { opacity: 0, y: 16 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.15 },
-                  className: "journey-eyebrow !mb-0 !text-white/55 [text-shadow:0_1px_12px_rgba(0,0,0,0.45)]",
-                  children: t.intro.greeting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                motion.h1,
-                {
-                  initial: { opacity: 0, y: 28 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.9, delay: 0.3 },
-                  className: "font-display font-extrabold text-[clamp(2.75rem,9vw,5.5rem)] leading-[0.95] tracking-tight text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.5),0_0_60px_rgba(6,16,24,0.35)]",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mb-1", children: t.intro.nameLine1 }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[var(--ocean-sunset-bright)]", children: t.intro.nameLine2 })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                motion.p,
-                {
-                  initial: { opacity: 0, y: 20 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.5 },
-                  className: "text-base sm:text-lg text-white/75 max-w-md mx-auto leading-relaxed [text-shadow:0_1px_16px_rgba(0,0,0,0.4)]",
-                  children: t.intro.tagline
-                }
-              )
-            ] }) })
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center w-full max-w-xl mx-auto space-y-5 sm:space-y-6", children: experienceReady ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                initial: { opacity: 0, y: 24 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.7 },
+                className: "space-y-5 sm:space-y-6",
+                children: heroContent
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-5 sm:space-y-6 opacity-90", children: heroContent }) })
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -1956,11 +2602,16 @@ function JourneyIntro() {
             initial: { opacity: 0 },
             animate: { opacity: experienceReady ? hintOpacity : 0 },
             transition: { duration: 0.6 },
-            className: "shrink-0 pb-[12vh] sm:pb-[11vh] flex flex-col items-center gap-4",
-            style: { opacity: experienceReady ? hintOpacity : 0 },
+            className: "shrink-0 pb-[max(10vh,env(safe-area-inset-bottom))] sm:pb-[11vh] flex flex-col items-center gap-3 sm:gap-4",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[10px] uppercase tracking-[0.18em] text-white/50 [text-shadow:0_1px_8px_rgba(0,0,0,0.35)]", children: t.intro.scrollHint }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-px h-12 bg-gradient-to-b from-white/45 to-transparent animate-pulse" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--ocean-text-dim)] [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]", children: t.intro.scrollHint }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "w-px h-10 sm:h-12 bg-gradient-to-b from-[var(--ocean-sunset)]/60 to-transparent motion-reduce:animate-none animate-pulse",
+                  "aria-hidden": true
+                }
+              )
             ]
           }
         )
@@ -1978,19 +2629,20 @@ function BuoyCard({ item, index }) {
       whileInView: { opacity: 1, y: 0, x: 0 },
       viewport: { once: true, margin: "-8%" },
       transition: { duration: 0.65, delay: index * 0.08 },
-      className: `relative ${index % 2 === 0 ? "md:mr-auto md:max-w-[480px]" : "md:ml-auto md:max-w-[480px]"}`,
+      className: `relative w-full ${index % 2 === 0 ? "md:mr-[calc(50%+1.5rem)] md:max-w-[calc(50%-1.5rem)]" : "md:ml-[calc(50%+1.5rem)] md:max-w-[calc(50%-1.5rem)]"}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: `absolute -top-3 ${index % 2 === 0 ? "left-6" : "right-6"} w-3 h-3 rounded-full ${isCurrent ? "bg-[var(--ocean-sunset)] shadow-[0_0_12px_var(--ocean-sunset)]" : isFuture ? "border-2 border-dashed border-[var(--ocean-teal)]/50 bg-transparent" : "bg-[var(--ocean-teal-dim)]"}`,
+            className: `absolute -top-3 z-[2] ${index % 2 === 0 ? "left-5 sm:left-6" : "right-5 sm:right-6 md:left-auto"} w-3.5 h-3.5 rounded-full ${isCurrent ? "bg-[var(--ocean-sunset)] shadow-[0_0_14px_var(--ocean-sunset)]" : isFuture ? "border-2 border-dashed border-[var(--ocean-teal)]/55 bg-transparent" : "bg-[var(--ocean-teal-dim)] shadow-[0_0_8px_rgba(114,212,196,0.35)]"}`,
             "aria-hidden": true
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           GlassCard,
           {
-            className: `p-6 sm:p-7 ${isFuture ? "border-dashed border-[var(--ocean-teal)]/20" : ""}`,
+            variant: isFuture ? "dashed" : "default",
+            className: "p-5 sm:p-7",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-3", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-base font-bold text-[var(--ocean-text)]", children: item.role }),
@@ -1998,10 +2650,10 @@ function BuoyCard({ item, index }) {
                   "@ ",
                   item.company
                 ] }),
-                item.badge && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-[var(--ocean-teal)]/25 text-[var(--ocean-teal)]", children: item.badge })
+                item.badge && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-[var(--ocean-teal)]/30 text-[var(--ocean-teal)] bg-[var(--ocean-teal)]/8", children: item.badge })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[10px] text-[var(--ocean-text-dim)] tracking-wider mb-3", children: item.period }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-[var(--ocean-text-muted)] leading-[1.7]", children: item.description })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm sm:text-[15px] text-[var(--ocean-text-muted)] leading-[1.7]", children: item.description })
             ]
           }
         )
@@ -2018,6 +2670,7 @@ function JourneyMilestones() {
       whileInView: { opacity: 1, y: 0 },
       viewport: { once: true },
       transition: { duration: 0.7 },
+      className: "relative",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-eyebrow", children: t.milestones.label }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "journey-title", children: [
@@ -2025,7 +2678,16 @@ function JourneyMilestones() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.milestones.titleAccent })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-10 md:space-y-12", children: t.journey.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(BuoyCard, { item, index: i }, item.role)) })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mt-8 sm:mt-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "journey-milestone-path hidden md:block",
+              "aria-hidden": true
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-8 sm:space-y-10 md:space-y-12", children: t.journey.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(BuoyCard, { item, index: i }, item.role)) })
+        ] })
       ]
     }
   ) });
@@ -2046,21 +2708,24 @@ function JourneySkills() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-title-accent", children: t.services.titleAccent })
         ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-section-divider !mb-6", "aria-hidden": true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Waves, { className: "journey-section-divider-icon w-4 h-4", strokeWidth: 1.5 }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "journey-lead", children: t.services.sub }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-5", children: t.services.categories.map((cat, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5", children: t.services.categories.map((cat, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           motion.div,
           {
             initial: { opacity: 0, y: 28 },
             whileInView: { opacity: 1, y: 0 },
             viewport: { once: true },
             transition: { duration: 0.55, delay: i * 0.07 },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(GlassCard, { className: "p-6 sm:p-7 hover:border-[var(--ocean-sunset)]/20 transition-colors duration-300 h-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-text-dim)] tracking-wider uppercase mb-2", children: t.services.cardLabel }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-lg font-bold text-[var(--ocean-text)] mb-5", children: cat.title }),
+            className: "relative",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(GlassCard, { className: "relative p-5 sm:p-7 hover:border-[var(--ocean-teal)]/25 transition-colors duration-300 h-full overflow-hidden", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "journey-skill-index", "aria-hidden": true, children: String(i + 1).padStart(2, "0") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[9px] text-[var(--ocean-sunset)]/75 tracking-wider uppercase mb-2", children: t.services.cardLabel }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-base sm:text-lg font-bold text-[var(--ocean-text)] mb-4 sm:mb-5 pr-10", children: cat.title }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "flex flex-wrap gap-2", children: cat.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "li",
                 {
-                  className: "font-mono text-[10px] px-2.5 py-1 rounded-md bg-white/5 border border-white/8 text-[var(--ocean-text-muted)]",
+                  className: "font-mono text-[10px] px-2.5 py-1 rounded-md bg-white/6 border border-white/10 text-[var(--ocean-text-muted)]",
                   children: item
                 },
                 item
@@ -2077,6 +2742,7 @@ function Home() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { "data-ocid": "home.journey", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyIntro, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyAbout, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyGallery, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneySkills, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyMilestones, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyContact, {})

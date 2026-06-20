@@ -10,7 +10,7 @@ const ACT_MARKS = [
 ];
 
 export function DepthIndicator() {
-  const { experienceReady } = useJourneyScroll();
+  const { experienceReady, activeSection } = useJourneyScroll();
   const { t } = useTranslation();
   const phases = useOceanPhasesFromScroll();
 
@@ -21,7 +21,7 @@ export function DepthIndicator() {
     reef: t.depth.reef,
   };
 
-  if (!experienceReady) return null;
+  if (!experienceReady || activeSection === "contact") return null;
 
   return (
     <>

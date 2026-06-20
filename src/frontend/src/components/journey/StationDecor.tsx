@@ -157,6 +157,7 @@ export function StationDecor({ theme }: StationDecorProps) {
 export const SECTION_THEMES: Record<string, StationTheme> = {
   intro: "sunset",
   about: "sea",
+  gallery: "surface",
   skills: "sea",
   milestones: "deep",
   contact: "reef",

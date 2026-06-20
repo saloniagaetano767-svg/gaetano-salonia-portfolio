@@ -3,13 +3,18 @@ import { GlassCard } from "@/components/journey/GlassCard";
 import { JourneyStation } from "@/components/journey/JourneyStation";
 import { useContact } from "@/hooks/useContact";
 import { useTranslation } from "@/i18n";
-import { FOCUS_RING } from "@/lib/layout";
+import { JOURNEY_CTA_PRIMARY, JOURNEY_FOCUS_RING } from "@/lib/layout";
+import {
+  CONTACT_EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+} from "@/lib/site";
 import type { ContactFormData } from "@/types/portfolio";
-import { Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useId, useState } from "react";
 
-const inputClass = `w-full rounded-xl px-4 py-3.5 text-base text-[var(--ocean-text)] bg-white/6 border border-white/12 outline-none focus:border-[var(--ocean-sunset)]/50 focus:bg-white/8 transition-colors placeholder:text-[var(--ocean-text-dim)] ${FOCUS_RING}`;
+const inputClass = `w-full rounded-xl px-4 py-3.5 text-base text-[var(--ocean-text)] bg-white/6 border border-[var(--ocean-border-subtle)] outline-none focus:border-[var(--ocean-sunset)]/50 focus:bg-white/8 transition-colors duration-200 placeholder:text-[var(--ocean-text-dim)] ${JOURNEY_FOCUS_RING}`;
 
 export function JourneyContact() {
   const { t } = useTranslation();
@@ -85,6 +90,42 @@ export function JourneyContact() {
 
         <p className="journey-lead">{t.contact.sub}</p>
 
+        <ul className="flex flex-wrap gap-3 mb-8 sm:mb-10">
+          <li>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className={`inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`}
+            >
+              <Mail className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+              {t.contact.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t.contact.github} (${t.a11y.opensInNewTab})`}
+              className={`inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`}
+            >
+              <Github className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+              {t.contact.github}
+            </a>
+          </li>
+          <li>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${t.contact.linkedin} (${t.a11y.opensInNewTab})`}
+              className={`inline-flex items-center gap-2 text-sm text-[var(--ocean-text-muted)] hover:text-[var(--ocean-text)] border border-[var(--ocean-border-subtle)] rounded-full px-4 py-2.5 min-h-11 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`}
+            >
+              <Linkedin className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+              {t.contact.linkedin}
+            </a>
+          </li>
+        </ul>
+
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(200px,280px)_1fr] gap-[var(--section-gap)] lg:gap-12 xl:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
@@ -98,14 +139,18 @@ export function JourneyContact() {
 
           <GlassCard variant="accent" className="p-5 sm:p-8">
             {isSuccess ? (
-              <output className="block text-center py-8 sm:py-10">
+              <div
+                className="block text-center py-8 sm:py-10"
+                role="status"
+                aria-live="polite"
+              >
                 <h3 className="font-display text-lg sm:text-xl font-bold text-[var(--ocean-text)] mb-3">
                   {t.contact.successTitle}
                 </h3>
                 <p className="text-[var(--ocean-text-muted)] text-sm sm:text-base">
                   {t.contact.successMessage}
                 </p>
-              </output>
+              </div>
             ) : (
               <form
                 id={formId}
@@ -127,10 +172,18 @@ export function JourneyContact() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     aria-invalid={errors.name ? true : undefined}
+                    aria-required="true"
+                    aria-describedby={
+                      errors.name ? `${formId}-name-error` : undefined
+                    }
                     className={inputClass}
                   />
                   {errors.name && (
-                    <p className="text-xs text-red-400 mt-1" role="alert">
+                    <p
+                      id={`${formId}-name-error`}
+                      className="text-xs text-red-400 mt-1"
+                      role="alert"
+                    >
                       {errors.name}
                     </p>
                   )}
@@ -149,10 +202,18 @@ export function JourneyContact() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     aria-invalid={errors.email ? true : undefined}
+                    aria-required="true"
+                    aria-describedby={
+                      errors.email ? `${formId}-email-error` : undefined
+                    }
                     className={inputClass}
                   />
                   {errors.email && (
-                    <p className="text-xs text-red-400 mt-1" role="alert">
+                    <p
+                      id={`${formId}-email-error`}
+                      className="text-xs text-red-400 mt-1"
+                      role="alert"
+                    >
                       {errors.email}
                     </p>
                   )}
@@ -170,10 +231,18 @@ export function JourneyContact() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     aria-invalid={errors.message ? true : undefined}
+                    aria-required="true"
+                    aria-describedby={
+                      errors.message ? `${formId}-message-error` : undefined
+                    }
                     className={`${inputClass} resize-none min-h-[120px]`}
                   />
                   {errors.message && (
-                    <p className="text-xs text-red-400 mt-1" role="alert">
+                    <p
+                      id={`${formId}-message-error`}
+                      className="text-xs text-red-400 mt-1"
+                      role="alert"
+                    >
                       {errors.message}
                     </p>
                   )}
@@ -188,8 +257,8 @@ export function JourneyContact() {
                 )}
                 <button
                   type="submit"
-                  disabled={isPending}
-                  className={`self-stretch sm:self-start font-semibold text-sm px-7 py-3.5 min-h-11 rounded-full bg-[var(--ocean-sunset)] text-[#1a1208] hover:bg-[var(--ocean-sunset-bright)] transition-colors disabled:opacity-50 ${FOCUS_RING}`}
+                  disabled={isPending || !isFormValid}
+                  className={`self-stretch sm:self-start ${JOURNEY_CTA_PRIMARY} disabled:opacity-50 disabled:pointer-events-none ${JOURNEY_FOCUS_RING}`}
                 >
                   {isPending ? t.contact.sending : t.contact.send}
                 </button>

@@ -4,7 +4,8 @@ import { MinimalNav } from "@/components/nav/MinimalNav";
 import { OceanScene } from "@/components/ocean/OceanScene";
 import { JourneyScrollProvider } from "@/context/JourneyScrollContext";
 import { LocaleProvider, useTranslation } from "@/i18n";
-import { FOCUS_RING } from "@/lib/layout";
+import { JOURNEY_FOCUS_RING } from "@/lib/layout";
+import { MotionConfig } from "motion/react";
 import type { ReactNode } from "react";
 
 interface LayoutProps {
@@ -16,7 +17,7 @@ function SkipLink() {
   return (
     <a
       href="#main-content"
-      className={`sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#0a1628] focus:text-white focus:shadow-lg ${FOCUS_RING}`}
+      className={`sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#0a1628] focus:text-white focus:shadow-lg ${JOURNEY_FOCUS_RING}`}
     >
       {t.a11y.skipToContent}
     </a>
@@ -27,7 +28,8 @@ export function Layout({ children }: LayoutProps) {
   return (
     <LocaleProvider>
       <JourneyScrollProvider>
-        <div className="min-h-screen flex flex-col text-white relative ocean-journey">
+        <MotionConfig reducedMotion="user">
+          <div className="min-h-screen flex flex-col text-white relative ocean-journey">
           <SkipLink />
           <OceanScene />
           <JourneyPreloader />
@@ -41,6 +43,7 @@ export function Layout({ children }: LayoutProps) {
             {children}
           </main>
         </div>
+        </MotionConfig>
       </JourneyScrollProvider>
     </LocaleProvider>
   );

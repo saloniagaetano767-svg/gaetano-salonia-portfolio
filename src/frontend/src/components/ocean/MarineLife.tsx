@@ -23,6 +23,14 @@ const PRESETS: Record<Exclude<PageSection, "intro">, MarinePreset> = {
     spread: 14,
     speed: 0.38,
   },
+  gallery: {
+    count: 10,
+    color: "#9ac8d8",
+    scale: [0.48, 0.13, 0.11],
+    depth: -1.8,
+    spread: 16,
+    speed: 0.42,
+  },
   skills: {
     count: 12,
     color: "#ff9f43",

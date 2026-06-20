@@ -22,6 +22,7 @@ import {
 export const PAGE_SECTIONS = [
   "intro",
   "about",
+  "gallery",
   "skills",
   "milestones",
   "contact",

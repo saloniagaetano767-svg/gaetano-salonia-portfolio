@@ -32985,6 +32985,7 @@ var Lenis = class {
 const PAGE_SECTIONS = [
   "intro",
   "about",
+  "gallery",
   "skills",
   "milestones",
   "contact"
@@ -33230,13 +33231,20 @@ const de = {
     skipToContent: "Zum Hauptinhalt springen",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schliessen",
-    goToSlide: "Zu Folie"
+    goToSlide: "Zu Folie",
+    home: "Zurück zum Intro",
+    mainNav: "Hauptnavigation",
+    language: "Sprache",
+    switchLanguage: "Sprache wechseln zu {locale}",
+    opensInNewTab: "öffnet in neuem Tab"
   },
   nav: {
     about: "Über mich",
+    gallery: "Galerie",
     skills: "Skills",
     milestones: "Weg",
-    contact: "Kontakt"
+    contact: "Kontakt",
+    instagram: "Instagram"
   },
   preloader: {
     loading: "Laden",
@@ -33248,7 +33256,52 @@ const de = {
     nameLine2: "Salonia",
     tagline: "Eine Reise vom Sonnenuntergang über das offene Meer bis zum Meeresboden — wer ich bin, was ich mitbringe und wohin es geht.",
     scrollHint: "Scrollen zum Eintauchen",
-    cv: "CV"
+    cv: "CV",
+    viewGallery: "Galerie ansehen"
+  },
+  gallery: {
+    label: "Momente",
+    titleLight: "Ein Blick",
+    titleAccent: "hinter den Code",
+    lead: "Ein paar Einblicke — Arbeit, Team, Schweiz und Alltag. Echte Fotos folgen bald.",
+    scrollHint: "Seitwärts scrollen",
+    stripLabel: "Fotogalerie",
+    placeholderLabel: "Folgt bald",
+    prev: "Vorheriges Bild",
+    next: "Nächstes Bild",
+    position: "{current} von {total}",
+    items: {
+      portrait: {
+        alt: "Portrait-Platzhalter",
+        caption: "Der erste Eindruck — professionell und nahbar.",
+        tag: "Portrait"
+      },
+      work: {
+        alt: "Arbeitsumfeld-Platzhalter",
+        caption: "Wo Ideen zu Software werden.",
+        tag: "Arbeit"
+      },
+      team: {
+        alt: "Team-Platzhalter",
+        caption: "Zusammenarbeit zählt — gemeinsam lernen.",
+        tag: "Team"
+      },
+      switzerland: {
+        alt: "Schweiz-Landschaft-Platzhalter",
+        caption: "Verwurzelt in der Schweiz — ruhig, zuverlässig, neugierig.",
+        tag: "Schweiz"
+      },
+      everyday: {
+        alt: "Alltag-Platzhalter",
+        caption: "Abseits des Bildschirms: Hobbys, Bewegung, Balance.",
+        tag: "Alltag"
+      },
+      moment: {
+        alt: "Persönlicher Moment-Platzhalter",
+        caption: "Kleine Momente, die Neugier lebendig halten.",
+        tag: "Moment"
+      }
+    }
   },
   depth: {
     label: "Tiefe",
@@ -33410,13 +33463,20 @@ const en = {
     skipToContent: "Skip to main content",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    goToSlide: "Go to slide"
+    goToSlide: "Go to slide",
+    home: "Back to intro",
+    mainNav: "Main navigation",
+    language: "Language",
+    switchLanguage: "Switch language to {locale}",
+    opensInNewTab: "opens in new tab"
   },
   nav: {
     about: "About",
+    gallery: "Gallery",
     skills: "Skills",
     milestones: "Path",
-    contact: "Contact"
+    contact: "Contact",
+    instagram: "Instagram"
   },
   preloader: {
     loading: "Loading",
@@ -33428,7 +33488,52 @@ const en = {
     nameLine2: "Salonia",
     tagline: "A journey from sunset to the open sea to the reef below — who I am, what I bring, and where I'm headed.",
     scrollHint: "Scroll to dive in",
-    cv: "CV"
+    cv: "CV",
+    viewGallery: "View gallery"
+  },
+  gallery: {
+    label: "Moments",
+    titleLight: "A glimpse",
+    titleAccent: "behind the code",
+    lead: "A few snapshots — work, team, Switzerland, and everyday life. Real photos coming soon.",
+    scrollHint: "Scroll sideways",
+    stripLabel: "Photo gallery",
+    placeholderLabel: "Coming soon",
+    prev: "Previous slide",
+    next: "Next slide",
+    position: "{current} of {total}",
+    items: {
+      portrait: {
+        alt: "Portrait placeholder",
+        caption: "First impression — professional and approachable.",
+        tag: "Portrait"
+      },
+      work: {
+        alt: "Work environment placeholder",
+        caption: "Where ideas turn into software.",
+        tag: "Work"
+      },
+      team: {
+        alt: "Team placeholder",
+        caption: "Collaboration matters — learning with others.",
+        tag: "Team"
+      },
+      switzerland: {
+        alt: "Switzerland landscape placeholder",
+        caption: "Rooted in Switzerland — calm, reliable, curious.",
+        tag: "Switzerland"
+      },
+      everyday: {
+        alt: "Everyday life placeholder",
+        caption: "Off screen: hobbies, movement, and balance.",
+        tag: "Everyday"
+      },
+      moment: {
+        alt: "Personal moment placeholder",
+        caption: "Small moments that keep curiosity alive.",
+        tag: "Moment"
+      }
+    }
   },
   depth: {
     label: "Depth",
@@ -33590,13 +33695,20 @@ const it = {
     skipToContent: "Vai al contenuto principale",
     openMenu: "Apri menu",
     closeMenu: "Chiudi menu",
-    goToSlide: "Vai alla slide"
+    goToSlide: "Vai alla slide",
+    home: "Torna all'intro",
+    mainNav: "Navigazione principale",
+    language: "Lingua",
+    switchLanguage: "Passa alla lingua {locale}",
+    opensInNewTab: "si apre in una nuova scheda"
   },
   nav: {
     about: "Chi sono",
+    gallery: "Galleria",
     skills: "Competenze",
     milestones: "Percorso",
-    contact: "Contatti"
+    contact: "Contatti",
+    instagram: "Instagram"
   },
   preloader: {
     loading: "Caricamento",
@@ -33608,7 +33720,52 @@ const it = {
     nameLine2: "Salonia",
     tagline: "Un viaggio dal tramonto al mare aperto fino al fondale — chi sono, cosa porto con me e dove sto andando.",
     scrollHint: "Scorri per immergerti",
-    cv: "CV"
+    cv: "CV",
+    viewGallery: "Vedi galleria"
+  },
+  gallery: {
+    label: "Momenti",
+    titleLight: "Uno sguardo",
+    titleAccent: "dietro al codice",
+    lead: "Qualche scatto — lavoro, team, Svizzera e vita quotidiana. Foto reali in arrivo.",
+    scrollHint: "Scorri in orizzontale",
+    stripLabel: "Galleria fotografica",
+    placeholderLabel: "In arrivo",
+    prev: "Immagine precedente",
+    next: "Immagine successiva",
+    position: "{current} di {total}",
+    items: {
+      portrait: {
+        alt: "Segnaposto ritratto",
+        caption: "La prima impressione — professionale e accessibile.",
+        tag: "Ritratto"
+      },
+      work: {
+        alt: "Segnaposto ambiente di lavoro",
+        caption: "Dove le idee diventano software.",
+        tag: "Lavoro"
+      },
+      team: {
+        alt: "Segnaposto team",
+        caption: "La collaborazione conta — imparare insieme.",
+        tag: "Team"
+      },
+      switzerland: {
+        alt: "Segnaposto paesaggio svizzero",
+        caption: "Radicato in Svizzera — calmo, affidabile, curioso.",
+        tag: "Svizzera"
+      },
+      everyday: {
+        alt: "Segnaposto vita quotidiana",
+        caption: "Fuori dallo schermo: hobby, movimento, equilibrio.",
+        tag: "Quotidiano"
+      },
+      moment: {
+        alt: "Segnaposto momento personale",
+        caption: "Piccoli momenti che tengono viva la curiosità.",
+        tag: "Momento"
+      }
+    }
   },
   depth: {
     label: "Profondità",
@@ -33805,23 +33962,26 @@ function useTranslation() {
   }
   return ctx;
 }
+const JOURNEY_FOCUS_RING = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ocean-sunset)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#061018]";
+const JOURNEY_CTA_PRIMARY = "font-semibold text-sm px-6 py-3 min-h-11 rounded-full bg-[var(--ocean-sunset)] text-[var(--ocean-cta-text)] hover:bg-[var(--ocean-sunset-bright)] transition-colors duration-200 cursor-pointer";
+const JOURNEY_CTA_SECONDARY = "font-semibold text-sm px-6 py-3 min-h-11 rounded-full border border-white/25 text-[var(--ocean-text)] hover:bg-white/8 hover:border-white/35 transition-colors duration-200 cursor-pointer";
 function LanguageSwitcher({ className = "" }) {
-  const { locale, setLocale } = useTranslation();
+  const { locale, setLocale, t } = useTranslation();
   const locales = ["EN", "DE", "IT"];
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
       className: `inline-flex items-center gap-1 rounded-full p-1 bg-white/6 border border-white/10 ${className}`,
       role: "group",
-      "aria-label": "Language",
+      "aria-label": t.a11y.language,
       children: locales.map((l2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
         {
           type: "button",
           onClick: () => setLocale(l2),
-          className: `font-mono text-[10px] font-semibold tracking-wider min-w-[2.25rem] px-2.5 py-1.5 rounded-full transition-all duration-200 ${locale === l2 ? "bg-[var(--ocean-sunset)]/90 text-[#1a1208] shadow-sm" : "text-white/55 hover:text-white/85"}`,
+          className: `font-mono text-[10px] font-semibold tracking-wider min-w-[2.25rem] px-2.5 py-1.5 min-h-9 rounded-full transition-all duration-200 cursor-pointer ${JOURNEY_FOCUS_RING} ${locale === l2 ? "bg-[var(--ocean-sunset)]/90 text-[var(--ocean-cta-text)] shadow-sm" : "text-white/55 hover:text-white/85"}`,
           "aria-pressed": locale === l2,
-          "aria-label": `Switch language to ${l2}`,
+          "aria-label": t.a11y.switchLanguage.replace("{locale}", l2),
           children: l2
         },
         l2
@@ -33835,7 +33995,7 @@ const ACT_MARKS = [
   { act: "reef", pct: 100 }
 ];
 function DepthIndicator() {
-  const { experienceReady } = useJourneyScroll();
+  const { experienceReady, activeSection } = useJourneyScroll();
   const { t } = useTranslation();
   const phases = useOceanPhasesFromScroll();
   const progress2 = depthProgress(phases);
@@ -33844,58 +34004,60 @@ function DepthIndicator() {
     sea: t.depth.sea,
     reef: t.depth.reef
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: `fixed left-[var(--section-px)] top-[calc(50%+1.5rem)] -translate-y-1/2 z-40 hidden sm:flex flex-col items-center gap-4 pointer-events-none transition-opacity duration-700 ${experienceReady ? "opacity-100" : "opacity-0"}`,
-      "aria-hidden": true,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--ocean-text-dim)] -rotate-90 origin-center whitespace-nowrap mb-6", children: t.depth.label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-36 w-px bg-white/10 rounded-full overflow-hidden", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--ocean-sunset)] via-[var(--ocean-teal-dim)] to-[var(--ocean-teal)]",
-              style: {
-                height: `${Math.max(6, progress2 * 100)}%`,
-                transition: "height 0.1s linear"
+  if (!experienceReady || activeSection === "contact") return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "fixed left-[var(--section-px)] top-[calc(50%+1.5rem)] -translate-y-1/2 z-40 hidden md:flex flex-col items-center gap-4 pointer-events-none transition-opacity duration-700 opacity-100",
+        "aria-hidden": true,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--ocean-text-dim)] -rotate-90 origin-center whitespace-nowrap mb-6", children: t.depth.label }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-36 w-px bg-white/12 rounded-full overflow-hidden", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--ocean-sunset)] via-[var(--ocean-teal-dim)] to-[var(--ocean-teal)]",
+                style: {
+                  height: `${Math.max(6, progress2 * 100)}%`,
+                  transition: "height 0.1s linear"
+                }
               }
-            }
-          ),
-          ACT_MARKS.map((mark) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute left-1/2 -translate-x-1/2 w-2 h-px bg-white/25",
-              style: { bottom: `${mark.pct}%` }
-            },
-            mark.act
-          ))
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-mono text-[10px] text-center leading-tight min-w-[4.5rem]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[var(--ocean-sunset-bright)] text-[9px] uppercase tracking-wider mb-1", children: labels[phases.journeyAct] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "tabular-nums text-[var(--ocean-text-muted)]", children: [
-            Math.round(phases.depthSymbolic),
-            "%"
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2.5 items-start -ml-1", children: ACT_MARKS.map((mark) => {
-          const weight = mark.act === "sunset" ? phases.sunsetWeight : mark.act === "sea" ? phases.seaWeight : phases.reefWeight;
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "span",
-            {
-              className: "font-mono text-[8px] uppercase tracking-wider transition-opacity duration-700",
-              style: {
-                opacity: 0.35 + weight * 0.65,
-                color: weight > 0.45 ? "var(--ocean-sunset-bright)" : "var(--ocean-text-dim)"
+            ),
+            ACT_MARKS.map((mark) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "absolute left-1/2 -translate-x-1/2 w-2 h-px bg-white/30",
+                style: { bottom: `${mark.pct}%` }
               },
-              children: labels[mark.act]
-            },
-            mark.act
-          );
-        }) })
-      ]
-    }
-  );
+              mark.act
+            ))
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-mono text-[10px] text-center leading-tight min-w-[4.5rem]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[var(--ocean-sunset-bright)] text-[9px] uppercase tracking-wider mb-1", children: labels[phases.journeyAct] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "tabular-nums text-[var(--ocean-text-muted)]", children: [
+              Math.round(phases.depthSymbolic),
+              "%"
+            ] })
+          ] })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "journey-depth-mobile sm:hidden", "aria-hidden": true, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "journey-depth-mobile-bar", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "journey-depth-mobile-fill",
+          style: { width: `${Math.max(8, progress2 * 100)}%` }
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[9px] uppercase tracking-wider text-[var(--ocean-sunset-bright)] whitespace-nowrap", children: labels[phases.journeyAct] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-mono text-[9px] tabular-nums text-[var(--ocean-text-dim)]", children: [
+        Math.round(phases.depthSymbolic),
+        "%"
+      ] })
+    ] })
+  ] });
 }
 function FrameSequencePlayer({
   frames,
@@ -40592,6 +40754,20 @@ function filterProps(props, isDom, forwardMotionProps) {
   }
   return filteredProps;
 }
+function MotionConfig({ children, isValidProp, ...config }) {
+  isValidProp && loadExternalIsValidProp(isValidProp);
+  const parentConfig = reactExports.useContext(MotionConfigContext);
+  config = { ...parentConfig, ...config };
+  config.transition = resolveTransition(config.transition, parentConfig.transition);
+  config.isStatic = useConstant(() => config.isStatic);
+  const context2 = reactExports.useMemo(() => config, [
+    JSON.stringify(config.transition),
+    config.transformPagePoint,
+    config.reducedMotion,
+    config.skipAnimations
+  ]);
+  return jsxRuntimeExports.jsx(MotionConfigContext.Provider, { value: context2, children });
+}
 const MotionContext = /* @__PURE__ */ reactExports.createContext({});
 function getCurrentTreeVariants(props, context2) {
   if (isControllingVariants(props)) {
@@ -42307,10 +42483,11 @@ function JourneyPreloader() {
     }
   ) });
 }
-const FOCUS_RING = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 const CONTACT_EMAIL = "gaetanosalo@outlook.de";
 const BRAND_MARK = "GS.";
 const INSTAGRAM_URL = "";
+const GITHUB_URL = "https://github.com/saloniagaetano767-svg";
+const LINKEDIN_URL = "https://www.linkedin.com/in/gaetano-salonia";
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -42433,11 +42610,20 @@ const __iconNode = [
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ];
 const X$1 = createLucideIcon("x", __iconNode);
-const SECTION_IDS = ["about", "skills", "milestones", "contact"];
+const SECTION_IDS = [
+  "about",
+  "gallery",
+  "skills",
+  "milestones",
+  "contact"
+];
 function MinimalNav() {
   const { t } = useTranslation();
   const { activeSection, scrollToSection, experienceReady } = useJourneyScroll();
   const [isOpen, setIsOpen] = reactExports.useState(false);
+  const menuRef = reactExports.useRef(null);
+  const menuButtonRef = reactExports.useRef(null);
+  const wasOpenRef = reactExports.useRef(false);
   const navLinks = SECTION_IDS.map((id2) => ({
     id: id2,
     label: t.nav[id2]
@@ -42450,15 +42636,29 @@ function MinimalNav() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen]);
+  reactExports.useEffect(() => {
+    var _a3, _b3;
+    if (!isOpen) {
+      if (wasOpenRef.current) (_a3 = menuButtonRef.current) == null ? void 0 : _a3.focus();
+      return;
+    }
+    wasOpenRef.current = true;
+    const firstLink = (_b3 = menuRef.current) == null ? void 0 : _b3.querySelector("button, a");
+    firstLink == null ? void 0 : firstLink.focus();
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
   const handleNav = (id2) => {
     setIsOpen(false);
     scrollToSection(id2);
   };
-  const linkClass = (id2) => `text-[11px] uppercase tracking-[0.14em] font-medium transition-colors px-1 py-2 ${FOCUS_RING} ${activeSection === id2 ? "text-[var(--ocean-sunset-bright)]" : "text-white/70 hover:text-white"}`;
+  const linkClass = (id2) => `text-[11px] uppercase tracking-[0.14em] font-medium transition-colors duration-200 px-1 py-2 min-h-11 cursor-pointer ${JOURNEY_FOCUS_RING} ${activeSection === id2 ? "text-[var(--ocean-sunset-bright)]" : "text-white/70 hover:text-white"}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "header",
     {
-      className: `fixed top-0 left-0 right-0 z-50 transition-opacity duration-500 ${experienceReady ? "opacity-100" : "opacity-0"}`,
+      className: `fixed top-0 left-0 right-0 z-50 transition-opacity duration-500 pt-[env(safe-area-inset-top)] ${experienceReady ? "opacity-100" : "opacity-0"}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 ocean-nav-scrim pointer-events-none", "aria-hidden": true }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative px-[var(--section-px)] pointer-events-none", children: [
@@ -42467,8 +42667,9 @@ function MinimalNav() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
+                  ref: menuButtonRef,
                   type: "button",
-                  className: `lg:hidden min-w-10 min-h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors ${FOCUS_RING}`,
+                  className: `lg:hidden min-w-11 min-h-11 flex items-center justify-center text-white/80 hover:text-white transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
                   onClick: () => setIsOpen(!isOpen),
                   "aria-label": isOpen ? t.a11y.closeMenu : t.a11y.openMenu,
                   "aria-expanded": isOpen,
@@ -42481,8 +42682,8 @@ function MinimalNav() {
                 {
                   type: "button",
                   onClick: () => scrollToSection("intro"),
-                  className: `font-display font-extrabold text-lg sm:text-xl tracking-tight text-white shrink-0 ${FOCUS_RING}`,
-                  "aria-label": "Home",
+                  className: `font-display font-extrabold text-lg sm:text-xl tracking-tight text-white shrink-0 cursor-pointer ${JOURNEY_FOCUS_RING}`,
+                  "aria-label": t.a11y.home,
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: BRAND_MARK.replace(".", "") }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[var(--ocean-sunset)]", children: "." })
@@ -42494,7 +42695,7 @@ function MinimalNav() {
               "nav",
               {
                 className: "hidden lg:flex items-center gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2",
-                "aria-label": "Main navigation",
+                "aria-label": t.a11y.mainNav,
                 children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "button",
                   {
@@ -42516,18 +42717,18 @@ function MinimalNav() {
                 {
                   href: "/cv.pdf",
                   download: true,
-                  className: `text-[10px] sm:text-[11px] uppercase tracking-[0.12em] font-semibold px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full border border-white/20 text-white/90 hover:bg-white/8 hover:border-white/30 transition-colors ${FOCUS_RING}`,
+                  className: `text-[10px] sm:text-[11px] uppercase tracking-[0.12em] font-semibold px-3 sm:px-3.5 py-1.5 sm:py-2 min-h-11 inline-flex items-center rounded-full border border-white/20 text-white/90 hover:bg-white/8 hover:border-white/30 transition-colors duration-200 cursor-pointer ${JOURNEY_FOCUS_RING}`,
                   children: t.intro.cv
                 }
               )
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
+          !isOpen ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
+              ref: menuRef,
               id: "journey-mobile-menu",
-              className: `lg:hidden pointer-events-auto mx-[var(--section-px)] -mt-1 mb-3 rounded-2xl ocean-glass backdrop-blur-xl border border-white/10 overflow-hidden transition-all duration-300 ${isOpen ? "opacity-100 max-h-[28rem]" : "opacity-0 max-h-0 pointer-events-none"}`,
-              "aria-hidden": !isOpen,
+              className: "lg:hidden pointer-events-auto mx-[var(--section-px)] -mt-1 mb-3 rounded-2xl ocean-glass backdrop-blur-xl border border-white/10 overflow-hidden",
               children: /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "py-2 px-1", children: [
                 navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "button",
@@ -103962,13 +104163,13 @@ function SkipLink() {
     "a",
     {
       href: "#main-content",
-      className: `sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#0a1628] focus:text-white focus:shadow-lg ${FOCUS_RING}`,
+      className: `sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#0a1628] focus:text-white focus:shadow-lg ${JOURNEY_FOCUS_RING}`,
       children: t.a11y.skipToContent
     }
   );
 }
 function Layout({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(LocaleProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyScrollProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col text-white relative ocean-journey", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(LocaleProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyScrollProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MotionConfig, { reducedMotion: "user", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col text-white relative ocean-journey", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SkipLink, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OceanScene, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JourneyPreloader, {}),
@@ -103977,15 +104178,15 @@ function Layout({ children }) {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "main",
       {
-        className: "flex-1 relative z-10",
+        className: "flex-1 relative z-10 md:pl-[3.25rem] lg:pl-[3.75rem]",
         id: "main-content",
         tabIndex: -1,
         children
       }
     )
-  ] }) }) });
+  ] }) }) }) });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-CyAoImRE.js"), true ? [] : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-YYQYMw4I.js"), true ? [] : void 0));
 function PageLoader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
@@ -104045,7 +104246,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InternetIdentityProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
 );
 export {
-  useMouseParallax as $,
+  usePrefersReducedMotion as $,
   timeoutManager as A,
   focusManager as B,
   Certificate as C,
@@ -104069,24 +104270,29 @@ export {
   UnknownError as U,
   useInternetIdentity as V,
   createActorWithConfig as W,
-  jsxRuntimeExports as X,
-  useTranslation as Y,
-  motion as Z,
-  usePrefersReducedMotion as _,
+  createLucideIcon as X,
+  jsxRuntimeExports as Y,
+  useTranslation as Z,
+  motion as _,
   RequestStatusDoneNoReplyErrorCode as a,
-  Record as a0,
-  Vec as a1,
-  Opt as a2,
-  Service as a3,
-  Func as a4,
-  Nat as a5,
-  Text as a6,
-  Bool as a7,
-  Int as a8,
-  CONTACT_EMAIL as a9,
-  FOCUS_RING as aa,
-  useJourneyScroll as ab,
-  SURFACE_SCROLL_START as ac,
+  useMouseParallax as a0,
+  Record as a1,
+  Vec as a2,
+  Opt as a3,
+  Service as a4,
+  Func as a5,
+  Nat as a6,
+  Text as a7,
+  Bool as a8,
+  Int as a9,
+  CONTACT_EMAIL as aa,
+  JOURNEY_FOCUS_RING as ab,
+  GITHUB_URL as ac,
+  LINKEDIN_URL as ad,
+  JOURNEY_CTA_PRIMARY as ae,
+  useJourneyScroll as af,
+  JOURNEY_CTA_SECONDARY as ag,
+  SURFACE_SCROLL_START as ah,
   RejectError as b,
   CertifiedRejectErrorCode as c,
   UNREACHABLE_ERROR as d,

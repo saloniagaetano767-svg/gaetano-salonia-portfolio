@@ -10,3 +10,13 @@ export const SECTION_TITLE =
 
 export const FOCUS_RING =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background" as const;
+
+/** High-contrast focus ring for the ocean journey (dark canvas). */
+export const JOURNEY_FOCUS_RING =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ocean-sunset)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#061018]" as const;
+
+export const JOURNEY_CTA_PRIMARY =
+  "font-semibold text-sm px-6 py-3 min-h-11 rounded-full bg-[var(--ocean-sunset)] text-[var(--ocean-cta-text)] hover:bg-[var(--ocean-sunset-bright)] transition-colors duration-200 cursor-pointer" as const;
+
+export const JOURNEY_CTA_SECONDARY =
+  "font-semibold text-sm px-6 py-3 min-h-11 rounded-full border border-white/25 text-[var(--ocean-text)] hover:bg-white/8 hover:border-white/35 transition-colors duration-200 cursor-pointer" as const;
